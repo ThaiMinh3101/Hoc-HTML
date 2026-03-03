@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Thiết kế Web - CNTT - CKC</title>
+	<!-- Font Awesome Icons -->
+	<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+	<!-- Theme style -->
+	<link rel="stylesheet" href="dist/css/adminlte.min.css">
+	<!-- CodeMirror -->
+	<link rel="stylesheet" href="plugins/codemirror/codemirror.css">
+	<link rel="stylesheet" href="plugins/codemirror/addon/fold/foldgutter.css">
+	<link rel="stylesheet" href="plugins/codemirror/theme/mdn-like.css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="hold-transition layout-fixed layout-navbar-fixed">
+	<div class="wrapper">
+		<!-- Navbar -->
+		<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+			<!-- Left navbar links -->
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+				</li>
+			</ul>
+			<ul id="my-breadcrumb" class="d-flex m-1 p-0">
+			</ul>
+			<!-- Right navbar links -->
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" data-widget="fullscreen" href="#" role="button">
+						<i class="fas fa-expand-arrows-alt"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- /.navbar -->
+		<!-- Main Sidebar Container -->
+		<aside class="main-sidebar sidebar-light-primary elevation-2">
+			<!-- Brand Logo -->
+			<a href="http://cntt.caothang.edu.vn/" class="brand-link">
+				<img src="img/logo.png" alt="IT CKC" class="brand-image img-circle elevation-3">
+				<span class="brand-text font-weight-bold">CNTT - CKC</span>
+			</a>
+			<!-- Sidebar -->
+			<div class="sidebar ">
+				<!-- Sidebar user panel (optional) -->
+				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+					<div class="info font-weight-bold">
+						Thiết kế Web
+					</div>
+				</div>
+				<!-- Sidebar Menu -->
+				<nav class="mt-2 mb-5">
+					<ul id="nav-main" class="nav nav-pills nav-sidebar nav-compact nav-child-indent flex-column"
+						data-widget="treeview" role="menu" data-accordion="false">
+					</ul>
+				</nav>
+				<!-- /.sidebar-menu -->
+			</div>
+			<!-- /.sidebar -->
+		</aside>
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<div class="content-header">
+				<div class="container">
+					<div class="row mb-2">
+						<div class="col-sm-12">
+							<h1 class="m-0 text-center text-uppercase">Thiết kế web</h1>
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.container-fluid -->
+			</div>
+			<!-- /.content-header -->
+			<!-- Main content -->
+			<div class="content">
+				<div class="container-fluid">
+					<ul id="main-heading" class="heading" data-start-at="1">
+						<!--Slideshow cơ bản-->
+						<li>
+							<p>Slideshow cơ bản</p>
+							<p>Dùng JS để ẩn/hiện các hình ảnh, kết hợp với hàm <code>setInterval()</code> để lặp lại sau một khoảng thời gian</p>
+							<p>Lưu ý: các đoạn code JS trong phần này không tự động chạy, phải bấm bút &#x2BC8; để chạy</p>
+							<div class="code-group">
+								<div class="code-highlight language-css line-numbers">
+									<script type="text/plain">
+										*{
+											margin: 0;
+											padding: 0;
+											box-sizing: border-box;
+										}
+										#slideshow{
+											width: 80%;
+											height: 500px;
+											margin: 10px auto;
+											overflow: hidden;
+											position: relative;
+										}
+										#slideshow .slide{
+											display: none; /* Ẩn hết tất cả hình */
+											object-fit: cover;
+											width: 100%;
+											height: 100%;
+										}
+										#slideshow .slide.current{
+											display: block;
+										}
+									</script>
+								</div>
+								<div class="code-highlight language-html line-numbers show-result">
+									<div id="slideshow">
+										<!-- Nên dùng hình dạng landscape (width>height), tốt nhất là dùng các hình có cùng kích thước với khung slideshow-->
+										<img class="slide current" src="img/1.jpg">
+										<img class="slide" src="img/2.jpg">
+										<img class="slide" src="img/3.jpg">
+										<img class="slide" src="img/5.jpg">
+										<img class="slide" src="img/7.jpg">
+										<img class="slide" src="img/9.jpg">
+										<img class="slide" src="img/10.jpg">
+									</div>
+								</div>
+								<div class="code-highlight language-javascript line-numbers">
+									<script type="text/plain">
+										var showDuration = 1000;// thời gian hiển thị 1 hình (ms)
+										var slides = document.querySelectorAll('#slideshow .slide');
+										var numOfSlide = slides.length;
+										var current = 0;
+										slides[current].classList.add('current');
+										function nextSlide() {
+											slides[current].classList.remove('current');
+											current = (current + 1) % numOfSlide;
+											slides[current].classList.add('current');
+										}
+										setInterval(nextSlide,showDuration);//hẹn thời gian lặp lại việc chuyển slide
+									</script>
+								</div>
+							</div>
+							<p>Kết hợp thêm text (chỉ thêm HTML và CSS, JS vẫn giữ nguyên)</p>
+							<div class="code-group">
+								<div class="code-highlight language-css line-numbers collapsed-card">
+									<script type="text/plain">
+										*{
+											margin: 0;
+											padding: 0;
+											box-sizing: border-box;
+										}
+										#slideshow{
+											width: 80%;
+											height: 500px;
+											margin: 10px auto;
+											overflow: hidden;
+											position: relative;
+										}
+										#slideshow .slide{
+											display: none; /* Ẩn hết tất cả hình */
+											width: 100%;
+											height: 100%;
+											position: relative;
+										}
+										#slideshow .slide .slide-img{
+											position: absolute;
+											top: 0;
+											left: 0;
+											width: 100%;
+											height: 100%;
+											object-fit: cover;
+										}
+										#slideshow .slide .slide-text{
+											position: absolute;
+											bottom: 0;
+											left: 0;
+											right: 0;
+											max-height: 20%;
+											overflow: hidden;
+											padding: 1.5em;
+											background: linear-gradient(#fff0 0%, #fff7 25%,#ffff);	
+										}
+										#slideshow .slide.current{
+											display: block;
+										}
+									</script>
+								</div>
+								<div class="code-highlight language-html line-numbers show-result collapsed-card">
+									<div id="slideshow">
+										<div class="slide current">
+											<img class="slide-img" src="img/1.jpg">
+											<div class="slide-text">
+												<h3>Lorem ipsum dolor sit amet.</h3>
+												<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, eius. Vel quod temporibus molestias qui porro atque explicabo, hic incidunt deserunt reiciendis. Hic, a sed. Aut, quas expedita. Blanditiis, molestiae.</p>
+											</div>
+										</div>
+										<div class="slide">
+											<img class="slide-img" src="img/2.jpg">
+											<div class="slide-text">
+												<h3>Lorem, ipsum dolor.</h3>
+												<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, quia id praesentium nemo voluptatum minus esse voluptatibus amet at dolores?</p>
+											</div>
+										</div>
+										<div class="slide">
+											<img class="slide-img" src="img/3.jpg">
+											<div class="slide-text">
+												<h3>Lorem, ipsum dolor sit amet consectetur adipisicing.</h3>
+												<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique at, iure cumque unde, vero perspiciatis veniam quis magni provident itaque, molestias minima nihil architecto accusamus hic molestiae soluta commodi. Accusamus assumenda natus iste sunt ab error amet harum fuga aut.</p>
+											</div>
+										</div>
+										<div class="slide">
+											<img class="slide-img" src="img/5.jpg">
+											<div class="slide-text">
+												<h3>Lorem ipsum dolor sit amet consectetur.</h3>
+												<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex possimus repellat rerum rem laboriosam eligendi minus consequatur voluptatum cum! Recusandae quidem autem dolorem veniam odit, sed quasi accusamus cum adipisci.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="code-highlight language-javascript line-numbers collapsed-card">
+									<script type="text/plain">
+										var showDuration = 1000;// thời gian hiển thị 1 hình (ms)
+										var slides = document.querySelectorAll('#slideshow .slide');
+										var numOfSlide = slides.length;
+										var current = 0;
+										slides[current].classList.add('current');
+										function nextSlide() {
+											slides[current].classList.remove('current');
+											current = (current + 1) % numOfSlide;
+											slides[current].classList.add('current');
+										}
+										setInterval(nextSlide,showDuration);//hẹn thời gian lặp lại việc chuyển slide
+									</script>
+								</div>
+							</div>
+						</li>
+						<!--Slideshow có hiệu ứng-->
+						<li>
+							<p>Slideshow có hiệu ứng</p>
+							<p>Dùng JS để thêm/bớt các class, kết hợp với CSS để tạo hiệu ứng</p>
+							<div class="code-group">
+								<div class="code-highlight language-css line-numbers collapsed-card">
+									<script type="text/plain">
+										*{
+											margin: 0;
+											padding: 0;
+											box-sizing: border-box;
+										}
+										#slideshow{
+											width: 80%;
+											height: 500px;
+											margin: 10px auto;
+											overflow: hidden;
+											position: relative;
+										}
+										#slideshow .slide{
+											width: 100%;
+											height: 100%;
+											object-fit: cover;
+											position: absolute;
+											top: 0;
+											left: 0;
+											/* Đưa hết tất cả hình ra ngoài khung slideshow */
+											transform: translateX(100%);
+										}
+										#slideshow .slide.current, #slideshow .slide.prev{
+											/* Cho transition-duration kế thừa từ thẻ cha, transition duration của thẻ cha sẽ được gán trong JS*/
+											transition-duration: inherit;
+											transition-property: transform;
+										}
+										#slideshow .slide.next{
+											transform: translateX(100%);
+										}
+										#slideshow .slide.current{
+											transform: translateX(0);
+										}
+										#slideshow .slide.prev{
+											transform: translateX(-100%);
+										}
+									</script>
+								</div>
+								<div class="code-highlight language-html line-numbers show-result collapsed-card">
+									<div id="slideshow">
+										<img class="slide current" src="img/1.jpg">
+										<img class="slide" src="img/2.jpg">
+										<img class="slide" src="img/3.jpg">
+										<img class="slide" src="img/5.jpg">
+										<img class="slide" src="img/7.jpg">
+										<img class="slide" src="img/9.jpg">
+										<img class="slide" src="img/10.jpg">
+									</div>
+								</div>
+								<div class="code-highlight language-javascript line-numbers">
+									<script type="text/plain">
+										var showDuration = 3000;// thời gian hiển thị 1 hình (ms)
+										var transitionDuration = 1000;// thời gian chạy hiệu ứng chuyển hình (ms)
+										var slideshow = document.querySelector('#slideshow');
+										var slides = document.querySelectorAll('#slideshow .slide');
+										var numOfSlide = slides.length;
+										var current = 0;
+										var next = 1;
+										var prev = slides.length-1;
+										slides[current].classList.add('current');
+										slides[next].classList.add('next');
+										/* Cách thêm class cho 1 thẻ trong JS */
+										slideshow.style.transitionDuration = transitionDuration + 'ms';
+										/* Cách thay đổi inline CSS của 1 thẻ trong JS, lưu ý cách ghi tên thuộc tính CSS */
+										function nextSlide() {
+											slides[prev].classList.remove('prev');
+											slides[current].classList.remove('current');
+											slides[next].classList.remove('next');
+											prev = current;
+											current = next;
+											next = (next + 1) % numOfSlide;
+											slides[prev].classList.add('prev');
+											slides[current].classList.add('current');
+											slides[next].classList.add('next');
+										}
+										setInterval(nextSlide,showDuration);//hẹn thời gian lặp lại việc chuyển slide
+									</script>
+								</div>
+							</div>
+							<p>Khi cần thay đổi hiệu ứng, chỉ cần sửa CSS, JS vẫn giữ nguyên không đổi</p>
+							<div class="code-group">
+								<div class="code-highlight language-css line-numbers collapsed-card">
+									<script type="text/plain">
+										*{
+											margin: 0;
+											padding: 0;
+											box-sizing: border-box;
+										}
+										#slideshow{
+											width: 80%;
+											height: 500px;
+											margin: 10px auto;
+											overflow: hidden;
+											position: relative;
+										}
+										#slideshow .slide{
+											width: 100%;
+											height: 100%;
+											object-fit: cover;
+											position: absolute;
+											top: 0;
+											left: 0;
+											/* Ẩn tất cả hình */
+											opacity: 0;
+										}
+										#slideshow .slide.current, #slideshow .slide.prev{
+											/* Cho transition-duration kế thừa từ thẻ cha, transition duration của thẻ cha sẽ được gán trong JS*/
+											transition-duration: inherit;
+											transition-property: opacity;
+										}
+										#slideshow .slide.next{
+											opacity: 1;
+										}
+										#slideshow .slide.current{
+											opacity: 1;
+											z-index: 2;
+										}
+										#slideshow .slide.prev{
+											opacity: 0;
+											z-index: 3;
+										}
+									</script>
+								</div>
+								<div class="code-highlight language-html line-numbers show-result collapsed-card">
+									<div id="slideshow">
+										<img class="slide current" src="img/1.jpg">
+										<img class="slide" src="img/2.jpg">
+										<img class="slide" src="img/3.jpg">
+										<img class="slide" src="img/5.jpg">
+										<img class="slide" src="img/7.jpg">
+										<img class="slide" src="img/9.jpg">
+										<img class="slide" src="img/10.jpg">
+									</div>
+								</div>
+								<div class="code-highlight language-javascript line-numbers collapsed-card">
+									<script type="text/plain">
+										var showDuration = 3000;// thời gian hiển thị 1 hình (ms)
+										var transitionDuration = 1000;// thời gian chạy hiệu ứng chuyển hình (ms)
+										var slideshow = document.querySelector('#slideshow');
+										var slides = document.querySelectorAll('#slideshow .slide');
+										var numOfSlide = slides.length;
+										var current = 0;
+										var next = 1;
+										var prev = slides.length-1;
+										slides[current].classList.add('current');
+										slides[next].classList.add('next');
+										/* Cách thêm class cho 1 thẻ trong JS */
+										slideshow.style.transitionDuration = transitionDuration + 'ms';
+										/* Cách thay đổi inline CSS của 1 thẻ trong JS, lưu ý cách ghi tên thuộc tính CSS */
+										function nextSlide() {
+											slides[prev].classList.remove('prev');
+											slides[current].classList.remove('current');
+											slides[next].classList.remove('next');
+											prev = current;
+											current = next;
+											next = (next + 1) % numOfSlide;
+											slides[prev].classList.add('prev');
+											slides[current].classList.add('current');
+											slides[next].classList.add('next');
+										}
+										setInterval(nextSlide,showDuration);//hẹn thời gian lặp lại việc chuyển slide
+									</script>
+								</div>
+							</div>
+						</li>
+						<!--Nút next và previous-->
+						<li>
+							<p>Nút next và previous</p>
+							<p>Thêm 2 button và hàm để quay lại slide trước</p>
+							<p>Điều chỉnh hiệu ứng CSS (nếu có) để thêm hiệu ứng khi quay lại slide trước</p>
+							<div class="code-group">
+								<div class="code-highlight language-css line-numbers collapsed-card">
+									<script type="text/plain">
+										*{
+											margin: 0;
+											padding: 0;
+											box-sizing: border-box;
+										}
+										#slideshow{
+											width: 80%;
+											height: 500px;
+											margin: 10px auto;
+											overflow: hidden;
+											position: relative;
+											display: flex;
+											justify-content: space-between;
+											align-items: center;
+										}
+										#slideshow .slide{
+											width: 100%;
+											height: 100%;
+											object-fit: cover;
+											position: absolute;
+											top: 0;
+											left: 0;
+											/* Đưa hết tất cả hình ra ngoài khung slideshow */
+											transform: translateX(100%);
+										}
+										#slideshow .control{
+											display: inline-block;
+											z-index: 10;
+											font-size: 5rem;
+											padding: 0.25em;
+											cursor: pointer;
+											color: #fff7;
+										}
+										#slideshow .control:hover{
+											color: #fffa;
+											text-shadow: 0 0 5px #000;
+										}
+										#slideshow .slide.next, #slideshow .slide.current, #slideshow .slide.prev{
+											/* Cho transition-duration kế thừa từ thẻ cha, transition duration của thẻ cha sẽ được gán trong JS*/
+											transition-duration: inherit;
+											transition-property: transform;
+										}
+										#slideshow .slide.next{
+											transform: translateX(100%);
+											z-index: 2;
+										}
+										#slideshow .slide.current{
+											transform: translateX(0);
+											z-index: 3;
+										}
+										#slideshow .slide.prev{
+											transform: translateX(-100%);
+										}
+									</script>
+								</div>
+								<div class="code-highlight language-html line-numbers show-result">
+									<div id="slideshow">
+										<img class="slide current" src="img/1.jpg">
+										<img class="slide" src="img/2.jpg">
+										<img class="slide" src="img/3.jpg">
+										<img class="slide" src="img/5.jpg">
+										<img class="slide" src="img/7.jpg">
+										<img class="slide" src="img/9.jpg">
+										<img class="slide" src="img/10.jpg">
+										<span class="control" onclick="btnPrev_click()">&lt;</span>
+										<span class="control" onclick="btnNext_click()">&gt;</span>
+									</div>
+								</div>
+								<div class="code-highlight language-javascript line-numbers">
+									<script type="text/plain">
+										var showDuration = 3000;// thời gian hiển thị 1 hình (ms)
+										var transitionDuration = 1000;// thời gian chạy hiệu ứng chuyển hình (ms)
+										var slideshow = document.querySelector('#slideshow');
+										var slides = document.querySelectorAll('#slideshow .slide');
+										var numOfSlide = slides.length;
+										var current = 0;
+										var next = 1;
+										var prev = slides.length-1;
+										slides[current].classList.add('current');
+										slides[next].classList.add('next');
+										slides[prev].classList.add('prev');
+										slideshow.style.transitionDuration = transitionDuration + 'ms';
+										function nextSlide() {
+											slides[prev].classList.remove('prev');
+											slides[current].classList.remove('current');
+											slides[next].classList.remove('next');
+											prev = current;
+											current = next;
+											next = (next + 1) % numOfSlide;
+											slides[prev].classList.add('prev');
+											slides[current].classList.add('current');
+											slides[next].classList.add('next');
+										}
+										function prevSlide() {
+											slides[prev].classList.remove('prev');
+											slides[current].classList.remove('current');
+											slides[next].classList.remove('next');
+											next = current;
+											current = prev;
+											prev = (prev == 0) ? (numOfSlide - 1) : (prev - 1);
+											slides[prev].classList.add('prev');
+											slides[current].classList.add('current');
+											slides[next].classList.add('next');
+										}
+										function btnNext_click(){
+											nextSlide();
+											clearInterval(slideInterval);
+											slideInterval = setInterval(nextSlide, showDuration);
+										}
+										function btnPrev_click(){
+											prevSlide();
+											clearInterval(slideInterval);
+											slideInterval = setInterval(nextSlide, showDuration);
+										}
+										var slideInterval = setInterval(nextSlide, showDuration);
+									</script>
+								</div>
+							</div>
+						</li>
+						<!--Các nút chuyển slide trực tiếp-->
+						<li>
+							<p>Các nút chuyển slide trực tiếp</p>
+							<p>Thêm các nút cho từng slide (thêm trực tiếp trong HTML hoặc dùng JS)</p>
+							<p>Nên bắt sự kiện click trên thẻ chứa các nút thay vì bắt trên từng nút</p>
+							<ul class="heading">
+								<!--Thêm bằng HTML-->
+								<li>
+									<p>Thêm bằng HTML</p>
+									<div class="code-group">
+										<div class="code-highlight language-css line-numbers collapsed-card">
+											<script type="text/plain">
+												*{
+													margin: 0;
+													padding: 0;
+													box-sizing: border-box;
+												}
+												#slideshow{
+													width: 80%;
+													height: 500px;
+													margin: 10px auto;
+													overflow: hidden;
+													position: relative;
+													display: flex;
+													justify-content: space-between;
+													align-items: center;
+												}
+												#slideshow .slide{
+													width: 100%;
+													height: 100%;
+													object-fit: cover;
+													position: absolute;
+													top: 0;
+													left: 0;
+													/* Đưa hết tất cả hình ra ngoài khung slideshow */
+													transform: translateX(100%);
+												}
+												#slideshow .control{
+													display: inline-block;
+													z-index: 10;
+													font-size: 3rem;
+													padding: 0.2em;
+													cursor: pointer;
+													color: #ffff;
+													text-shadow: 0 0 5px #000;
+													opacity: 0.5;
+												}
+												#slideshow .slide-list{
+													z-index: 10;
+													align-self: flex-end;
+												}
+												#slideshow .control:hover{
+													opacity: 1;
+												}
+		
+												#slideshow .slide.next, #slideshow .slide.current, #slideshow .slide.prev{
+													/* Cho transition-duration kế thừa từ thẻ cha, transition duration của thẻ cha sẽ được gán trong JS*/
+													transition-duration: inherit;
+													transition-property: transform;
+												}
+												#slideshow .slide.next{
+													transform: translateX(100%);
+													z-index: 2;
+												}
+												#slideshow .slide.current{
+													transform: translateX(0);
+													z-index: 3;
+												}
+												#slideshow .slide.prev{
+													transform: translateX(-100%);
+												}
+											</script>
+										</div>
+										<div class="code-highlight language-html line-numbers show-result">
+											<div id="slideshow">
+												<img class="slide current" src="img/1.jpg">
+												<img class="slide" src="img/2.jpg">
+												<img class="slide" src="img/3.jpg">
+												<img class="slide" src="img/5.jpg">
+												<img class="slide" src="img/7.jpg">
+												<img class="slide" src="img/9.jpg">
+												<img class="slide" src="img/10.jpg">
+												<span class="control" onclick="btnPrev_click()">&lt;</span>
+												<span class="slide-list" onclick="btnSlide_click(event)">
+													<span class="control btn-slide" data-slide="0">&bull;</span>
+													<span class="control btn-slide" data-slide="1">&bull;</span>
+													<span class="control btn-slide" data-slide="2">&bull;</span>
+													<span class="control btn-slide" data-slide="3">&bull;</span>
+													<span class="control btn-slide" data-slide="4">&bull;</span>
+													<span class="control btn-slide" data-slide="5">&bull;</span>
+													<span class="control btn-slide" data-slide="6">&bull;</span>
+												</span>
+												<span class="control" onclick="btnNext_click()">&gt;</span>
+											</div>
+										</div>
+										<div class="code-highlight language-javascript line-numbers">
+											<script type="text/plain">
+												var showDuration = 3000;// thời gian hiển thị 1 hình (ms)
+												var transitionDuration = 1000;// thời gian chạy hiệu ứng chuyển hình (ms)
+												var slideshow = document.querySelector('#slideshow');
+												var slides = document.querySelectorAll('#slideshow .slide');
+												var numOfSlide = slides.length;
+												var current = 0;
+												var next = 1;
+												var prev = slides.length-1;
+												slides[current].classList.add('current');
+												slides[next].classList.add('next');
+												slides[prev].classList.add('prev');
+												slideshow.style.transitionDuration = transitionDuration + 'ms';
+												function nextSlide() {
+													slides[prev].classList.remove('prev');
+													slides[current].classList.remove('current');
+													slides[next].classList.remove('next');
+													prev = current;
+													current = next;
+													next = (next + 1) % numOfSlide;
+													slides[prev].classList.add('prev');
+													slides[current].classList.add('current');
+													slides[next].classList.add('next');
+												}
+												function prevSlide() {
+													slides[prev].classList.remove('prev');
+													slides[current].classList.remove('current');
+													slides[next].classList.remove('next');
+													next = current;
+													current = prev;
+													prev = (prev == 0) ? (numOfSlide - 1) : (prev - 1);
+													slides[prev].classList.add('prev');
+													slides[current].classList.add('current');
+													slides[next].classList.add('next');
+												}
+												function btnNext_click(){
+													clearInterval(slideInterval);
+													nextSlide();
+													slideInterval = setInterval(nextSlide, showDuration);
+												}
+												function btnPrev_click(){
+													clearInterval(slideInterval);
+													prevSlide();
+													slideInterval = setInterval(nextSlide, showDuration);
+												}
+												function btnSlide_click(e){
+													clearInterval(slideInterval);
+													var i = parseInt(e.target.getAttribute('data-slide'));
+													if(isNaN(i) || i == current) return;
+													if(i == prev) {
+														prevSlide();
+													}
+													else {
+														slides[next].classList.remove('next');
+														next = i;
+														slides[next].classList.add('next');
+														nextSlide();
+													}
+													slideInterval = setInterval(nextSlide, showDuration);
+												}
+												var slideInterval = setInterval(nextSlide, showDuration);
+											</script>
+										</div>
+									</div>
+								</li>
+								<!--Thêm bằng JS-->
+								<li>
+									<p>Thêm bằng JS</p>
+									<div class="code-group">
+										<div class="code-highlight language-css line-numbers collapsed-card">
+											<script type="text/plain">
+												*{
+													margin: 0;
+													padding: 0;
+													box-sizing: border-box;
+												}
+												#slideshow{
+													width: 80%;
+													height: 500px;
+													margin: 10px auto;
+													overflow: hidden;
+													position: relative;
+													display: flex;
+													justify-content: space-between;
+													align-items: center;
+												}
+												#slideshow .slide{
+													width: 100%;
+													height: 100%;
+													object-fit: cover;
+													position: absolute;
+													top: 0;
+													left: 0;
+													/* Đưa hết tất cả hình ra ngoài khung slideshow */
+													transform: translateX(100%);
+												}
+												#slideshow .control{
+													display: inline-block;
+													z-index: 10;
+													font-size: 3rem;
+													padding: 0.2em;
+													cursor: pointer;
+													color: #ffff;
+													text-shadow: 0 0 5px #000;
+													opacity: 0.5;
+												}
+												#slideshow .slide-list{
+													z-index: 10;
+													align-self: flex-end;
+												}
+												#slideshow .control:hover{
+													opacity: 1;
+												}
+		
+												#slideshow .slide.next, #slideshow .slide.current, #slideshow .slide.prev{
+													/* Cho transition-duration kế thừa từ thẻ cha, transition duration của thẻ cha sẽ được gán trong JS*/
+													transition-duration: inherit;
+													transition-property: transform;
+												}
+												#slideshow .slide.next{
+													transform: translateX(100%);
+													z-index: 2;
+												}
+												#slideshow .slide.current{
+													transform: translateX(0);
+													z-index: 3;
+												}
+												#slideshow .slide.prev{
+													transform: translateX(-100%);
+												}
+											</script>
+										</div>
+										<div class="code-highlight language-html line-numbers show-result">
+											<div id="slideshow">
+												<img class="slide current" src="img/1.jpg">
+												<img class="slide" src="img/2.jpg">
+												<img class="slide" src="img/3.jpg">
+												<img class="slide" src="img/5.jpg">
+												<img class="slide" src="img/7.jpg">
+												<img class="slide" src="img/9.jpg">
+												<img class="slide" src="img/10.jpg">
+												<span class="control" onclick="btnPrev_click()">&lt;</span>
+												<span class="slide-list" onclick="btnSlide_click(event)">
+												</span>
+												<span class="control" onclick="btnNext_click()">&gt;</span>
+											</div>
+										</div>
+										<div class="code-highlight language-javascript line-numbers">
+											<script type="text/plain">
+												var showDuration = 3000;// thời gian hiển thị 1 hình (ms)
+												var transitionDuration = 1000;// thời gian chạy hiệu ứng chuyển hình (ms)
+												var slideshow = document.querySelector('#slideshow');
+												var slides = document.querySelectorAll('#slideshow .slide');
+												var numOfSlide = slides.length;
+												var current = 0;
+												var next = 1;
+												var prev = slides.length-1;
+												slides[current].classList.add('current');
+												slides[next].classList.add('next');
+												slides[prev].classList.add('prev');
+												slideshow.style.transitionDuration = transitionDuration + 'ms';
+												function nextSlide() {
+													slides[prev].classList.remove('prev');
+													slides[current].classList.remove('current');
+													slides[next].classList.remove('next');
+													prev = current;
+													current = next;
+													next = (next + 1) % numOfSlide;
+													slides[prev].classList.add('prev');
+													slides[current].classList.add('current');
+													slides[next].classList.add('next');
+												}
+												function prevSlide() {
+													slides[prev].classList.remove('prev');
+													slides[current].classList.remove('current');
+													slides[next].classList.remove('next');
+													next = current;
+													current = prev;
+													prev = (prev == 0) ? (numOfSlide - 1) : (prev - 1);
+													slides[prev].classList.add('prev');
+													slides[current].classList.add('current');
+													slides[next].classList.add('next');
+												}
+												function btnNext_click(){
+													clearInterval(slideInterval);
+													nextSlide();
+													slideInterval = setInterval(nextSlide, showDuration);
+												}
+												function btnPrev_click(){
+													clearInterval(slideInterval);
+													prevSlide();
+													slideInterval = setInterval(nextSlide, showDuration);
+												}
+												function btnSlide_click(e){
+													clearInterval(slideInterval);
+													var i = parseInt(e.target.getAttribute('data-slide'));
+													if(isNaN(i) || i == current) return;
+													if(i == prev) {
+														prevSlide();
+													}
+													else {
+														slides[next].classList.remove('next');
+														next = i;
+														slides[next].classList.add('next');
+														nextSlide();
+													}
+													slideInterval = setInterval(nextSlide, showDuration);
+												}
+												for(var i = 0; i < slides.length; i++){
+													var ele = document.createElement('span');
+													ele.className = 'control btn-slide';
+													ele.setAttribute('data-slide', i);
+													ele.innerHTML = '&bull;'
+													document.querySelector('#slideshow .slide-list').append(ele);
+												}
+												var slideInterval = setInterval(nextSlide, showDuration);
+											</script>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div><!-- /.container-fluid -->
+			</div>
+			<!-- /.content -->
+			<a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+				<i class="fas fa-chevron-up"></i>
+			</a>
+		</div>
+		<!-- /.content-wrapper -->
+		<!-- Main Footer -->
+		<footer class="main-footer">
+			<!-- To the right -->
+			<div class="float-right d-none d-sm-inline">
+				Khoa Công nghệ thông tin - Trường Cao đẳng kỹ thuật Cao Thắng
+			</div>
+			<!-- Default to the left -->
+			<strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
+			reserved.
+		</footer>
+	</div>
+	<!-- ./wrapper -->
+	<template id="card-code">
+		<div class="card card-success m-0">
+			<div class="card-header py-1 px-3">
+				<h3 class="card-title text-uppercase font-weight-bold">Title</h3>
+				<div class="card-error hidden mx-2">
+					<span class="px-1 badge badge-danger"><i class="fas fa-times-circle"></i> <span
+							class="errorCount">0</span></span>
+				</div>
+				<div class="card-tools">
+					<button type="button" class="btn-run btn btn-tool" title="Run"><i class="fas fa-play"></i></button>
+					<button type="button" class="btn-clear btn btn-tool" title="Clear"><i
+							class="fas fa-trash-alt"></i></button>
+					<button type="button" class="btn-apply btn btn-tool" title="Apply"><i
+							class="fas fa-check"></i></button>
+					<button type="button" class="btn-copy btn btn-tool" title="Copy"><i
+							class="fas fa-copy"></i></button>
+					<button type="button" class="btn-reset btn btn-tool" title="Reset"><i
+							class="fas fa-sync-alt"></i></button>
+					<button type="button" class="btn btn-tool" data-card-widget="maximize" title="Maximize"><i
+							class="fas fa-expand"></i></button>
+					<button type="button" class="btn btn-tool" data-card-widget="collapse" data-animation-speed="150"
+						title="Minimize"><i class="fas fa-minus"></i></button>
+				</div>
+				<!-- /.card-tools -->
+			</div>
+			<!-- /.card-header -->
+			<div class="card-body p-0">
+			</div>
+			<!-- /.card-body -->
+		</div>
+	</template>
+	<template id="card-text">
+		<div class="card card-primary m-0 card-text">
+			<div class="card-header py-1 px-3">
+				<h3 class="card-title font-weight-bold">Title</h3>
+				<div class="card-tools">
+					<button type="button" class="btn btn-tool" data-card-widget="maximize"><i
+							class="fas fa-expand"></i></button>
+					<button type="button" class="btn btn-tool" data-card-widget="collapse" data-animation-speed="150"><i
+							class="fas fa-minus"></i></button>
+				</div>
+				<!-- /.card-tools -->
+			</div>
+			<!-- /.card-header -->
+			<div class="card-body">
+			</div>
+			<!-- /.card-body -->
+		</div>
+	</template>
+	<!-- #region JS-->
+	<!-- REQUIRED SCRIPTS -->
+	<!-- jQuery -->
+	<script src="plugins/jquery/jquery.min.js"></script>
+	<!-- Bootstrap 4 -->
+	<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- AdminLTE App -->
+	<script src="dist/js/adminlte.min.js"></script>
+	<!-- CodeMirror -->
+	<script src="plugins/codemirror/codemirror.js"></script>
+	<script src="plugins/codemirror/addon/fold/foldcode.js"></script>
+	<script src="plugins/codemirror/addon/fold/foldgutter.js"></script>
+	<script src="plugins/codemirror/addon/fold/brace-fold.js"></script>
+	<script src="plugins/codemirror/addon/fold/xml-fold.js"></script>
+	<script src="plugins/codemirror/addon/fold/indent-fold.js"></script>
+	<script src="plugins/codemirror/addon/fold/markdown-fold.js"></script>
+	<script src="plugins/codemirror/addon/fold/comment-fold.js"></script>
+	<script src="plugins/codemirror/addon/edit/matchbrackets.js"></script>
+	<script src="plugins/codemirror/addon/edit/closebrackets.js"></script>
+	<script src="plugins/codemirror/addon/edit/matchtags.js"></script>
+	<script src="plugins/codemirror/addon/edit/closetag.js"></script>
+	<script src="plugins/codemirror/mode/css/css.js"></script>
+	<script src="plugins/codemirror/mode/javascript/javascript.js"></script>
+	<script src="plugins/codemirror/mode/xml/xml.js"></script>
+	<script src="plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+	<!-- Custom JS -->
+	<script src="js/main.js"></script>
+	<!-- #endregion -->
+</body>
+
+</html>

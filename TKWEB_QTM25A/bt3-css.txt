@@ -1,0 +1,10 @@
+- Không thay đổi nội dung file html cho sẵn, chỉ thêm CSS (dùng external CSS)
+- Chưa cần sử dụng các thuộc tính flex hoặc grid
+- Toàn trang: font sans-serif
+- Các thẻ <li> cần sắp trên hàng ngang thì dùng display:inline-block
+- Điều chỉnh các khoảng trống giữa các thành phần bằng margin và padding
+- Hình ảnh bo tròn góc
+- Các dòng trong <table> tô màu nền chẵn/lẻ, dòng được hover đổi màu nền
+- Các ký tự unicode để dùng trong CSS: ✓, ★
+- Thẻ <a> website link tới cntt.caothang.edu.vn
+- Thẻ <a> email đổi thành MSSV@caothang.edu.vn (cả phần text và đường link)

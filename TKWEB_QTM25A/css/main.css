@@ -1,0 +1,310 @@
+/*Button back to top*/
+#back-to-top {
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+#back-to-top:hover {
+	opacity: 1;
+}
+
+.main-header {
+	padding: 0;
+	font-size: 0.8em;
+}
+
+/*Breadcrumb in top header*/
+#my-breadcrumb {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+#my-breadcrumb>li {
+	list-style: none;
+}
+
+#my-breadcrumb>li {
+	list-style: none;
+}
+
+#my-breadcrumb>li:last-child {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+#my-breadcrumb>li:not(:first-child)::before {
+	content: '/';
+	margin: 0 0.5rem;
+}
+
+/*Responsively collapse items*/
+#my-breadcrumb>li>a>span {
+	display: none;
+}
+
+#my-breadcrumb>li>a::before {
+	content: ' .. ';
+	display: inline;
+}
+
+@media(min-width:720px) {
+	#my-breadcrumb>li:nth-last-child(2)>a>span {
+		display: inline;
+	}
+
+	#my-breadcrumb>li:nth-last-child(2)>a::before {
+		display: none;
+	}
+}
+
+@media(min-width:960px) {
+	#my-breadcrumb>li:nth-last-child(3)>a>span {
+		display: inline;
+	}
+
+	#my-breadcrumb>li:nth-last-child(3)>a::before {
+		display: none;
+	}
+}
+
+/*figcaption numbering*/
+#main-heading {
+	counter-reset: chap heading;
+}
+
+#main-heading>li {
+	counter-reset: fig;
+	counter-increment: chap heading;
+}
+
+figcaption {
+	counter-increment: fig;
+}
+
+figcaption::before {
+	content: 'Hình ' counter(chap) '.' counter(fig) '. ';
+}
+
+/*Nested list numbering*/
+.heading {
+	counter-reset: heading;
+}
+
+.heading>li {
+	list-style: none;
+	counter-increment: heading;
+}
+
+.heading>li {
+	position: relative;
+}
+
+.heading>li .heading-number::before {
+	content: counters(heading, '.') '. ';
+}
+
+.content .heading {
+	padding: 0;
+	margin: 0;
+}
+
+.heading .scroll-hack {
+	position: absolute;
+	top: -70px;
+	z-index: -1;
+}
+
+/*Custom treeview-like sidebar*/
+#nav-main {
+	font-size: 15px;
+}
+
+#nav-main .heading {
+	padding-left: 1rem;
+	position: relative;
+}
+
+#nav-main .heading::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: -0.5rem;
+	left: 1.5rem;
+	width: 2px;
+	height: calc(100% - 0.5rem);
+	border-left: 2px dotted #aaa;
+}
+
+#nav-main .heading>li::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 1rem;
+	left: 0.5rem;
+	width: 0.5rem;
+	height: 2px;
+	border-bottom: 2px dotted #aaa;
+}
+
+/*Custom card for code group*/
+.card-title {
+	cursor: pointer;
+}
+
+.code-group {
+	margin: 1rem 0;
+}
+
+.code-group .card {
+	flex: 1 0 100%;
+}
+
+.plain-result~.card-result .card-header {
+	display: none;
+}
+
+.plain-result~.card-result {
+	box-shadow: none;
+}
+
+.plain-result~.card-result iframe {
+	border: none;
+	resize: none;
+}
+
+.CodeMirror {
+	height: auto;
+	border: none;
+}
+
+iframe.code-result {
+	margin: 0;
+	width: 100%;
+	max-width: 100%;
+	border: 1px solid #ddd;
+	resize: both;
+}
+
+/*List style in card text*/
+.card-text ol {
+	padding-left: 2rem;
+}
+
+.card-text ul:not(.heading) {
+	padding-left: 1rem;
+	margin-bottom: 1rem;
+	list-style-type: disc;
+}
+
+.card-text li:not(:last-child) ul:not(.heading) {
+	margin-bottom: 0.5em;
+}
+
+.card-text p+ul {
+	margin-top: -0.75em;
+}
+
+.card-text ul:not(.heading) ul:not(.heading) {
+	list-style-type: circle;
+}
+
+.card-text ul:not(.heading) ul:not(.heading) ul:not(.heading) {
+	list-style-type: square;
+}
+
+/*Table style in card text*/
+.card-text table th {
+	text-align: center;
+}
+
+.card-text table :is(td, th) {
+	border: 1px solid;
+	padding: 0.25em 0.5em;
+}
+
+.card-text li:not(:last-child) ul:not(.heading) {
+	margin-bottom: 0.5em;
+}
+
+.card-text p+ul {
+	margin-top: -0.75em;
+}
+
+.card-text p {
+	text-align: justify;
+}
+
+.card-text ul:not(.heading) ul:not(.heading) {
+	list-style-type: circle;
+}
+
+.card-text ul:not(.heading) ul:not(.heading) ul:not(.heading) {
+	list-style-type: square;
+}
+
+/*Other style*/
+:root {
+	font-size: 18px;
+}
+
+.hidden {
+	display: none;
+}
+
+figure {
+	text-align: center;
+}
+
+figure img {
+	max-width: 100%;
+}
+
+.card-body p {
+	text-indent: 1.2rem;
+}
+
+.card-body .fa-external-link-alt {
+	text-indent: 0;
+	margin: 0 0 0 0.4em;
+}
+
+@media print {
+	.card-tools {
+		display: none;
+	}
+}
+
+.card-body img {
+	max-width: 100%;
+}
+
+/*WTF LTE?*/
+.callout a {
+	color: #007bff;
+	text-decoration: none;
+}
+
+.callout a:hover {
+	color: #0056b3;
+	text-decoration: none;
+}
+
+/*CodeMirror console*/
+.card-console .CodeMirror {
+	color: #333;
+	height: auto;
+}
+
+.card-console .CodeMirror-scroll {
+	color: #333;
+	max-height: 400px;
+}
+
+/*CodeMirror javascript*/
+.card-error {
+	float: left;
+	font-size: 1.1rem;
+	line-height: 1.2;
+}

@@ -1,0 +1,224 @@
+html, body {
+    background-color: #e0f2f7;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    font-family: sans-serif;
+    text-align: center; 
+    background-image: url("https://picsum.photos/id/1050/800/400/");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+}
+img {
+    border-radius: 20px;
+}
+section {
+    background-color: white;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+header{
+    background-color: #0784b5;
+    color: white;
+}
+header h1{
+    text-transform: uppercase;
+    padding-top: 20px;
+    margin: 0;
+    font-size: 35px;
+    letter-spacing: 2px;
+}
+header p{
+    font-style: italic;
+    padding-top: 15px;
+    font-size: 15px;
+}
+header ul{
+    background-color: #003d5c;
+    padding: 15px;
+}
+header li{
+    display: inline-block;
+}
+header a{
+    color:white;
+    text-decoration:none;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+main h2 {
+    color: #066893;
+    font-size: 40px;
+}
+main img {
+    display: block;
+    margin: 20px auto;
+    width: 70%;
+}
+main h3 {
+    color: #0a8ec2;
+    font-size: 30px;
+    margin-top: 20px;
+}
+#destinations {
+    background-color: #e8f5f9;
+    text-align: left;
+}
+#destinations p{
+    color:#004a74;
+    font-weight: bold;
+
+}
+#destinations ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+}
+#destinations li {
+    width: 300px;
+    text-align: center;
+}
+#destinations li p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #004a74;
+}
+#destinations li img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px !important;
+}
+#rooms {
+    width:1000px;
+    height:400px;
+}
+#rooms h3 {
+    text-align: left;
+}
+#rooms table {
+    width: 100%;
+    height:300px;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+#rooms thead th{
+    background-color: #0077a6;
+    color: white;
+    text-align: center;
+}
+#rooms th, #rooms td {
+    text-align: left;
+    border: 1px solid gray;
+}
+section#amenities {
+    background-color: #fff9e6;
+}
+#amenities h3 {
+    text-align: left;
+}
+#amenities ul {
+    list-style: none;
+    padding:0;
+}
+#amenities li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 25px; 
+    text-align: left;
+}
+#amenities li::before{
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #0077a6;
+}
+section#packages {
+    background-color: #f0f8ff;
+    text-align: left;
+}
+#packages p {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+#packages ul {
+    list-style: none;
+}
+#packages li{
+    padding-bottom: 12px;
+    position: relative;
+    padding-left: 15px; 
+}
+#packages li::before {
+    content: "⁎";
+    position: absolute;
+    left: 0;
+    color: #0077a6;
+    font-weight: bold;
+}
+#packages strong {
+    color: #0077a6 ;
+}
+section#booking {
+    text-align: left;
+}
+#booking p {
+    margin-left: 30px;
+}
+#booking a {
+    text-decoration: none;
+    color:#0077a6;
+}
+#booking li {
+    padding-bottom: 12px;
+    position: relative;
+    padding-left: 15px; 
+}
+#booking ol {
+    padding: 10px 40px;
+}
+#reviews {
+    padding: 40px;
+    margin: 40px auto;
+    font-weight: bold;
+}
+#reviews h3 {
+    text-align: center;
+}
+#reviews ul {
+    justify-content: center;
+    list-style: none;   
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px
+}
+#reviews li {
+    width: 200px;
+    text-align: center;
+}
+#reviews strong {
+    color:#0077a6
+}
+footer {
+    background-color: #004a74;
+    font-size: 20px;
+    color:white;
+    text-align: center;
+    padding: 20px;
+}
+footer a {
+    text-decoration: none;
+    color:rgb(217, 204, 130)
+}

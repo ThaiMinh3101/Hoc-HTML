@@ -1,0 +1,3311 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>JavaScript - Thiết kế Web - CNTT - CKC</title>
+		<!-- Font Awesome Icons -->
+		<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+		<!-- Theme style -->
+		<link rel="stylesheet" href="dist/css/adminlte.min.css">
+		<!-- CodeMirror -->
+		<link rel="stylesheet" href="plugins/codemirror/codemirror.css">
+		<link rel="stylesheet" href="plugins/codemirror/addon/fold/foldgutter.css">
+		<link rel="stylesheet" href="plugins/codemirror/theme/mdn-like.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body class="hold-transition layout-fixed layout-navbar-fixed">
+	<div class="wrapper">
+		<!-- Navbar -->
+		<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+			<!-- Left navbar links -->
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+				</li>
+			</ul>
+			<ul id="my-breadcrumb" class="d-flex m-1 p-0">
+			</ul>
+			<!-- Right navbar links -->
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" data-widget="fullscreen" href="#" role="button">
+						<i class="fas fa-expand-arrows-alt"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- /.navbar -->
+		<!-- Main Sidebar Container -->
+		<aside class="main-sidebar sidebar-light-primary elevation-2">
+			<!-- Brand Logo -->
+			<a href="http://cntt.caothang.edu.vn/" class="brand-link">
+				<img src="img/logo.png" alt="IT CKC" class="brand-image img-circle elevation-3">
+				<span class="brand-text font-weight-bold">CNTT - CKC</span>
+			</a>
+			<!-- Sidebar -->
+			<div class="sidebar ">
+				<!-- Sidebar user panel (optional) -->
+				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+					<div class="info font-weight-bold">
+						Thiết kế Web
+					</div>
+				</div>
+				<!-- Sidebar Menu -->
+				<nav class="mt-2 mb-5">
+					<ul id="nav-main" class="nav nav-pills nav-sidebar nav-compact nav-child-indent flex-column" data-widget="treeview" role="menu" data-accordion="false">
+					</ul>
+				</nav>
+				<!-- /.sidebar-menu -->
+			</div>
+			<!-- /.sidebar -->
+		</aside>
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<div class="content-header">
+				<div class="container">
+					<div class="row mb-2">
+						<div class="col-sm-12">
+							<h1 class="m-0 text-center text-uppercase">Thiết kế web</h1>
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.container-fluid -->
+			</div>
+			<!-- /.content-header -->
+			<!-- Main content -->
+			<div class="content">
+				<div class="container-fluid">
+					<ul id="main-heading" class="heading" data-start-at="1">
+						<!--[ ]HTML-->
+						<li>
+							<p>Hypertext markup language (HTML)</p>
+							<p><a href="01-HTML.html">HTML</a></p>
+						</li>
+						<!--[ ]CSS-->
+						<li>
+							<p>Cascading style sheets (CSS)</p>
+							<p><a href="02-CSS.html">CSS</a></p>
+						</li>
+						<!--[ ]JS-->
+						<li>
+							<p>JavaScript (JS)</p>
+							<p>JavaScript là một ngôn ngữ lập trình thường được sử dụng để tạo ra các trang web động và có tính tương tác. JavaScript có thể chạy ở client (browser) hoặc server. Trong phạm vi môn học này chỉ tìm hiểu về các chức năng của JavaScript ở client:</p>
+							<ul>
+								<li>Tương tác với các thành phần HTML và CSS</li>
+								<li>Xử lý sự kiện</li>
+								<li>Xác thực dữ liệu trên form</li>
+								<li>Hiệu ứng đồ họa</li>
+							</ul>
+							<p>JavaScript là một ngôn ngữ thông dịch, có cú pháp tương tự như C/C++, hỗ trợ hướng đối tượng.</p>
+							<div class="callout callout-danger">
+								Lưu ý: JavaScript không có liên quan gì với Java
+							</div>
+							<p>Cách sử dụng JS trong HTML:</p>
+							<div class="code-group">
+								<div class="code-highlight language-html line-numbers">
+									<script type="text/plain">
+										<!doctype html>
+										<html>
+										<head>
+											<!--Có thể để JS trong thẻ head nhưng để tránh lỗi thì thường để JS ở cuối thẻ body-->
+										</head>
+										<body>
+											<script>
+												alert('Hello world!');
+											<&#47;script>
+											<script src="path/to/file/script.js"><&#47;script>
+										</body>
+										</html>
+									</script>
+								</div>
+							</div>
+							<ul class="heading">
+								<!--[ ]Thông dịch-->
+								<li>
+									<p>Thông dịch</p>
+									<figure>
+										<img src="img/Compiler.png" alt="HTTP.png">
+										<figcaption>
+											Biên dịch
+										</figcaption>
+									</figure>
+									<figure>
+										<img src="img/Interpreter.png" alt="HTTP_Steps.png">
+										<figcaption>
+											Thông dịch
+										</figcaption>
+									</figure>
+									<p>Nhược điểm thông dịch nói chung là tốc độ thực thi chậm do mỗi lần chạy đều phải thực hiện lại quá trình thông dịch từ đầu. Các browser hiện nay thường không chạy JavaScript theo cách thông dịch mà sử dụng các JavaScript engine, một loại JIT (just-in-time compiler), để tối ưu hóa code và tăng tốc độ thực thi.</p>
+								</li>
+								<!--[ ]Các khái niệm cơ bản-->
+								<li>
+									<p>Các khái niệm cơ bản</p>
+									<ul class="heading">
+										<!--[ ]Biến-->
+										<li>
+											<p>Biến</p>
+											<div class="callout callout-info">
+												<p>Tên biến (và tên hằng, tên hàm, tên thuộc tính, gọi chung là định danh) có phân biệt hoa thường, chỉ được chứa các ký tự <b>chữ</b>, <b>số</b>, dấu <b>_</b>, dấu <b>$</b>, và không được bắt đầu bằng số.</p>
+												<p>Khác với C++, biến trong JS <b>không có kiểu cố định</b>, có nghĩa là một biến có thể chứa bất kỳ kiểu dữ liệu nào (<b>dynamic typing</b>).</p>
+												<p>Cách khai báo và khởi tạo biến/hằng</p>
+												<ul>
+													<li><code>var &lt;tên biến&gt;;</code> hoặc <code>var &lt;tên biến&gt; = &lt;giá trị&gt;;</code></li>
+													<li><code>let &lt;tên biến&gt;;</code> hoặc <code>let &lt;tên biến&gt; = &lt;giá trị&gt;;</code></li>
+													<li><code>const &lt;tên hằng&gt; = &lt;giá trị&gt;;</code></li>
+												</ul>
+											</div>
+											<p>So sánh var và let:</p>
+											<p>Biến khai báo bằng var có phạm vi <b>hàm</b>, biến khai báo bằng let có phạm vi <b>khối</b>,</p>
+											<div class="row">
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															(function f(){
+																{
+																	var a=5;
+																}
+																console.log(a);
+															})();
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result">
+														</div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															(function f(){
+																{
+																	let a=5;
+																}
+																console.log(a);//lỗi
+															})();
+														</div>
+													</div>
+												</div>
+											</div>
+											<p>do đó biến khai báo bằng var có thể được hiểu tại mọi vị trí trong hàm, kể cả <b>trước khi khai báo</b>:</p>
+											<div class="row">
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result">
+														</div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															(function f(){
+																console.log(a);//lưu ý: undefined ở đây có nghĩa là đã tồn tại nhưng chưa có giá trị
+																var a=5;
+																console.log(a);
+															})();
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result">
+														</div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															(function f(){
+																console.log(a);//lỗi
+																let a=5;
+																console.log(a);
+															})();
+														</div>
+													</div>
+												</div>
+											</div>
+											<p>Ngoài ra var còn có thể <b>định nghĩa lại</b> biến:</p>
+											<div class="row">
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result">
+														</div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															(function f(){
+																var a=5;
+																console.log(a);
+																var a=123;
+																console.log(a);
+															})();
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result">
+														</div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															(function f(){
+																let a=5;
+																console.log(a);
+																let a=123;//lỗi
+																console.log(a);
+															})();
+														</div>
+													</div>
+												</div>
+											</div>
+											<p>const cũng có phạm vi khối và không được định nghĩa lại tương tự như let, điểm khác nhau là biến khai báo bằng const <b>không thể gán lại giá trị khác</b> &rArr; "hằng",</p>
+											<div class="row">
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result">
+														</div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															(function f(){
+																const a=5;
+																console.log(a);
+																a=123;//lỗi
+																console.log(a);
+															})();
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result">
+														</div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															(function f(){
+																let a=5;
+																console.log(a);
+																a=123;
+																console.log(a);
+															})();
+														</div>
+													</div>
+												</div>
+											</div>
+											<p>tuy nhiên mảng và đối tượng vẫn có thể bị thay đổi nội dung vì const chỉ ngăn không cho thay đổi địa chỉ biến đang trỏ tới chứ không ngăn thay đổi nội dung tại địa chỉ đó:</p>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result">
+												</div>
+												<div class="code-highlight language-javascript line-numbers auto-run console-only">
+													(function f(){
+														const a=[1,2,3];
+														console.log(a);
+														a[0]='abc';
+														a.push(true);
+														console.log(a);
+
+														const b={x:1,y:2};
+														console.log(b);
+														b.x=5;
+														b.z=7;
+														console.log(b);
+													})();
+												</div>
+											</div>
+											<div class="callout callout-danger">
+												<p>Lưu ý trường hợp sau:</p>
+												<div class="code-group">
+													<div class="code-highlight language-html line-numbers hidden show-result">
+													</div>
+													<div class="code-highlight language-javascript line-numbers auto-run console-only">
+														(function f(){
+															var abc=5;
+															abC=10; //lưu ý chữ C
+															console.log(abc);
+														})();
+														console.log(abC);
+													</div>
+												</div>
+												<p>Nếu gán giá trị vào một định danh chưa được khai báo (thường là do lỗi đánh máy) thì JS sẽ tự động khai báo một biến <b>toàn cục</b> thay vì báo lỗi</p>
+											</div>
+										</li>
+										<!--[ ]Kiểu dữ liệu-->
+										<li>
+											<p>Kiểu dữ liệu</p>
+											<p>Trong JS có các <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures">kiểu dữ liệu</a> sau</p>
+											<ul>
+												<li><b>Null</b>: chỉ có duy nhất một giá trị là <code>null</code></li>
+												<li><b>Undefined</b>: chỉ có duy nhất một giá trị là <code>undefined</code></li>
+												<li><b>Boolean</b>: chỉ có 2 giá trị là <code>true</code> và <code>false</code></li>
+												<li><b>Number</b>: số thực dấu chấm động 64bit, tương tự kiểu <code>double</code> của C++(<a href="https://en.wikipedia.org/wiki/Double_precision_floating-point_format">IEEE 754</a>). JS không có kiểu số nguyên.</li>
+												<li><b>BigInt</b>: kiểu dữ liệu mới (2018) dành cho các số nguyên nằm ngoài [-2^53 .. 2^53 - 1] (do các số này sẽ bị mất độ chính xác khi dùng kiểu Number), trên lý thuyết là không có giới hạn</li>
+												<li><b>String</b>: chuỗi ký tự</li>
+												<li><b>Symbol</b>: kiểu dữ liệu mới (2014) để tạo ra các giá trị không trùng lặp (chức năng tương tự như UUID)</li>
+												<li><b>Function</b>: kiểu hàm (một loại object đặc biệt)</li>
+												<li><b>Object</b>: kiểu đối tượng (sẽ được học trong môn Lập trình hướng đối tượng ở học kỳ sau)</li>
+											</ul>
+											<p>Ngoài 2 kiểu cuối cùng, tất cả các kiểu còn lại đều là kiểu cơ sở (primitive data type)</p>
+											<div class="callout callout-danger">
+												<p>Lưu ý bug sau</p>
+												<div class="code-group">
+													<div class="code-highlight language-html line-numbers hidden show-result">
+													</div>
+													<div class="code-highlight language-javascript line-numbers auto-run console-only">
+														console.log(typeof null);
+													</div>
+												</div>
+												<p>Đây là bug từ các phiên bản đầu của JS, nhưng về sau vẫn được giữ lại vì lý do tương thích ngược.</p>
+											</div><div class="callout callout-danger">
+												<p><b>JS là một ngôn ngữ định kiểu yếu</b> (weakly typed), do đó khi các giá trị trong 1 biểu thức có kiểu khác nhau hoặc dùng chung với các toán tử không phù hợp thì JS sẽ thực hiện chuyển đổi kiểu ngầm (type coercion) thay vì báo lỗi</p>
+												<div class="code-group">
+													<div class="code-highlight language-html line-numbers hidden show-result">
+													</div>
+													<div class="code-highlight language-javascript line-numbers auto-run console-only">
+														<script type="text/plain">
+															console.log('abc' + (!{} - null) + 123 / ([] || true));//@_@
+															//toán tử ==, !=  so sánh không xét kiểu dữ liệu
+															console.log('' == 0);
+															console.log('' == false);
+															console.log('' == []);
+															//toán tử ===, !==  so sánh có xét kiểu dữ liệu
+															console.log('' === 0);
+															console.log('' === false);
+														</script>
+													</div>
+												</div>
+											</div>
+											<ul class="heading">
+												<!--[ ]Kiểu Null và Undefined-->
+												<li>
+													<p>Kiểu Null và Undefined</p>
+													<div class="callout callout-info">
+														<p>Cả <code>undefined</code> và <code>null</code> đều được xem như "không có giá trị" hoặc "giá trị không xác định"</p>
+														<p>Phân biệt: các biến mới được khai báo mà chưa được gán giá trị thì sẽ có giá trị là <code>undefined</code>, còn giá trị <code>null</code> phải được gán vào biến một cách tường minh. Do đó <code>undefined</code> còn có thể được hiểu là "không tồn tại"</p>
+													</div>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result">
+														</div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															var a;
+															var b=null;
+															console.log(a);
+															console.log(b);
+															console.log(typeof c);// biến không tồn tại vẫn có thể dùng typeof
+															console.log(c);// nhưng nếu dùng trong các lệnh khác sẽ bị báo lỗi (trừ lệnh gán)
+														</div>
+													</div>
+													<p>Sử dụng trong các biểu thức so sánh</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result">
+														</div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															var a; // undefined
+															var b=null;
+															console.log(a==undefined);
+															console.log(a===undefined);
+															console.log(b==null);
+															console.log(b===null);
+															console.log(a==b);
+															console.log(a===b);
+														</div>
+													</div>
+												</li>
+												<!--[ ]Kiểu Boolean-->
+												<li>
+													<p>Kiểu Boolean</p>
+													<div class="callout callout-info">
+														<p>Kiểu <code>Boolean</code> có 2 giá trị là <code>true</code> và <code>false</code></p>
+														<p>Cách dùng với các cấu trúc điều kiện, lặp, các toán tử logic, ... tương tự như trong C/C++</p>
+														<p>Do JS là ngôn ngữ weakly typed nên cần lưu ý một số giá trị thuộc các kiểu khác cũng có thể xem như tương đương false trong các biểu thức điều kiện (<a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy">falsy</a>): null, undefined, NaN, 0, ""</p>
+													</div>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result">
+														</div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															if(false || null || undefined || NaN || 0 || "")
+																console.log(1); // lệnh này sẽ không được thực hiện do tất cả các giá trị trên đều tương đương false
+															else console.log(0);
+														</div>
+													</div>
+													<p>Lưu ý phân biệt giữa falsy và chuyển đổi kiểu khi so sánh:</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result">
+														</div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															console.log(false == []); // khi so sánh thì mảng rỗng xem như bằng false
+															if ([]) console.log(1); // nhưng trong lệnh if thì xem như true
+															console.log(false == null); // khi so sánh thì null xem như khác false
+															if (null) console.log(1); // nhưng trong lệnh if thì xem như false
+															//thử thay null trong VD trên thành undefined hoặc NaN hoặc "0" và xem kết quả
+														</div>
+													</div>
+												</li>
+												<!--[ ]Kiểu Number-->
+												<li>
+													<p>Kiểu Number</p>
+													<div class="callout callout-info">
+														<p>Kiểu <code>Number</code> dùng 64 bit để lưu các số thực dấu chấm động ( <a href="https://en.wikipedia.org/wiki/Double_precision_floating-point_format">IEEE 754</a>) và không có kiểu số nguyên. Do đó khi dùng kiểu này để lưu các số nguyên quá lớn sẽ bị mất độ chính xác. Vùng số nguyên có thể lưu chính xác là từ -(2<sup>53</sup> − 1)(Number.MIN_SAFE_INTEGER)  tới 2<sup>53</sup> − 1 (Number.MAX_SAFE_INTEGER)</p>
+														<p>Các hàm và hàng số toán học nằm trong đối tượng toàn cục <code>Math</code> (tương tự như thư viện <code>cmath</code> trong C++)</p>
+														<p>Các hàm chuyển đổi số và chuỗi sẽ học trong phần sau</p>
+													</div>
+													<p>Lưu ý cách ghi các hệ cơ số</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															console.log(10);
+															console.log(010);
+															console.log(0b10);
+															console.log(0x10);
+														</div>
+													</div>
+													<p>Nhắc lại về độ chính xác của dấu chấm động</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															console.log(0.1 + 0.2);
+															console.log(0.1 + 0.2 == 0.3);
+															//Đây là tình trạng chung của tất cả các ngôn ngữ dùng dấu chấm động 64 bit IEEE754, không phải của riêng JS
+														</div>
+													</div>
+													<p>Lưu ý các giá trị Infinity và NaN:</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															console.log(1/0);
+															console.log(1/-0);
+															console.log(0/0);
+															console.log(Infinity - Infinity);
+															console.log(Math.sqrt(-1));
+														</div>
+													</div>
+													<p>Tất cả các phép toán có NaN đều cho kết quả là NaN ngoại trừ 1 trường hợp đặc biệt</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															console.log(NaN + 0);
+															console.log(NaN - 0);
+															console.log(NaN * 0);
+															console.log(NaN / 0);
+															console.log(NaN ** 0);
+														</div>
+													</div>
+													<p>Lưu ý khi cần so sánh với NaN:</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															let a= NaN;
+															console.log(a == NaN);
+															console.log(a === NaN);
+															console.log(NaN == NaN);
+															console.log(NaN === NaN);
+															console.log(NaN != NaN);
+															console.log(NaN !== NaN);
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript line-numbers auto-run console-only">
+																	let a = 1, b = NaN, c = 'abc';
+																	console.log(isNaN(a));
+																	console.log(isNaN(b));
+																	console.log(isNaN(c)); // chuyển đổi kiều thành Number rồi mới kiểm tra
+																</div>
+															</div>
+															</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript line-numbers auto-run console-only">
+																	let a = 1, b = NaN, c = 'abc';
+																	console.log(Number.isNaN(a));
+																	console.log(Number.isNaN(b));
+																	console.log(Number.isNaN(c)); // chỉ kiểm tra nếu đã là Number
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Kiểu BigInt-->
+												<li>
+													<p>Kiểu BigInt</p>
+													<div class="callout callout-info">
+														<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt">Đọc thêm</a></p>
+													</div>
+												</li>
+												<!--[ ]Kiểu String-->
+												<li>
+													<p>Kiểu String</p>
+													<div class="callout callout-info">
+														<p>Kiểu <code>String</code> dùng để chứa các chuỗi ký tự UTF-16.</p>
+														<p>Có thể dùng các cặp dấu <code>""</code>, <code>''</code>, hoặc <code>``</code></p>
+														<p>Các hàm xử lý chuỗi sẽ học trong phần sau.</p>
+													</div>
+													<p>Cách dùng các dấu đóng mở chuỗi</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															console.log("This's a string.");
+															console.log('This\'s also a string.');
+															console.log("\"There's a zombie on your lawn\" - Sunflower, 2009");
+														</div>
+													</div>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															console.log('This's an error.');
+														</div>
+													</div>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															let a = 2;
+															console.log(`a = ${a}`);
+														</div>
+													</div>
+													<p>Do một số ký tự trong bảng mã UTF-16 dùng 2 đơn vị (2 * 16 = 32bit) để lưu trữ nên cần cẩn thận khi tính độ dài, tách chuỗi,... đối với các ký tự này</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															console.log('😄'.length);
+															console.log('Hi!😄'.split(''));
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<!--[ ]Toán tử-->
+										<li>
+											<p>Toán tử</p>
+											<div class="callout callout-info">
+												<p>JS là một ngôn ngữ họ C nên phần lớn các toán tử đã học trong C/C++ đều có trong JS và có tác dụng tương tự (một số trường hợp sẽ có sự khác biệt nhỏ)</p>
+												<ul>
+													<li><b>Tăng/giảm</b>: x++, ++x, x--, --x</li>
+													<li><b>Toán tử 1 ngôi</b>: +, -, ~ (bit not), ! (logic not)</li>
+													<li><b>Số học</b>: ** (lũy thừa), *, /, % (trong JS dùng được cho số thực), +, -</li>
+													<li><b>So sánh lớn/nhỏ</b>:&lt;, &gt;, &lt;=, &gt;= (<b>KHÔNG có</b> &lt;== và &gt;==)</li>
+													<li><b>So sánh bằng/khác</b>: ==, !=, ===, !==</li>
+													<li><b>Dịch bit</b>: &lt;&lt;, &gt;&gt;, &gt;&gt;&gt;</li>
+													<li><b>Toán tử bit</b>: &, |, ^</li>
+													<li><b>Toán tử logic</b>: &&, ||, ?? (coalescing)</li>
+													<li><b>Toán tử điều kiện</b>: ?:</li>
+													<li><b>Gán</b>: =, +=, -=, *=, /=, ... </li>
+													<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators">đọc thêm</a></li>
+												</ul>
+												<p>Thứ tự ưu tiên tương tự như C++ (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence#table">đọc thêm</a>)</p>
+											</div>
+											<div class="callout callout-danger">
+												<p>Lưu ý trong JS toán tử + vừa có chức năng cộng số học vừa có chức năng nối chuỗi. So sánh 2 trường hợp sau:</p>
+												<div class="row">
+													<div class="col-12 col-md-6">
+														<div class="code-group">
+															<div class="code-highlight language-html line-numbers show-result">
+																<input type="number" id="txtA" placeholder="A"><br>
+																<input type="number" id="txtB" placeholder="B"><br>
+																<button onclick="add()">A + B</button>
+																<p id="result"></p>
+															</div>
+															<div class="code-highlight language-javascript line-numbers auto-run show-console">
+																<script type="text/plain">
+																	function add(){
+																		let a = document.getElementById('txtA').value;
+																		let b = document.getElementById('txtB').value;
+																		document.getElementById('result').innerText = a + b;
+																	}
+																</script>
+															</div>
+														</div>
+													</div>
+													<div class="col-12 col-md-6">
+														<div class="code-group">
+															<div class="code-highlight language-html line-numbers show-result">
+																<input type="number" id="txtA" placeholder="A"><br>
+																<input type="number" id="txtB" placeholder="B"><br>
+																<button onclick="add()">A + B</button>
+																<p id="result"></p>
+															</div>
+															<div class="code-highlight language-javascript line-numbers auto-run show-console">
+																<script type="text/plain">
+																	function add(){
+																		let a = document.getElementById('txtA').valueAsNumber;
+																		let b = document.getElementById('txtB').valueAsNumber;
+																		document.getElementById('result').innerText = a + b;
+																	}
+																</script>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<p>Toán tử ?? (coalescing) và || (logic OR) có thể dùng để kiểm tra giá trị khác null hoặc undefined nhưng có một điểm khác biệt nhỏ: || sẽ loại bỏ cả các giá trị falsy (false, 0, '', NaN), còn ?? chỉ loại bỏ null và undefined</p>
+											<div class="row">
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															<script type="text/plain">
+																console.log(null || undefined || 0 || '' || false || NaN || "default value");
+															</script>
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															<script type="text/plain">
+																console.log(null ?? undefined ?? 0 ?? '' ?? false ?? NaN ?? "default value");
+															</script>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<!--[ ]Mảng-->
+										<li>
+											<p>Mảng</p>
+											<div class="callout callout-info">
+												<p>Mảng trong JS là một loại Object đặc biệt</p>
+												<p>Khác với C++, các phần tử trong mảng có thể có kiểu dữ liệu khác nhau</p>
+												<p>Do mảng là đối tượng nên có thể dùng thuộc tính <code>length</code> để lấy số lượng phần tử, không cần khai báo thêm biến</p>
+											</div>
+											<p>VD duyệt mảng:</p>
+											<div class="row">
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															<script type="text/plain">
+															let a=[1,2,3,'abc'];
+															for(let i = 0; i < a.length; i++){
+																console.log(a[i]);
+															}
+														</script>
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															<script type="text/plain">
+															let a=[1,2,3,'abc'];
+															for(let x of a){
+																console.log(x);
+															}
+														</script>
+														</div>
+													</div>
+												</div>
+											</div>
+											<p>VD mảng lồng nhau:</p>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript line-numbers auto-run console-only">
+													<script type="text/plain">
+													let a=[3,4], b=[5,6], c=[1,2,a,[b,7,8,9]];
+													console.log(c);
+													</script>
+												</div>
+											</div>
+											<p>Dùng mảng để hoán đổi giá trị 2+ biến</p>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript line-numbers auto-run console-only">
+													<script type="text/plain">
+													let a = 1, b = 2;
+													console.log(a,b);
+													[a,b]=[b,a];
+													console.log(a,b);
+													</script>
+												</div>
+											</div>
+											<p>Lưu ý: trong JS các chỉ số mảng có thể không liên tục (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#sparse_arrays">sparse arrays</a>) nhưng nên tránh vì code sẽ khó hiểu hơn và dễ xảy ra lỗi</p>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript line-numbers auto-run console-only">
+													<script type="text/plain">
+													let a = [];
+													a[1]=1;
+													a[3]=2;
+													a[6]=3;
+													console.log(a);
+													delete a[6];
+													console.log(a);
+													</script>
+												</div>
+											</div>
+										</li>
+										<!--[ ]Hàm-->
+										<li>
+											<p>Hàm</p>
+											<div class="callout callout-info">
+												<p>Hàm trong JS là một loại Object đặc biệt &rArr; có thể định nghĩa hàm và gán vào 1 biến</p>
+												<p>Khác với C++, hàm trong JS không có kiểu dữ liệu trả về</p>
+												<p>Hàm trong JS chỉ có 1 cách truyền tham số là truyền tham trị, <b>KHÔNG có</b> truyền tham chiếu</p>
+												<p>Hàm trong JS có thể được định nghĩa ở bất kỳ đâu trong chương trình, kể cả bên trong các hàm khác. Một số hàm có thể được định nghĩa và gọi ngay nên cũng không cần có tên hàm (<a href="https://developer.mozilla.org/en-US/docs/Glossary/Function#different_types_of_functions">anonymous function</a>)</p>
+											</div>
+											<p>Khai báo và định nghĩa hàm:</p>
+											<div class="row">
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															<script type="text/plain">
+																function f(a,b);
+																console.log(f(1,2));
+																function f(a,b){
+																	return a+b;
+																}
+																// Khác với C++, không thể tách rời phần khai báo và định nghĩa hàm
+														</script>
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															<script type="text/plain">
+																console.log(f(1,2));
+																function f(a,b){
+																	return a+b;
+																}
+																// Nhưng có thể gọi hàm trước khi định nghĩa O_o
+														</script>
+														</div>
+													</div>
+												</div>
+											</div>
+											<p>Gán hàm cho biến</p>
+											<div class="row">
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															<script type="text/plain">
+																let g=f;
+																console.log(g(1,2));
+																function f(a,b){
+																	return a+b;
+																}
+														</script>
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															<script type="text/plain">
+																let g=function	(a,b){
+																	return a+b;
+																};//anonymous function
+																console.log(g(1,2));
+														</script>
+														</div>
+													</div>
+												</div>
+											</div>
+											<p>Giá trị mặc định</p>
+											<div class="row">
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															<script type="text/plain">
+																function f(a,b=2,c,d=4,e){
+																	console.log(a,b,c,d,e);
+																}
+																f(10,9,8,7,6,5,4,3,2,1);
+																//Lưu ý JS không báo lỗi nếu truyền thừa tham số O_o
+														</script>
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-md-6">
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript line-numbers auto-run console-only">
+															<script type="text/plain">
+																function f(a,b=2,c,d=4,e){
+																	console.log(a,b,c,d,e);
+																}
+																f(1);
+																//hoặc thiếu tham số O_o, tham số nào không có giá trị mặc định thì undefined
+														</script>
+														</div>
+													</div>
+												</div>
+											</div>
+											<p>Số lượng tham số bất kỳ (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters">rest parameter</a>)</p>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript line-numbers auto-run console-only">
+													<script type="text/plain">
+														function f(...a){
+															//Trong hàm tham số a sẽ được hiểu là 1 mảng
+															let s=0;
+															for(let x of a) s+=x;
+															return s/a.length;
+														}
+														console.log(f(1,2,3));
+														console.log(f(1,2,3,43,67,23));
+														console.log(f(1,2,3,123,654,21,678,542,78));
+													</script>
+												</div>
+											</div>
+											<p>Lưu ý: 1 hàm chỉ được có 1 tham số ... và phải nằm cuối danh sách tham số</p>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript line-numbers auto-run console-only">
+													<script type="text/plain">
+														function f(...a,b){
+														}
+													</script>
+												</div>
+											</div>
+											<div class="callout callout-danger">
+												<h5>Truyền tham trị</h5>
+												<p>Như đã nói ở trên, JS chỉ có truyền tham trị nên khái niệm truyền tham chiếu trong C++ sẽ không sử dụng được. Tuy nhiên cần phân biệt rõ các trường hợp sau:</p>
+												<p>Kiểu giá trị</p>
+												<div class="code-group">
+													<div class="code-highlight language-html line-numbers hidden show-result"></div>
+													<div class="code-highlight language-javascript line-numbers auto-run console-only">
+														<script type="text/plain">
+															// SAI!
+															function swap(a, b){
+																let t = a;
+																a = b;
+																b = t;
+																console.log('inside', a, b);
+															}
+															let a = 1, b = 2;
+															console.log('before', a,b);
+															swap(a,b);
+															console.log('after', a,b);
+															// Thử sửa lại hàm trên bằng cách thêm & vào trước tham số a, b và quan sát kết quả
+														</script>
+													</div>
+												</div>
+												<p>Kiểu tham chiếu</p>
+												<div class="code-group">
+													<div class="code-highlight language-html line-numbers hidden show-result"></div>
+													<div class="code-highlight language-javascript line-numbers auto-run console-only">
+														<script type="text/plain">
+															function add(a, x){
+																for(let i = 0; i < a.length; i++) a[i] += x;
+																console.log('inside 1', a);
+																a = ['x','y','z'];
+																console.log('inside 2', a);
+															}
+															let a = [1,2,3];
+															console.log('before', a);
+															add(a,8);
+															console.log('after', a);
+															//Các phần tử trong mảng được cập nhật, nhưng bản thân biến a sau khi ra khỏi hàm vẫn trỏ tới mảng cũ, lệnh gán mảng mới chỉ có tác dụng bên trong hàm
+														</script>
+													</div>
+												</div>
+
+											</div>
+											<div class="callout callout-danger">
+												<h5>Closure</h5>
+												<p>Một hàm có thể truy cập tất cả các biến trong cùng tầm vực mà nó được định nghĩa, <b>kể cả khi đã ra khỏi tầm vực đó</b></p>
+												<div class="code-group">
+													<div class="code-highlight language-html line-numbers hidden show-result"></div>
+													<div class="code-highlight language-javascript line-numbers auto-run console-only">
+														<script type="text/plain">
+															function f(){
+																let f2;
+																{
+																	let a = 5;
+																	//Biến a chỉ có giá trị trong đoạn code này do khai báo bằng let
+																	f2 = function(){
+																		console.log(a);
+																		//lưu ý biến a được sử dụng trực tiếp trong hàm con chứ không phải truyền tham số
+																	}
+																}
+																console.log(typeof a);
+																//Tại dòng này biến a đã bị undefined
+																return f2;
+															}
+															let g=f();
+															g();
+															//Nhưng ngay cả khi đã ra khỏi hàm f thì hàm f2 (đã được gán vào biến g) vẫn có thể đọc được giá trị biến a O_o
+														</script>
+													</div>
+												</div>
+												<p>Đây là một tính năng rất tiện lợi của JS, nhưng nếu dùng không cẩn thận hoặc không biết sự tồn tại của tính năng này thì rất dễ dẫn đến memory leak do không giải phóng được bộ nhớ cho những biến đang nằm trong closure.</p>
+											</div>
+											<p>Cú pháp định nghĩa anonymous function có thể được rút gọn lại thành arrow function:</p>
+											<p><code>(&lt;Danh sách tham số&gt;) => {&lt;Thân hàm&gt;}</code></p>
+											<p>Nếu &lt;Danh sách tham số&gt; chỉ có 1 tham số duy nhất thì có thể bỏ dấu ()</p>
+											<p>Nếu &lt;Thân hàm&gt; chỉ có 1 lệnh duy nhất thì có thể bỏ dấu {}, nếu lệnh đó trả về giá trị cho lời gọi hàm thì bỏ luôn từ khóa return, chỉ giữ lại 1 biểu thức/giá trị trả về</code></p>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript line-numbers auto-run console-only">
+													<script type="text/plain">
+														// (Danh sách tham số) => {thân hàm}
+														let f1 = (a, b, c) => {
+															max = a;
+															if(b > max) max = b;
+															if(c > max) max = c;
+															return max;
+														}
+														console.log(f1(1,2,3));
+												</script>
+												</div>
+											</div>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript line-numbers auto-run console-only">
+													<script type="text/plain">
+														// 1 tham số => {thân hàm}
+														let f2 = a => {
+															let s = 0;
+															for(x of a) s += x;
+															return s/a.length;
+														}
+														console.log(f2([1,2,3,4]));
+												</script>
+												</div>
+											</div>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript line-numbers auto-run console-only">
+													<script type="text/plain">
+														// () => {thân hàm}
+														let f3 = () => {
+															console.log(new Date());
+															console.log(Math.random());
+														}
+														f3();
+												</script>
+												</div>
+											</div>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript line-numbers auto-run console-only">
+													<script type="text/plain">
+														// (Danh sách tham số) => 1 biểu thức/lệnh/giá trị
+														let f4 = (a, b) => a + b;
+														console.log(f4(1,2));
+												</script>
+												</div>
+											</div>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript line-numbers auto-run console-only">
+													<script type="text/plain">
+														// 1 tham số => 1 biểu thức/lệnh/giá trị
+														let f5 = x => -x;
+														console.log(f5(2));
+												</script>
+												</div>
+											</div>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript line-numbers auto-run console-only">
+													<script type="text/plain">
+														// () => 1 biểu thức/lệnh/giá trị
+														let f6 = () => Math.random();
+														console.log(f6());
+												</script>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<!--[ ]Một số hàm thường dùng-->
+								<li>
+									<p>Một số hàm thường dùng</p>
+									<ul class="heading">
+										<!--[ ]Input/out-->
+										<li>
+											<p>Input/Output</p>
+											<div class="callout callout-info">
+												<ul>
+													<li><b>prompt()</b>: cho người dùng nhập một chuỗi</li>
+													<li><b>confirm()</b>: xuất 1 câu thông báo và cho người dùng chọn đồng ý (OK) hoặc không (Cancel)</li>
+													<li><b>alert()</b>: xuất 1 câu thông báo</li>
+													<li><b>console.log()</b>: xuất 1 câu thông báo ra console (chỉ nên dùng khi debug, không nên dùng trong sản phẩm hoàn chỉnh)</li>
+													<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/console">Đọc thêm</a> một số hàm khác trong đối tượng console</li>
+												</ul>
+												<p>Các hàm prompt(), confirm(), alert() sẽ hiện thông báo dưới dạng dialog, dễ gây khó chịu cho người dùng, nên hạn chế dùng các hàm này nếu không thực sự cần thiết (xác nhận đóng cửa sổ, xác nhận xóa dữ liệu, ...).</p>
+											</div>
+											<p>Các VD trong phần này không tự động chạy, phải bấm bút &#x2BC8; để chạy</p>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript js-only line-numbers">
+													<script type="text/plain">
+														alert("Hello world!");
+													</script>
+												</div>
+											</div>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript js-only line-numbers">
+													<script type="text/plain">
+														let name = prompt("What's your name?","tester001");
+														alert(`Hello ${name}`);
+														//Thử bấm nút Cancel và quan sát kết quả
+													</script>
+												</div>
+											</div>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript js-only line-numbers">
+													<script type="text/plain">
+														let ans = confirm("Bạn đã like, share và subscribe chưa?");
+														alert(ans?'Cảm ơn bạn đã ủng hộ :D':':((');
+													</script>
+												</div>
+											</div>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript console-only line-numbers">
+													<script type="text/plain">
+														console.log(Math.random());
+													</script>
+												</div>
+											</div>
+										</li>
+										<!--[ ]Mảng-->
+										<li>
+											<p>Mảng</p>
+											<div class="callout callout-info">
+												<p>Phần này chỉ giới thiệu sơ một số hàm thường dùng, SV nên <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods">tìm hiểu thêm</a></p>
+												<ul>
+													<li>Kiểm tra mảng: Array.isArray()</li>
+													<li>Thêm/bớt phần tử: push(), pop(), shift(), unshift(), splice()</li>
+													<li>Lấy mảng con: slice()</li>
+													<li>Tìm kiếm: indexOf(), lastIndexOf(), includes()</li>
+													<li>Sắp xếp: sort(), reverse()</li>
+													<li>Nối thành chuỗi: join()</li>
+												</ul>
+											</div>
+											<ul class="heading">
+												<!--[ ]Kiểm tra mảng-->
+												<li>
+													<p>Kiểm tra mảng</p>
+													<p>Array.isArray()</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript console-only auto-run line-numbers">
+															<script type="text/plain">
+																console.log(Array.isArray([1,2,3]));
+																console.log(Array.isArray([1,2,[3,4]][2]));
+																console.log(Array.isArray([]));
+																console.log(Array.isArray("abc"));
+																console.log(Array.isArray(""));
+																console.log(Array.isArray(0));
+															</script>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Thêm/bớt phần tử-->
+												<li>
+													<p>Thêm/bớt phần tử</p>
+													<p>push(), pop(), shift(), unshift()</p>
+													<p>SV tự xem VD để suy ra cú pháp và kết quả trả về</p>
+													<div class="row">
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let a=[1,2,3,4];
+																		console.log(a.push(5));
+																		console.log(a);
+																		console.log(a.push(6,7,8,9));
+																		console.log(a);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let a=[1,2,3,4];
+																		console.log(a.unshift(0));
+																		console.log(a);
+																		console.log(a.unshift(-4,-3,-2,-1));
+																		console.log(a);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let a=[1,2,3];
+																		console.log(a.pop());
+																		console.log(a);
+																		console.log(a.pop());
+																		console.log(a);
+																		console.log(a.pop());
+																		console.log(a);
+																		console.log(a.pop());
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let a=[1,2,3];
+																		console.log(a.shift());
+																		console.log(a);
+																		console.log(a.shift());
+																		console.log(a);
+																		console.log(a.shift());
+																		console.log(a);
+																		console.log(a.shift());
+
+																	</script>
+																</div>
+															</div>
+														</div>
+													</div>
+													<p>splice()</p>
+													<p><code>splice(start)</code></p>
+													<p><code>splice(start, deleteCount)</code></p>
+													<p><code>splice(start, deleteCount, item1, item2, /* …, */ itemN)</code></p>
+													<div class="row">
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let a =[0,1,2,3,4,5,6,7,8,9];
+																		let b = a.splice(3,4,'x','y','z');
+																		console.log(a);
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let a =[0,1,2,3,4,5,6,7,8,9];
+																		let b = a.splice(-2,4,'x','y','z');
+																		//Quan sát kết quả và nhận xét giá trị -2 của start và 4 của deleteCount
+																		console.log(a);
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Lấy mảng con-->
+												<li>
+													<p>Lấy mảng con</p>
+													<p>slice()</p>
+													<p><code>slice()</code></p>
+													<p><code>slice(start)</code></p>
+													<p><code>slice(start, end)</code></p>
+													<div class="row">
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let a =[0,1,2,3,4,5,6,7,8,9];
+																		let b = a.slice();
+																		console.log(a);
+																		console.log(b);
+																		//Nhận xét mảng a sau khi slice
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let a =[0,1,2,3,4,5,6,7,8,9];
+																		let b = a.slice(4);
+																		console.log(a);
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let a =[0,1,2,3,4,5,6,7,8,9];
+																		let b = a.slice(3,8);
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let a =[0,1,2,3,4,5,6,7,8,9];
+																		let b = a.slice(8,3);
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let a =[0,1,2,3,4,5,6,7,8,9];
+																		console.log(a.slice(-5,-2));
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let a =[0,1,2,3,4,5,6,7,8,9];
+																		console.log(a.slice(-2,-5));
+																	</script>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Tìm kiếm-->
+												<li>
+													<p>Tìm kiếm</p>
+													<p>indexOf(), lastIndexOf()</p>
+													<p>SV tự xem VD để suy ra cú pháp và kết quả trả về</p>
+													<div class="row">
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		//index: 0  1  2  3  4  5  6  7  8   s9
+																		//     -10 -9 -8 -7 -6 -5 -4 -3 -2  -1
+																		let a = [1, 2, 3, 1, 2, 3, 1, 2, 3, '2'];
+																		console.log(a.indexOf(2));
+																		console.log(a.indexOf('2'));
+																		console.log(a.indexOf(2,2));
+																		console.log(a.indexOf(2,-8));
+																		console.log(a.indexOf(2,5));
+																		console.log(a.indexOf(2,-5));
+																		console.log(a.indexOf(2,8));
+																		console.log(a.indexOf(2,-2));
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		//index: 0  1  2  3  4  5  6  7  8   s9
+																		//     -10 -9 -8 -7 -6 -5 -4 -3 -2  -1
+																		let a = [1, 2, 3, 1, 2, 3, 1, 2, 3, '2'];
+																		console.log(a.lastIndexOf(2));
+																		console.log(a.lastIndexOf('2'));
+																		console.log(a.lastIndexOf(2,6));
+																		console.log(a.lastIndexOf(2,-4));
+																		console.log(a.lastIndexOf(2,3));
+																		console.log(a.lastIndexOf(2,-7));
+																		console.log(a.lastIndexOf(2,0));
+																		console.log(a.lastIndexOf(2,-10));
+																	</script>
+																</div>
+															</div>
+														</div>
+													</div>
+													<p>includes()</p>
+													<p>SV tự xem VD để suy ra cú pháp và kết quả trả về</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript console-only auto-run line-numbers">
+															<script type="text/plain">
+																//index: 0  1  2  3  4  5  6  7  8   s9
+																//     -10 -9 -8 -7 -6 -5 -4 -3 -2  -1
+																let a = [1, 2, 3, 1, 2, 3, 1, 2, 3, '5'];
+																console.log(a.includes(2));
+																console.log(a.includes('2'));
+																console.log(a.includes(2,8));
+																console.log(a.includes(2,-2));
+																console.log(a.includes(5));
+																console.log(a.includes('5'));
+															</script>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Sắp xếp-->
+												<li>
+													<p>Sắp xếp</p>
+													<p>sort()</p>
+													<p>Lưu ý: mặc định nếu không truyền vào hàm so sánh thì hàm sort() sẽ ép kiểu các phần tử thành kiểu chuỗi</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript console-only auto-run line-numbers">
+															<script type="text/plain">
+																let a = [1,2,3,12,258,27,1001,300];
+																a.sort();
+																console.log(a);
+															</script>
+														</div>
+													</div>
+													<p>Để sắp xếp mảng số thì bắt buộc phải truyền tham số cho hàm sort() là một hàm nhận vào 2 tham số a, b và trả về giá trị âm nếu a đứng trước b, dương nếu a đứng sau b, 0 nếu a bằng b</p>
+													<div class="row">
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		function f(a,b){ return a - b;}
+																		let a = [1,2,3,12,258,27,1001,300];
+																		a.sort(f);
+																		console.log(a);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		function f(a,b){ return b - a;}
+																		let a = [1,2,3,12,258,27,1001,300];
+																		a.sort(f);
+																		console.log(a);
+																	</script>
+																</div>
+															</div>
+														</div>
+													</div>
+													<p>Có thể viết gọn hơn bằng arrow function</p>
+													<div class="row">
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let a = [1,2,3,12,258,27,1001,300];
+																		a.sort((a,b) => a - b);
+																		console.log(a);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let a = [1,2,3,12,258,27,1001,300];
+																		a.sort((a,b) => b - a);
+																		console.log(a);
+																	</script>
+																</div>
+															</div>
+														</div>
+													</div>
+													<p>reverse()</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript console-only auto-run line-numbers">
+															<script type="text/plain">
+																let a = [1,2,3,12,258,27,1001,300];
+																a.reverse();
+																console.log(a);
+															</script>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Nối thành chuỗi-->
+												<li>
+													<p>Nối thành chuỗi</p>
+													<p>join()</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript console-only auto-run line-numbers">
+															<script type="text/plain">
+																let a = [1,2,3,12,258,27,1001,300];
+																console.log(a.join());
+																console.log(a.join(''));
+																console.log(a.join(', '));
+																console.log(a.join(' ~ '));
+																console.log(a.join('😸'));
+															</script>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<!--[ ]Chuỗi-->
+										<li>
+											<p>Chuỗi</p>
+											<div class="callout callout-info">
+												<p>Phần này chỉ giới thiệu sơ một số hàm thường dùng, SV nên <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#instance_methods">tìm hiểu thêm</a></p>
+												<ul>
+													<li>Lấy chuỗi con: slice(), substring()</li>
+													<li>Tìm kiếm: indexOf(), lastIndexOf(), includes(), match(), matchAll()</li>
+													<li>Thay thế: replace(), replaceAll()</li>
+													<li>Chuyển đổi hoa thường: toLowerCase(), toUpperCase()</li>
+													<li>Bỏ khoảng trắng đầu/cuối: trim(), trimStart(), trimEnd()</li>
+													<li>Tách chuỗi: split()</li>
+												</ul>
+											</div>
+											<ul class="heading">
+												<!--[ ]Lấy chuỗi con-->
+												<li>
+													<p>Lấy chuỗi con</p>
+													<p>slice()</p>
+													<p><code>slice()</code></p>
+													<p><code>slice(indexStart)</code></p>
+													<p><code>slice(indexStart, indexEnd)</code></p>
+													<p>Giống như slice() của mảng</p>
+													<div class="row">
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s ='0123456789';
+																		let b = s.slice()
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s ='0123456789';
+																		let b = s.slice(4);
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s ='0123456789';
+																		let b = s.slice(3,8);
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s ='0123456789';
+																		let b = s.slice(8,3);
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s ='0123456789';
+																		let b = s.slice(-5,-2);
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s ='0123456789';
+																		let b = s.slice(-2,-5);
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+													</div>
+													<p>substring()</p>
+													<p><code>substring()</code></p>
+													<p><code>substring(indexStart)</code></p>
+													<p><code>substring(indexStart, indexEnd)</code></p>
+													<p>Giống như slice() nhưng tham số âm sẽ được xem như 0, và nếu indexStart lớn hơn indexEnd thì sẽ tự động đổi chỗ (so sánh với VD slice ở trên để thấy sự khác nhau)</p>
+													<div class="row">
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s ='0123456789';
+																		let b = s.substring()
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s ='0123456789';
+																		let b = s.substring(4);
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s ='0123456789';
+																		let b = s.substring(3,8);
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s ='0123456789';
+																		let b = s.substring(8,3);
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s ='0123456789';
+																		let b = s.substring(-5,-2);
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s ='0123456789';
+																		let b = s.substring(-2,-5);
+																		console.log(b);
+																	</script>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Tìm kiếm-->
+												<li>
+													<p>Tìm kiếm</p>
+													<p>indexOf(), lastIndexOf(), includes()</p>
+													<p>Giống với các hàm của mảng nhưng tham số âm sẽ được xem như 0</p>
+													<div class="row">
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s='123123123';
+																		console.log(s.indexOf('2'));
+																		console.log(s.indexOf('2',2));
+																		console.log(s.indexOf('2',5));
+																		console.log(s.indexOf('2',8));
+																		console.log(s.indexOf(2,-2));
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s='123123123';
+																		console.log(s.lastIndexOf('2'));
+																		console.log(s.lastIndexOf('2',6));
+																		console.log(s.lastIndexOf('2',3));
+																		console.log(s.lastIndexOf('2',1));
+																		console.log(s.lastIndexOf(2,-2));
+																	</script>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript console-only auto-run line-numbers">
+															<script type="text/plain">
+																let s='123123123';
+																console.log(s.includes('2'));
+																console.log(s.includes('2',8));
+																console.log(s.includes(2,-1));
+															</script>
+														</div>
+													</div>
+													<p>match(), matchAll() xem phần Regex</p>
+												</li>
+												<!--[ ]Thay thế-->
+												<li>
+													<p>Thay thế</p>
+													<p>replace(), replaceAll()</p>
+													<p>Có thể dùng với chuỗi thường hoặc kết hợp với Regex</p>
+													<p>Xem phần Regex</p>
+													<div class="row">
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s='123123123';
+																		let s2= s.replace('3','C');
+																		console.log(s);
+																		console.log(s2);
+																		//Nhận xét giá trị của s sau khi replace
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s='123123123';
+																		let s2= s.replaceAll('3','C');
+																		console.log(s);
+																		console.log(s2);
+																	</script>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Chuyển đổi hoa thường-->
+												<li>
+													<p>Chuyển đổi hoa thường</p>
+													<p>toLowerCase(), toUpperCase()</p>
+													<div class="row">
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s='abc ABC';
+																		let s2 = s.toLowerCase();
+																		console.log(s);
+																		console.log(s2);
+																		//Nhận xét giá trị của s sau khi toLowerCase
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		let s='abc ABC';
+																		let s2 = s.toUpperCase();
+																		console.log(s);
+																		console.log(s2);
+																	</script>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Bỏ khoảng trắng đầu/cuối-->
+												<li>
+													<p>Bỏ khoảng trắng đầu/cuối</p>
+													<p>trim(), trimStart(), trimEnd()</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript console-only auto-run line-numbers">
+															<script type="text/plain">
+																let s = '   abc   def   ';
+																console.log('-'+s.trim()+'-');
+																console.log('-'+s.trimStart()+'-');
+																console.log('-'+s.trimEnd()+'-');
+																console.log('-'+s+'-');
+															</script>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Tách chuỗi-->
+												<li>
+													<p>Tách chuỗi</p>
+													<p>split()</p>
+													<p><code>split(separator)</code></p>
+													<p><code>split(separator, limit)</code></p>
+													<p>separator có thể là chuỗi thường hoặc Regex (xem phần Regex)</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript console-only auto-run line-numbers">
+															<script type="text/plain">
+																let s = 'Lorem ipsum dolor sit amet.';
+																console.log(s.split());
+																console.log(s.split(''));
+																console.log(s.split(' '));
+																console.log(s.split('m'));
+															</script>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<!--Chuyển đổi số và chuỗi-->
+										<li>
+											<p>Chuyển đổi số và chuỗi</p>
+											<ul class="heading">
+												<!--[ ]Chuỗi thành số-->
+												<li>
+													<p>Chuỗi thành số</p>
+													<p><code>parseInt(string)</code></p>
+													<p><code>parseInt(string, radix)</code></p>
+													<p><code>parseFloat(string)</code></p>
+													<div class="row">
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		console.log(parseInt('100'));
+																		console.log(parseInt('+100'));
+																		console.log(parseInt('-100'));
+																		console.log(parseInt('100',2));
+																		console.log(parseInt('100',9));
+																		console.log(parseInt('100',10));
+																		console.log(parseInt('100',16));
+																		console.log(parseInt('0b100'));
+																		console.log(parseInt('0100'));
+																		console.log(parseInt('0x100'));
+																		console.log(parseInt('1e2'));
+																		console.log(parseInt('123.456,789'));
+																		console.log(parseInt('123,456.789'));
+																		console.log(parseInt('123abc'));
+																		console.log(parseInt('abc123'));
+																		console.log(parseInt(''));
+																	</script>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-6">
+															<div class="code-group">
+																<div class="code-highlight language-html line-numbers hidden show-result"></div>
+																<div class="code-highlight language-javascript console-only auto-run line-numbers">
+																	<script type="text/plain">
+																		console.log(parseFloat('100'));
+																		console.log(parseFloat('0b100'));
+																		console.log(parseFloat('0x100'));
+																		console.log(parseFloat('1e2'));
+																		console.log(parseFloat('+1e+2'));
+																		console.log(parseFloat('1e-2'));
+																		console.log(parseFloat('-1e-2'));
+																		console.log(parseFloat('.01'));
+																		console.log(parseFloat('-.01'));
+																		console.log(parseFloat('6.02e23'));
+																		console.log(parseFloat('123.456,789'));
+																		console.log(parseFloat('123,456.789'));
+																		console.log(parseFloat('123abc'));
+																		console.log(parseFloat('abc123'));
+																		console.log(parseFloat(''));
+																		//So sánh cách ghi 0x và e giữa parseInt và parseFloat
+																	</script>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Số thành chuỗi-->
+												<li>
+													<p>Số thành chuỗi</p>
+													<p>toString()</p>
+													<p><code>toString(radix)</code></p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript console-only auto-run line-numbers">
+															<script type="text/plain">
+																console.log((1234.125).toString());
+																console.log((1234.125).toString(2));
+																console.log((1234.125).toString(8));
+																console.log((1234.125).toString(10));
+																console.log((1234.125).toString(16));
+																console.log((10**22).toString());
+																console.log((10**-22).toString());
+															</script>
+														</div>
+													</div>
+													<p>toFixed()</p>
+													<p><code>toFixed(digits)</code></p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript console-only auto-run line-numbers">
+															<script type="text/plain">
+																console.log((1234.125).toFixed());
+																console.log((1234.125).toFixed(1));
+																console.log((1234.125).toFixed(2));
+																console.log((1234.125).toFixed(3));
+																console.log((1234.125).toFixed(4));
+																console.log((1234.125).toFixed(5));
+															</script>
+														</div>
+													</div>
+													<p>toLocaleString()</p>
+													<p><code>toLocaleString(locales)</code></p>
+													<p><code>toLocaleString(locales, options)</code></p>
+													<p>Tham khảo thêm <a href="https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes">danh sách các mã ngôn ngữ</a>, <a href="https://en.wikipedia.org/wiki/ISO_4217#Active_codes_(list_one)">danh sách các mã đơn vị tiền</a></p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript console-only auto-run line-numbers">
+															<script type="text/plain">
+																console.log((123456798.125).toLocaleString());
+																console.log((123456798.125).toLocaleString('en'));
+																console.log((123456798.125).toLocaleString('vi'));//'vi' không phải 'vn'
+																console.log((123456798.125).toLocaleString('vi-VN'));//'vi' là mã ngôn ngữ, 'VN' là mã quốc gia
+																console.log((674e12).toLocaleString('vi-VN', { style: "currency", currency: "VND" }));//'VND' là mã tiền tệ
+															</script>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<!--Chuyển đổi ngày giờ và chuỗi-->
+										<li>
+											<p>Chuyển đổi ngày giờ và chuỗi</p>
+											<ul class="heading">
+												<!--[ ]Chuỗi thành ngày giờ-->
+												<li>
+													<p>Chuỗi thành ngày giờ</p>
+													<p>JS hỗ trợ định dạng YYYY-MM-DDTHH:mm:ss.sssZ (ISO 8601)</p>
+													<p>Một số trình duyệt hỗ trợ các định dạng khác nhưng không thống nhất và không theo quy chuẩn &rArr; không nên dùng</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript console-only auto-run line-numbers">
+															<script type="text/plain">
+																console.log(new Date('2024-05-02'));//không có time => 00:00 (UTC)
+																console.log(new Date('2024-05-02T01:02:03'));// có time + không có timezone => timezone hệ thống
+																console.log(new Date('2024-05-02T01:02:03+07:00'));// dạng full
+																console.log(new Date('2024-05-02T01:02:03Z'));//timexone Z => UTC (00:00)
+																console.log(new Date('03/04/2024'));//định dạng MM/DD/YYYY không nên dùng
+																console.log(new Date('23/04/2024'));//Giải thích lý do sai?
+															</script>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Ngày giờ thành chuỗi-->
+												<li>
+													<p>Ngày giờ thành chuỗi</p>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers hidden show-result"></div>
+														<div class="code-highlight language-javascript console-only auto-run line-numbers">
+															<script type="text/plain">
+																let d = new Date('2024-05-02T01:02:03+07:00');
+																console.log(d.toString());
+																console.log(d.toDateString());
+																console.log(d.toTimeString());
+																console.log(d.toUTCString());
+																console.log(d.toISOString());
+																//Tham khảo thêm https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options
+																d = new Date('2024-05-02T13:02:03+07:00');
+																console.log(d.toLocaleString());
+																console.log(d.toLocaleString('vi-VN'));
+																console.log(d.toLocaleDateString('vi-VN'));
+																console.log(d.toLocaleTimeString('vi-VN'));																console.log(d.toLocaleString('vi',{
+																	dateStyle: 'full',
+																	timeStyle: 'full',
+																	timeZone: '+0700',
+																}));
+																console.log(d.toLocaleString('vi',{
+																	dateStyle: 'long',
+																	timeStyle: 'long',
+																	timeZone: '+0700',
+																}));
+																console.log(d.toLocaleString('vi',{
+																	dateStyle: 'medium',
+																	timeStyle: 'medium',
+																	timeZone: '+0700',
+																}));
+																console.log(d.toLocaleString('vi',{
+																	dateStyle: 'short',
+																	timeStyle: 'short',
+																	timeZone: '+0700',
+																}));
+
+															</script>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<!--Hẹn thời gian-->
+										<li>
+											<p>Hẹn thời gian</p>
+											<div class="callout callout-info">
+												<p>Hẹn/hủy hẹn một hàm chạy 1 lần sau một khoảng thời gian</p>
+												<ul>
+													<li><code>setTimeout(functionRef)</code></li>
+													<li><code>setTimeout(functionRef, delay)</code></li>
+													<li><code>setTimeout(functionRef, delay, param1, param2, /* …, */ paramN)</code></li>
+													<li><code>clearTimeout(timeoutID)</code></li>
+												</ul>
+												<p>Hẹn/hủy hẹn một hàm chạy định kì sau một khoảng thời gian</p>
+												<ul>
+													<li><code>setInterval(functionRef)</code></li>
+													<li><code>setInterval(functionRef, delay)</code></li>
+													<li><code>setInterval(functionRef, delay, param1, param2, /* …, */ paramN)</code></li>
+													<li><code>clearInterval(timeoutID)</code></li>
+												</ul>
+												<p>Lưu ý: </p>
+												<ul>
+													<li>Đơn vị của <code>delay</code> là milisecond (ms)</li>
+													<li>Tham số <code>timeoutID</code> là kết quả trả về của hàm setTimeout/setInterval cần hủy hẹn</li>
+													<li>Các hàm này chỉ có độ chính xác tương đối, ngoài ra, trong một số trường hợp trình duyệt sẽ chủ động tăng khoảng thời gian delay (trình duyệt bị minimize, người dùng chuyển tab khác, máy vào chế độ power saving, ...). Do đó khi cần độ chính xác về thời gian thì nên dùng các kỹ thuật khác.</li>
+												</ul>
+											</div>
+											<p>Các VD trong phần này không tự động chạy, phải bấm bút &#x2BC8; để chạy</p>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript console-only line-numbers">
+													<script type="text/plain">
+														function f(s){console.log(s);}
+														setTimeout(f,3000,"Hello world");//Hẹn thời gian chạy sau 3s
+														let x = setTimeout(f,5000,"Bye world");//Hẹn thời gian chạy sau 5s
+														clearTimeout(x);//Hủy hẹn
+													</script>
+												</div>
+											</div>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript console-only line-numbers">
+													<script type="text/plain">
+														//Có thể dùng anonymous function để truy xuất các biến bên ngoài hàm (closure)
+														let count = 0;
+														let x = setInterval(function(){
+															count++;
+															console.log(count);
+															if(count >= 5) clearInterval(x);
+														},1000);
+													</script>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<!--[ ]Regular Expression (Regex)-->
+								<li>
+									<p>Regular Expression (Regex)</p>
+									<div class="callout callout-info">
+										<p>Regex là một công cụ dùng để kiểm tra một chuỗi có thỏa một khuôn mẫu nào nó hay không, hoặc tìm kiếm và thay thế các chuỗi con thỏa khuôn mẫu trong một chuỗi lớn</p>
+										<p>Tham khảo thêm <a href="https://regexr.com/">cú pháp Regex</a></p>
+									</div>
+									<ul class="heading">
+										<!--[ ]Cơ bản-->
+										<li>
+											<p>Cơ bản</p>
+											<div class="callout callout-info">
+												<p>Mẫu để kiểm tra/tìm kiếm được đặt trong cặp dấu // (không phải comment)</p>
+												<p>Sử dụng kết hợp các hàm match(), matchAll(), replace(), replaceAll(). Khi dùng với matchAll() hoặc replaceAll() thì phải thêm đặt cờ global (//g)</p>
+											</div>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript console-only auto-run line-numbers">
+													<script type="text/plain">
+														let s = 'truong cao dang ky thuat Cao Thang';
+														let reg1 = /cao/g; // g => global
+														let reg2 = /cao/ig; // i => case insensitive
+														console.log(s.match(reg1));
+														console.log(s.match(reg2));
+														for(m of s.matchAll(reg2)){
+															console.log(m[0], m.index);
+														}
+													</script>
+												</div>
+											</div>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers hidden show-result"></div>
+												<div class="code-highlight language-javascript console-only auto-run line-numbers">
+													<script type="text/plain">
+														let s = '0306231000 0306231123 0306231456 ';
+														let reg = /(?<maNganh>\d{4})(?<khoaHoc>\d{2})(?<he>\d)(?<stt>\d{3})/g
+														console.log(s.match(reg));
+														for(m of s.matchAll(reg)){
+															console.log(m[0], m.index, m.groups);
+														}
+													</script>
+												</div>
+											</div>
+										</li>
+										<!--[ ]Các tập ký tự-->
+										<li>
+											<p>Các tập ký tự</p>
+											<div class="callout callout-info">
+												<ul>
+													<li>[ABC]: tìm các ký tự trong tập hợp</li>
+													<li>[A-Z]: tìm các ký tự khoảng</li>
+													<li>[^ABC]: tìm các ký tự không nằm trong tập hợp</li>
+													<li>\d: ký tự số (tương đương [0-9])</li>
+													<li>\D: ký tự không phải số (tương đương [^0-9])</li>
+													<li>\w: ký tự chữ, số và dấu _ (tương đương [A-Za-z0-9_])</li>
+													<li>\W: ký tự chữ, số và dấu _ (tương đương [^A-Za-z0-9_])</li>
+													<li>\s: ký tự khoảng trắng, tab, ngắt dòng</li>
+													<li>\S: ký tự khác khoảng trắng, tab, ngắt dòng</li>
+													<li>.: bất kỳ ký tự nào</li>
+												</ul>
+											</div>
+										</li>
+										<!--[ ]Số lượng-->
+										<li>
+											<p>Số lượng</p>
+											<div class="callout callout-info">
+												<ul>
+													<li>?: 0 hoặc 1</li>
+													<li>+: 1 hoặc nhiều (greedy)</li>
+													<li>+?: 1 hoặc nhiều nhưng lấy ít nhất có thể (lazy)</li>
+													<li>*: 0 hoặc nhiều (greedy)</li>
+													<li>*?: 0 hoặc nhiều nhưng lấy ít nhất có thể (lazy)</li>
+													<li>{3}: lấy đúng 3 lần</li>
+													<li>{3,5}: lấy từ 3 đến 5 lần</li>
+													<li>{3,}: lấy ít nhất 3 lần</li>
+												</ul>
+											</div>
+										</li>
+										<!--[ ]Vị trí biên-->
+										<li>
+											<p>Vị trí biên</p>
+											<div class="callout callout-info">
+												<ul>
+													<li>^: vị trí bắt đầu chuỗi</li>
+													<li>$: vị trí kết thúc chuỗi</li>
+													<li>\b: vị trí nằm giữa 1 ký tự \w và một ký tự \W, hoặc các vị trí bắt đầu/kết thúc chuỗi</li>
+													<li>\B: vị trí không thỏa \b</li>
+												</ul>
+											</div>
+										</li>
+										<!--[ ]Ký tự đặc biệt-->
+										<li>
+											<p>Ký tự đặc biệt</p>
+											<div class="callout callout-info">
+												<ul>
+													<li>\t: ký tự tab</li>
+													<li>\r, \n: các ký tự ngắt dòng</li>
+													<li>Các ký tự +*?^$\.[]{}()|/ là một phần trong cú pháp của Regex nên khi muốn tìm các ký tự này thì phải thêm \ vào trước, VD: \+, \?, \.</li>
+												</ul>
+											</div>
+										</li>
+										<!--[ ]Tìm trước/sau-->
+										<li>
+											<p>Tìm trước/sau</p>
+											<div class="callout callout-info">
+												<p>Đặt điều kiện cho đứng trước hoặc sau của chuỗi cần tìm</p>
+												<ul>
+													<li>(?=ABC): chuỗi phải thỏa điều kiện liền sau là ABC</li>
+													<li>(?!ABC): chuỗi phải thỏa điều kiện liền sau không phải là ABC</li>
+													<li>(?&lt;=ABC): chuỗi phải thỏa điều kiện liền trước là ABC</li>
+													<li>(?&lt;!ABC): chuỗi phải thỏa điều kiện liền trước không phải là ABC</li>
+												</ul>
+											</div>
+										</li>
+										<!--[ ]Nhóm-->
+										<li>
+											<p>Nhóm</p>
+											<div class="callout callout-info">
+												<p>Tạo ra các nhóm để tách nhỏ từng thành phần trong chuỗi cần tìm, có thể dùng khi thay thế chuỗi</p>
+												<ul>
+													<li>(ABC): tạo nhóm</li>
+													<li>(?&lt;name&gt;ABC): tạo và đặt tên cho nhóm</li>
+												</ul>
+											</div>
+										</li>
+										<!--[ ]Thay thế-->
+										<li>
+											<p>Thay thế</p>
+											<div class="callout callout-info">
+												<p>Sử dụng trong chuỗi thay thế khi dùng các hàm replace(), replaceAll()</p>
+												<ul>
+													<li>$&: chuỗi con tìm được</li>
+													<li>$n: nhóm thứ n trong chuỗi con</li>
+													<li>$&ltname&gt;: nhóm có tên là "name" trong chuỗi con</li>
+													<li>$$: dấu $</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<!--[ ]Document Object Model (DOM)-->
+								<li>
+									<p>Document Object Model (DOM)</p>
+									<div class="callout callout-info">
+										<p>Document Object Model là dạng thể hiện của tài liệu HTML dưới dạng các đối tượng JS</p>
+										<p>Các đối tượng DOM có cấu trúc cây, mỗi node trên cây là một thành phần trong HTML (thẻ, văn bản, thuộc tính, comment,...)</p>
+										<p>Những thay đổi trên DOM sẽ được đồng bộ với tài liệu HTML tương ứng, bằng cách này, JS có thể thay đổi nội dung và cấu trúc tài liệu HTML thông qua DOM</p>
+									</div>
+									<ul class="heading">
+										<!--[ ]window-->
+										<li>
+											<p>window</p>
+											<div class="callout callout-info">
+												<p>Đối tượng <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window">window</a> là cửa sổ trình duyệt hoặc thẻ &lt;iframe&gt; chứa tài liệu hiện tại.</p>
+												<p>Thường thì trong một đoạn code đang chạy, từ khóa <code>this</code> và biến window đều trỏ tới cửa sổ hiện tại, và có thể bỏ bớt this/window khi truy xuất các phương thức/thuộc tính của cửa sổ hiện tại</p>
+												<p>Thường dùng các thuộc tính location và history để chuyển trang</p>
+											</div>
+											<div class="code-group">
+												<div class="code-highlight language-html hidden line-numbers show-result"></div>
+												<div class="code-highlight language-javascript line-numbers console-only">
+													<script type="text/plain">
+														console.log(this == window);
+														console.log(this.location);//khung kết quả chứa đoạn code
+														console.log(this.parent.location);//cửa số trình duyệt
+													</script>
+												</div>
+											</div>
+											<div class="code-group">
+												<div class="code-highlight language-html hidden line-numbers show-result"></div>
+												<div class="code-highlight language-css hidden line-numbers">
+													html,body{
+														height:800px;
+													}
+												</div>
+												<div class="code-highlight language-javascript line-numbers">
+													<script type="text/plain">
+														this.location.href = "https://caothang.edu.vn";
+													</script>
+												</div>
+											</div>
+										</li>
+										<!--[ ]document-->
+										<li>
+											<p>document</p>
+											<div class="callout callout-info">
+												<p>Đối tượng <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">document</a> (window.document) là một node đặc biệt (node gốc) chứa nội dung của tài liệu hiện tại dưới dạng cây DOM</p>
+												<p><code>document.createElement(tagName)</code>: tạo ra một element node mới, xem phần Element</p>
+												<p><code>document.head</code>, <code>document.body</code>: các Element node tương ứng với các thẻ &lt;head&gt; và &lt;body&gt;</p>
+											</div>
+										</li>
+										<!--[ ]Node-->
+										<li>
+											<p>Node</p>
+											<div class="callout callout-info">
+												<p>Các <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">node</a> là các đối tượng DOM tương ứng với các thành phần trong HTML (thẻ, văn bản, thuộc tính, comment,...)</p>
+												<p>Trong nội dung môn học này chỉ tập trung vào các node tương ứng với thẻ (Element node). <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType">Đọc thêm các loại node khác</a></p>
+											</div>
+										</li>
+										<!--[ ]Element-->
+										<li>
+											<p>Element</p>
+											<ul class="heading">
+												<!--[ ]Attribute và property-->
+												<li>
+													<p>Attribute và property</p>
+													<div class="callout callout-info">
+														<p>Các <b>thuộc tính của thẻ HTML (attribute)</b> sẽ được copy vào các <b>thuộc tính của đối tượng (property)</b> khi đối tượng được vừa được tạo ra.</p>
+														<p>Trong quá trình người dùng tương tác với trang web, các thuộc tính này sẽ thay đổi giá trị, nhưng chỉ có <b>property thay đổi theo</b>, còn <b>attribute vẫn giữ nguyên</b> giá trị khi vừa load trang</p>
+													</div>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers show-result">
+															<p>Thử nhập nội dung mới input và click vào checkbox</p>
+															<table>
+																<tbody>
+																	<tr>
+																		<th></th>
+																		<th>Attribute</th>
+																		<th>Property</th>
+																	</tr>
+																	<tr>
+																		<td rowspan="2">
+																			<input id="txtTest" value="Hello">
+																		</td>
+																		<td>.getAttribute('value')</td>
+																		<td>.value</td>
+																	</tr>
+																	<tr>
+																		<td id="attrValue">a</td>
+																		<td id="propValue">a</td>
+																	</tr>
+																	<tr>
+																		<td rowspan="2">
+																			<input id="chkTest" type="checkbox" checked="checked">
+																		</td>
+																		<td>.getAttribute('checked')</td>
+																		<td>.checked</td>
+																	</tr>
+																	<tr>
+																		<td id="attrChecked">a</td>
+																		<td id="propChecked">a</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														
+														<div class="code-highlight language-css hidden line-numbers">
+															<script type="text/plain">
+																table,th,td{
+																	border:1px solid;
+																	border-collapse: collapse;
+																}
+																td{
+																	padding:0.5em 1em;
+																}
+															</script>
+														</div>
+														<div class="code-highlight language-javascript auto-run line-numbers">
+															<script type="text/plain">
+																let txt = document.getElementById('txtTest'),
+																chk = document.getElementById('chkTest'),
+																attrValue = document.getElementById('attrValue'),
+																propValue = document.getElementById('propValue'),
+																attrChecked = document.getElementById('attrChecked'),
+																propChecked = document.getElementById('propChecked'),
+																f1 = e => {
+																	attrValue.textContent = txt.getAttribute('value');
+																	propValue.textContent = txt.value;
+																},
+																f2 = e => {
+																	attrChecked.textContent = chk.getAttribute('checked');
+																	propChecked.textContent = chk.checked;
+																};
+																txt.oninput = f1;
+																chk.oninput = f2;
+																f1();f2();
+															</script>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Tìm element-->
+												<li>
+													<p>Tìm element</p>
+													<div class="callout callout-info">
+														<p>Một số phương thức để tìm các element</p>
+														<ul>
+															<li><code>getElementById(id)</code>: tìm theo id của thẻ</li>
+															<li><code>getElementsByClassName(names)</code>: tìm các thẻ có đủ những class trong danh sách truyền vào</li>
+															<li><code>getElementsByTagName(name)</code>: tìm theo loại thẻ ('a', 'p', 'div', ...)</li>
+															<li><code>querySelector(selectors)</code>: tìm theo CSS selector, chỉ trả về 1 element đầu tiên tìm được</li>
+															<li><code>querySelectorAll(selectors)</code>: tìm theo CSS selector</li>
+														</ul>
+														<p>Lưu ý:</p>
+														<ul>
+															<li>Các phương phức này được định nghĩa cho Node nên có thể gọi từ cả Document và Element. Nếu gọi từ document thì tìm trong toàn bộ tài liệu, nếu gọi từ element thì tìm trong các node con của element</li>
+															<li><code>getElementById</code> và <code>querySelector</code> trả về 1 element (hoặc null nếu không tìm thấy),các phương thức còn lại trả về 1 danh sách (danh sách rỗng nếu không tìm thấy) &rArr; phân biệt Element/Element<b>s</b></li>
+															<li><code>getElementById</code> và <code>getElementsByClassName</code> nhận vào id/class nên không có các ký tự "#"/".", còn <code>querySelector</code> và <code>querySelectorAll</code> nhận vào 1 CSS selector nên cần các ký tự này</li>
+															<li>Danh sách trả về từ <code>getElementsByClassName</code> và <code>getElementsByTagName</code> là danh sách live (tự động cập nhật khi có sự thay đổi trong DOM), <code>querySelectorAll</code> không có tính chất này</li>
+														</ul>
+													</div>
+													
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers show-result">
+															<p id="id">id</p>
+															<p>
+																<span class="c1"></span>
+																<span class="c1 c2"></span>
+																<span class="c1 c2 c3"></span>
+																<span class="c1 c2 c3 c4"></span>
+															</p>
+														</div>
+														<div class="code-highlight language-javascript auto-run show-console line-numbers">
+															<script type="text/plain">
+																//So sánh tham số và kết quả các hàm sau
+																console.log('------id------');
+																console.log(document.getElementById('id'));
+																console.log(document.querySelector('#id'));
+																console.log(document.querySelectorAll('#id'));																
+																//So sánh tham số và kết quả các hàm sau
+																let a = document.getElementsByClassName('c1 c2'),
+																b = document.querySelectorAll('.c1.c2'),
+																c = document.querySelector('.c1.c2');
+																console.log('------class------');
+																console.log(a);
+																console.log(b);
+																console.log(c);
+																//So sánh 2 danh sách sau khi thay đổi class của 1 element 
+																console.log('------live class 1------');
+																b[1].className='';
+																console.log(a);
+																console.log(b);
+																console.log('------live class 2------');
+																document.getElementById('id').className='c1 c2';
+																console.log(a);
+																console.log(b);
+															</script>
+														</div>
+													</div>
+
+												</li>
+												<!--[ ]Cập nhật element-->
+												<li>
+													<p>Cập nhật element</p>
+													<div class="callout callout-info">
+														<p>Một số phương thức/thuộc tính để đọc/ghi nội dung các element</p>
+														<ul>
+															<li><code>id</code>,<code>className</code>,<code>tagName</code>: id, class, loại thẻ của element</li>
+															<li><code>classList</code>: thuộc tính <code>className</code> chứa tất cả class của thẻ dưới dạng chuỗi, rất khó xử lý. Khi cần thêm/bớt/kiểm tra class thì nên dùng class list</li>
+															<ul>
+																<li><code>classList.add(class1, ..., classN)</code>: thêm 1 hoặc nhiều class</li>
+																<li><code>classList.remove(class1, ..., classN)</code>: bỏ 1 hoặc nhiều class</li>
+																<li><code>classList.toggle(class)</code>: thêm class nếu chưa có, bỏ class nếu đã có</li>
+																<li><code>classList.contains(class)</code>: kiểm tra có class tuyền vào hay không</li>
+															</ul>
+															<li><code>hasAttribute(attributeName)</code>, <code>getAttribute(attributeName)</code>, <code>setAttribute(attributeName, value)</code>, <code>removeAttribute(attributeName)</code>: kiểm tra/đọc/ghi/xóa thuộc tính của thẻ (attribute). Lưu ý: khi ghi hoặc xóa thì sẽ ảnh hưởng tới tài liệu HTML và cả các thuộc tính tương ứng của DOM (property) cũng sẽ bị thay đổi theo</li>
+															<li><code>style</code>: đọc/ghi nội dung inline CSS của thẻ. các thuộc tính CSS được ghi theo camelCase. VD: text-align &rArr; style.textAlign,  box-shadow &rArr; style.boxShadow, </li>
+															<li><code>textContent:</code> đọc hoặc ghi nội dung text bên trong thẻ (gồm cả các đoạn text bị ẩn bằng CSS, text trong các thẻ script, thẻ style)</li>
+															<li><code>innerText</code>: đọc hoặc ghi nội dung text bên trong thẻ (chỉ gồm các đoạn text không bị ẩn)</li>
+															<li><code>innerHTML</code>: đọc hoặc ghi nội dung HTML bên trong trong thẻ tương ứng (chỉ gồm nội dung bên trong, không bao gồm phần mở/đóng thẻ)</li>
+															<li><code>outerHTML</code>: đọc hoặc ghi nội dung HTML của thẻ tương ứng (bao gồm cả phần mở/đóng thẻ), tương đương với việc thay thế thẻ</li>
+															<li><code>remove()</code>: xóa node hiện tại</li>
+															<li><code>replaceWith(param1, param2, /* …, */ paramN)</code>: thay thế element hiện tại bằng 1 hoặc nhiều node mới (element hoặc text), xem phần document.createElement()</li>
+														</ul>
+													</div>
+													
+													<div class="code-group">
+														<div class="code-highlight language-css line-numbers">
+															.hidden{
+																display:none;
+															}
+															.red{
+																color:red;
+															}
+														</div>
+														<div class="code-highlight language-html line-numbers show-result">
+															<p id="id"></p>
+														</div>
+														<div class="code-highlight language-javascript auto-run show-console line-numbers">
+															<script type="text/plain">
+																let p = document.getElementById('id'),
+																span = document.createElement('span');
+																span.setAttribute('title','test');
+																span.className = 'red';
+																span.style.fontSize = '3em';
+																span.innerHTML = 'span <i class="hidden">Hidden</i>'
+																p.replaceWith(span);
+																console.log(span.outerHTML);
+																console.log(span.innerHTML);
+																console.log(span.innerText);
+																console.log(span.textContent);
+															</script>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Quan hệ giữa các element-->
+												<li>
+													<p>Quan hệ giữa các element</p>
+													<div class="callout callout-info">
+														<p>Element con</p>
+														<ul>
+															<li><code>children</code>: danh sách các element con của element hiện tại (lưu ý phân biệt với childNodes)</li>
+															<li><code>childElementCount</code>: số lượng các element con của element hiện tại</li>
+															<li><code>firstElementChild</code>, <code>lastElementChild</code>: element con đầu tiên/cuối cùng của element hiện tại</li>
+															<li><code>append(),prepend()</code>: nhận vào 1 hoặc nhiều node (cả element và các loại node khác) và thêm vào cuối/đầu element hiện tại, xem phần document.createElement()</li>
+														</ul>
+														<p>Element cha</p>
+														<ul>
+															<li><code>parentElement</code>: lấy element cha (null nếu element hiện tại không có element cha)</li>
+															<li><code>closest(selectors)</code>: lấy element gần nhất chứa element hiện tại và thỏa 1 CSS selector (null nếu element hiện tại không có element cha hoặc không không có element nào thỏa selector). Lưu ý: nếu element hiện tại thỏa selector thì cũng được lấy</li>
+														</ul>
+														<p>Các element cùng cha</p>
+														<ul>
+															<li><code>nextElementSibling</code>: lấy element nằm liền sau (null nếu element hiện tại nằm cuối cùng)</li>
+															<li><code>previousElementSibling</code>: lấy element nằm liền trước (null nếu element hiện tại nằm đầu tiên)</li>
+															<li><code>before(),after()</code>: nhận vào 1 hoặc nhiều node (cả element và các loại node khác) và thêm vào trước/sau element hiện tại, xem phần document.createElement()</li>
+														</ul>
+													</div>
+													<div class="code-group">
+														<div class="code-highlight language-css line-numbers">
+															<script type="text/plain">
+																ul{
+																	counter-reset:heading;
+																}
+																ul li{
+																	list-style:none;
+																	counter-increment:heading;
+																}
+																ul>li::marker{
+																	content: counters(heading,'.') ;
+																}
+																.c1{border: 3px solid red;}
+																.c2{border: 3px solid green;}
+																.c3{border: 3px solid blue;}
+															</script>
+														</div>
+														<div class="code-highlight language-html line-numbers show-result">
+															<ul class="level-1">
+																<li></li>
+																<li>
+																	<ul class="level-2">
+																		<li></li>
+																		<li>
+																			<ul id="id" class="level-3">
+																				<li>X</li>
+																				<li>Y</li>
+																				<li>Z</li>
+																			</ul>
+																		</li>
+																		<li></li>
+																	</ul>
+																</li>
+																<li></li>
+															</ul>
+														</div>
+														<div class="code-highlight language-javascript auto-run show-console line-numbers">
+															<script type="text/plain">
+																let ul = document.getElementById('id');
+																console.log(ul.children);
+																console.log(ul.firstElementChild);
+																console.log(ul.lastElementChild);
+																let before = document.createElement('i'),
+																after = document.createElement('b');
+																before.textContent='before';
+																after.textContent='after';
+																ul.before(before);
+																ul.after(after);
+																ul.prepend('prepend');
+																ul.append('append');
+																ul.parentElement.classList.add('c1');
+																ul.closest('ul').classList.add('c2');
+																ul.closest('.level-1').classList.add('c3');
+															</script>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<!--[ ]Sự kiện (Event)-->
+								<li>
+									<p>Sự kiện (Event)</p>
+									<div class="callout callout-info">
+										<p><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events">Sự kiện</a> là cách để JS nhận biết các thay đổi trên trang web (di chuyển chuột, click chuột, nhập dữ liệu form, ... ) và gọi các đoạn code để xử lý các thay đổi này</p>
+										<p>Có 3 cách để gắn đoạn code xử lý cho một sự kiện:</p>
+										<ul>
+											<li>&lt;thẻ-HTML ... ontensukien = "đoạn code xử lý" ... &gt;: đây là cách cũ, nên hạn chế dùng vì dễ dẫn đến việc có nhiều code JS trong file HTML, khó đọc, khó debug, khó sửa. Cho dù đoạn code chỉ là lời gọi hàm thì cũng có nhược điểm là file HTML sẽ bị phụ thuộc vào file JS (trái nguyên tắc).</li>
+											<li>element.ontensukien = &lt;hàm xử lý&gt;: có thể định nghĩa hàm riêng hoặc dùng anonymous function. Cách này có nhược điểm là chỉ gán được 1 hàm cho 1 sự kiện, nếu gán hàm mới vào thì hàm cũ sẽ bị gỡ bỏ ra khỏi sự kiện. Ngoài ra có một số sự kiện không thể gắn hàm xử lý bằng cách này.</li>
+											<li>element.addEventListener('tensukien', &lt;hàm xử lý&gt;): có thể định nghĩa hàm riêng  hoặc dùng anonymous function. Cách này có thể gắn nhiều hàm cùng lúc cho 1 sự kiện.</li>
+										</ul>
+										<p>Khi cần gỡ bỏ hàm xử lý ra khỏi 1 sự kiện:</p>
+										<ul>
+											<li>&lt;thẻ-HTML ... ontensukien = "đoạn code xử lý" ... &gt;: gỡ bỏ bằng JS như cách 2</li>
+											<li>element.ontensukien = null;</li>
+											<li>element.removeEventListener('tensukien', &lt;tên hàm xử lý&gt;): nếu khi gọi <code>addEventListener()</code> dùng anonymous function thì không thể gỡ bỏ bằng cách này mà phải dùng <a href="https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal">AbortSignal</a>.</li>
+										</ul>
+									</div>
+									<div class="code-group">
+										<div class="code-highlight language-html line-numbers show-result">
+											<button id="btn1" onclick="alert('click Button 1');">Button 1</button>
+											<button id="btn2">Button 2</button>
+											<button id="btn3">Button 3</button>
+										</div>
+										<div class="code-highlight language-javascript auto-run line-numbers">
+											<script type="text/plain">
+												function f(){alert('click'); console.log(this);}
+												let btn2 = document.getElementById('btn2');
+												let btn3 = document.getElementById('btn3');
+												btn2.onclick = f; //Lưu ý: chỉ có tên hàm, không có dấu ()
+												btn2.onclick = function(){alert('click Button 2');}; //lệnh này sẽ gỡ bỏ hàm f
+												btn3.addEventListener('click',f);
+												btn3.addEventListener('click',() => {alert('click Button 3');});//cả 2 hàm đều chạy
+											</script>
+										</div>
+									</div>
+									<ul class="heading">
+										<!--[ ]Tham số event-->
+										<li>
+											<p>Tham số event</p>
+											<div class="callout callout-info">
+												<p>Các đoạn code xử lý/hàm xử lý sẽ được truyền 1 tham số <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event</a> cho biết các thông tin về sự kiện và có thể hủy một số sự kiện</p>
+												<p>Nếu dùng cách đưa đoạn code vào thuộc tính thẻ HTML thì tên tham số là <code>event</code>, còn 2 cách dùng hàm trong JS thì có thể đặt tên tham số tùy ý</p>
+												<p>Tùy loại sự kiện mà tham số sẽ có các thuộc tính khác nhau nhưng luôn có các thuộc tính sau:</p>
+												<ul>
+													<li>type: tên sự kiện</li>
+													<li>cancelable: cho biết sự kiện có thể hủy được không</li>
+													<li>bubbles: cho biết sự kiện có thể lan truyền lên được không, xem phần Bubbling</li>
+													<li>target, currentTarget: xem phần Bubbling</li>
+												</ul>
+											</div>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers show-result">
+													<div id="div1" style="width:200px;height:200px;border:1px solid"></div>
+													<input id="txt1">
+													<p id="test">Di chuyển chuột vào ô vuông hoặc nhập vào textbox</p>
+												</div>
+												<div class="code-highlight language-javascript auto-run line-numbers show-console">
+													<script type="text/plain">
+														let p = document.getElementById('test');
+														document.getElementById('div1').addEventListener('mousemove',e => {
+															p.textContent = `x: ${e.x}, y: ${e.y}`;
+															console.log(e);
+														});;
+														document.getElementById('txt1').addEventListener('keydown',e => {
+															p.textContent = `key: ${e.key}`;
+															console.log(e);
+														});;
+													</script>
+												</div>
+											</div>
+										</li>
+										<!--[ ]Hủy sự kiện-->
+										<li>
+											<p>Hủy sự kiện</p>
+											<div class="callout callout-info">
+												<p>Khi cần hủy các tác dụng mặc dịnh của một sự kiện (chuyển trang khi click thẻ &lt;a&gt;, chọn checkbox khi click, hiện chữ trong thẻ &lt;input&gt;, submit form,...):</p>
+												<ul>
+													<li><code>return false</code>: hủy tác dụng của sự kiện <b>khi dùng trong đoạn code gán trực tiếp vào thẻ HTML</b>. Khi dùng trong hàm xử lý của JS thì chỉ có tác dụng thoát khỏi hàm.</li>
+													<li><code>event.preventDefault()</code>: hủy tác dụng của sự kiện </li>
+												</ul>
+												<p>Lưu ý: chỉ các sự kiện có <code>Event.cancelable</code> là true thì mới hủy được</p>
+											</div>
+											<div class="code-group">
+												<div class="code-highlight language-html line-numbers show-result">
+													<a href="https://google.com">https://google.com</a> chuyển trang bình thường<br>
+													<a onclick="return false" href="https://google.com">https://google.com</a> return false<br>
+													<a onclick="f1(event)" href="https://google.com">https://google.com</a> preventDefault()<br>
+													<a onclick="f2()" href="https://google.com">https://google.com</a> return false trong hàm (sai)<br>
+												</div>
+												<div class="code-highlight language-javascript auto-run line-numbers show-console">
+													<script type="text/plain">
+														function f1(e){e.preventDefault();}
+														function f2(){return false;}
+													</script>
+												</div>
+											</div>
+										</li>
+										<!--[ ]Bubbling-->
+										<li>
+											<p>Bubbling</p>
+											<div class="callout callout-info">
+												<p>Một số sự kiện có tính chất <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling">bubbling</a>, có nghĩa là khi sự kiện này xảy ra trên một đối tượng thì nó cũng xảy ra trên tất cả các đối tượng chứa đối tượng đó</p>
+												<p>Trong tham số event có thuộc tính <code>target</code> chứa đối tượng mà sự kiện bắt đầu xảy ra và thuộc tính <code>currentTarget</code> chứa đối tượng đang gọi hàm xử lý</p>
+												<p>Hàm <code>event.stopPropagation()</code> sẽ ngăn sự kiện tiếp tục lan truyền lên cho các đối tượng khác</p>
+											</div>										
+											<div class="code-group">
+												<div class="code-highlight language-css line-numbers">
+													*:not(span){
+														margin:1em;
+														padding:1em;
+														border:1px solid;
+													}
+												</div>
+												<div class="code-highlight language-html line-numbers show-result">
+													<main>
+														<span>A</span>
+														<article>
+															<span>B</span>
+															<div>
+																<span>C</span>
+																<p>
+																	<span>D</span>
+																</p>
+															</div>
+														</article>
+													</main>
+												</div>
+												<div class="code-highlight language-javascript auto-run line-numbers show-console">
+													<script type="text/plain">
+														document.querySelectorAll('*').forEach(ele => {
+															ele.onclick = e =>{
+																console.log(e.type, e.target.tagName, e.currentTarget.tagName);
+																if(e.ctrlKey) e.stopPropagation();
+															}
+														});
+													</script>
+												</div>
+											</div>
+										</li>
+										<!--[ ]Một số sự kiện thường dùng-->
+										<li>
+											<p>Một số sự kiện thường dùng</p>
+											<ul class="heading">
+												<!--[ ]Load trang-->
+												<li>
+													<p>Load trang</p>
+													<div class="callout callout-info">
+														<ul>
+															<li>load: xảy ra khi tất cả nội dung, kể cả hình ảnh, đã được load xong, thường dùng cho các thẻ img hoặc cho cả trang web</li>
+															<li>DOMContentLoaded: xảy ra khi tất cả nội dung HTML đã được load xong, chỉ dùng cho đối tượng <code>document</code> và chỉ gán được bằng <code>addEventListener()</code></li>
+														</ul>
+													</div>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers show-result">
+															<img src="img/10.jpg" onload="console.log('img load', new Date());">
+														</div>
+														<div class="code-highlight language-javascript line-numbers show-console auto-run">
+															<script type="text/plain">
+																//2 sự kiện sau không chạy được trong trang web demo này, SV tự copy vào trang web của mình để test.
+																document.addEventListener("DOMContentLoaded", () => {console.log("DOMContentLoaded", new Date().getMilliseconds());});
+																window.addEventListener("load", () => {console.log("load", new Date().getMilliseconds());});
+															</script>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Sự kiện chuột-->
+												<li>
+													<p>Sự kiện chuột</p>
+													<div class="callout callout-info">
+														<ul>
+															<li>click, dblclick: click và double click. Khi sự kiện dblclick xảy ra thì click cũng xảy ra trước đó 2 lần (click > click > dblclick)</li>
+															<li>mousedown, mouseup: nhấn chuột và nhả chuột. Khi nhấn và nhả trong cùng 1 thẻ (không có động tác kéo thả) thì cũng sẽ xảy ra sự kiện click (thứ tự: down > up > click)</li>
+															<li>mousemove: di chuyển con trỏ chuột trong thẻ </li>
+															<li>mouseover, mouseout: di chuyển con trỏ chuột vào/ra thẻ. Lưu ý: khi con trỏ vào thẻ con thì coi như ra khỏi thẻ cha.</li>
+															<li>mouseenter, mouseleave: di chuyển con trỏ chuột vào/ra thẻ. Khác với mouseover/mouseout, 2 sự kiện này không bubble, và khi di chuyển vào thẻ con thì coi như vẫn nằm trong thẻ cha</li>
+															<li>Đọc thêm: <a href="https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent">TouchEvent</a> cho các loại touch screen</li>
+															<p>Các thuộc tính liên quan:</p>
+															<ul>
+																<li>x, y (alias của clientX , clientY): tọa độ con trỏ trong cửa sổ trình duyệt</li>
+																<li>offsetX, offsetY: tọa độ con trỏ trong thẻ</li>
+																<li>pageX, pageY: tọa độ con trỏ trên toàn bộ trang</li>
+																<li>screenX, screenY: tạo độ con trỏ trên màn hình.</li>
+																<li>button: chỉ dùng cho các sự kiện click chuột. Các giá trị <b>0, 1, 2</b> lần lượt là các nút chuột <b>trái, giữa, phải</b></li>
+																<li>button<b>s</b>: dùng được cho tất cả các sự kiện chuột. Giá trị 0 là không có nút nào được nhấn, các giá trị <b>1, 2, 4</b> lần lượt là các nút chuột <b>trái, phải, giữa</b>. Nếu nhấn cùng lúc nhiều phím thì cộng lại (vd 5 = 1 + 4 = trái + giữa)</li>
+																<li>ctrlKey, altKey, shiftKey: cho biết các phím Ctrl, Alt, Shift có được nhấn không</li>
+																<li>Tham khảo thêm: <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/relatedTarget">relatedTarget</a></li>
+															</ul>
+														</ul>
+														<div class="row justify-content-center">
+															<div class="col-12 col-md-6">
+																<figure>
+																	<img src="img/coordinates.png" alt="HTTP.png">
+																	<figcaption>
+																		Các hệ tọa độ trong JavaScript
+																	</figcaption>
+																</figure>
+															</div>
+															<div class="col-12 col-md-6">
+																<figure>
+																	<img src="img/coordinates-offset.png" alt="HTTP.png">
+																	<figcaption>
+																		Offset dựa trên đối tượng phát sinh sự kiện
+																	</figcaption>
+																</figure>
+															</div>
+															<div class="col-12 col-md-6">
+																<figure>
+																	<img src="img/coordinates-client.png" alt="HTTP.png">
+																	<figcaption>
+																		Client (viewport) dựa trên cửa sổ trình duyệt
+																	</figcaption>
+																</figure>
+															</div>
+															<div class="col-12 col-md-6">
+																<figure>
+																	<img src="img/coordinates-page.png" alt="HTTP.png">
+																	<figcaption>
+																		Page dựa trên toàn bộ trang web (kể cả phần bị cuộn ra ngoài)
+																	</figcaption>
+																</figure>
+															</div>
+															<div class="col-12 col-md-6">
+																<figure>
+																	<img src="img/coordinates-screen.png" alt="HTTP.png">
+																	<figcaption>
+																		Screen dựa trên màn hình thiết bị
+																	</figcaption>
+																</figure>
+															</div>
+														</div>
+													</div>
+													
+													<div class="code-group">
+														<div class="code-highlight language-css line-numbers">
+															<script type="text/plain">
+																div{
+																	margin:1em;
+																	padding:1em;
+																	border:1px solid;
+																	width:fit-content;
+																}
+																#div3{
+																	width:100px;
+																	height:100px;
+																}
+															</script>
+														</div>
+														<div class="code-highlight language-html line-numbers show-result">
+															<div id="div1">
+																<div id="div2">
+																	<div id="div3"></div>
+																</div>
+															</div>
+															
+														</div>
+														<div class="code-highlight language-javascript auto-run line-numbers show-console">
+															<script type="text/plain">
+																function f(e){
+																	console.log(e.type, e.target.id, e.offsetX, e.offsetY);
+																}
+																document.querySelectorAll('div').forEach(div=>{
+																	div.addEventListener('mouseenter',f);
+																	div.addEventListener('mouseleave',f);
+																	div.addEventListener('click',f);
+																});
+																//Thử sửa lại thành mouseover/mouseout/mousemove, quan sát kết quả
+																//thử thêm e.stopPropagation()
+															</script>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Sự kiện phím-->
+												<li>
+													<p>Sự kiện phím</p>
+													<div class="callout callout-info">
+														<p>keydown, keypress, keyup: </p>
+														<ul>
+															<li>keydown, keyup: nhấn/nhả 1 phím trên bàn phím</li>
+															<li>keypress: nhấn phím ký tự (không phải các phím chức năng như Ctrl, Alt, Shift, mũi tên, Esc, Home, End, F1-F12,...). Xảy ra sau keydown và trước keyup</li>
+															<li>thứ tự: keydown > keypress > keyup</li>
+														</ul>
+														<p>Các thuộc tính liên quan:</p>
+															<ul>
+																<li>key: tên phím được nhấn. Đối với các phím ký tự thì là ký tự phát sinh ra và bị ảnh hưởng bởi Shift/CapsLock</li>
+																<li>code: tên phím được nhấn. Đối với các phím ký tự thì không bị ảnh hưởng bởi Shift/CapsLock</li>
+																<li>repeat: cho biết có phải sự kiện được lặp lại khi phím được nhấn giữ hay không</li>
+																<li>ctrlKey, altKey, shiftKey: cho biết các phím Ctrl, Alt, Shift có được nhấn không</li>
+															</ul>
+													</div>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers show-result">
+															<textarea id="txt" cols="30" rows="10" autofocus></textarea>
+														</div>
+														<div class="code-highlight language-javascript auto-run line-numbers show-console">
+															<script type="text/plain">
+																function f(e){
+																	console.log(e.type, e.code, e.key, e.repeat);
+																}
+																let txt = document.querySelector('#txt');
+																txt.addEventListener('keydown',f);
+																txt.addEventListener('keypress',f);
+																txt.addEventListener('keyup',f);
+															</script>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Sự kiện focus-->
+												<li>
+													<p>Sự kiện focus</p>
+													<div class="callout callout-info">
+														<p>Chỉ các thẻ nào cho phép người dùng nhập dữ liệu hoặc tương tác bằng bàn phím mới có thể nhận focus và có các sự kiện focus:</p>
+														<ul>
+															<li>Các thẻ <code>&lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;, &lt;button&gt;</code> nếu như không bị <code>disabled</code> (bằng thuộc tính HTML hay code JS)</li>
+															<li>Các thẻ <code>&lt;a&gt;, &lt;area&gt;</code> nếu như có thuộc tính <code>href</code></li>
+															<li>Các thẻ có thuộc tính <code>contentEditable = true</code></li>
+															<li>Các thẻ có thuộc tính <code>tabindex</code> hợp lệ. Nếu tabindex là -1 thì không thể focus bằng phím tab nhưng vẫn có thể focus bằng click chuột</li>
+														</ul>
+														<p>Các sự kiện:</p>
+														<ul>
+															<li>focus, blur: xảy ra khi một đối tượng nhận/mất focus. Các sự kiện này không bubble.</li>
+															<li>focusin, focusout: tương tự như focus và blur nhưng có bubble, do đó có thể bắt 2 sự kiện này trên các thẻ không thể nhận focus nhưng có chứa các thẻ có thể nhận focus</li>
+															<li>Thứ tự: khi focus chuyển từ đối tượng A qua đối tượng B, 4 sự kiện xảy ra theo thứ tự sau: blur(A) > focusout(A) > focus (b) > focusin(B)</li>
+														</ul>
+														<p>Tham khảo thuộc tính <a href="https://developer.mozilla.org/en-US/docs/Web/API/FocusEvent/relatedTarget">relatedTarget</a></p>
+													</div>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers show-result">
+															<p>Click vào đoạn text này, sau đó nhấn tab để chuyển focus cho các thẻ khác</p>
+															<p tabindex="0">Tab index</p>
+															<p contenteditable="true">Content editable</p>
+															<input type="text" value="Input">
+															<select>
+																<option value="">Select</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+															</select>
+															<button>Button</button>
+															<textarea>Textarea</textarea>
+															<a href="#">A</a>
+														</div>
+														<div class="code-highlight language-javascript auto-run line-numbers show-console">
+															<script type="text/plain">
+																document.querySelectorAll('body *').forEach(ele => {
+																	ele.onfocus = e => console.log(e.target);
+																});
+															</script>
+														</div>
+													</div>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers show-result">
+															<form>
+																Thẻ form không thể nhận focus, nhưng có thể bắt sự kiện focusin/focusout từ button <br>
+																<button type="button">Click me!</button>
+															</form>
+														</div>
+														<div class="code-highlight language-javascript auto-run line-numbers show-console">
+															<script type="text/plain">
+																function f(e){
+																	console.log(e.type, e.currentTarget.tagName);
+																}
+																document.querySelectorAll('form, button').forEach(ele => {
+																	ele.addEventListener('blur',f);
+																	ele.addEventListener('focusout',f);
+																	ele.addEventListener('focus',f);
+																	ele.addEventListener('focusin',f);
+																});
+															</script>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Sự kiện nhập liệu-->
+												<li>
+													<p>Sự kiện nhập liệu</p>
+													<div class="callout callout-info">
+														<ul>
+															<li>input: xảy ra khi giá trị hoặc trạng thái chọn của các thẻ <code>&lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;</code> bị thay đổi do thao tác của người dùng (không xảy ra nếu thay đổi bằng code JS). Lưu ý: đối với <code>&lt;input type="radio"&gt;</code>, sự kiện <b>KHÔNG xảy ra khi bỏ chọn</b></li>
+															<li>change: tương tự như input nhưng đối với <code>&lt;textarea&gt;</code> và các loại <code>&lt;input&gt;</code> dạng text (text, password, number, email, ...) chỉ xảy ra khi thẻ mất focus</li>
+														</ul>
+													</div>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers show-result">
+															<p>Nhập 2+ ký tự bất kỳ vào textbox sau rồi click ra ngoài</p>
+															<input type="text">
+															<p>Thay đổi tùy chọn trong select (bằng chuột hoặc phím)</p>
+															<select>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+															</select>
+														</div>
+														<div class="code-highlight language-javascript auto-run line-numbers show-console">
+															<script type="text/plain">
+																function f(e){
+																	console.log(e.type,e.target.value);
+																}
+																document.querySelectorAll('input').forEach(ele => {
+																	ele.addEventListener('input',f);
+																	ele.addEventListener('change',f);
+																});
+																document.querySelectorAll('select').forEach(ele => {
+																	ele.addEventListener('input',f);
+																	ele.addEventListener('change',f);
+																});
+															</script>
+														</div>
+													</div>
+													<div class="code-group">
+														<div class="code-highlight language-html line-numbers show-result">
+															<p>Check/uncheck các checkbox và radio sau</p>
+															<input type="checkbox" name="checkbox" id="chk"><label for="chk">Checkbox</label>
+															<input type="radio" name="radio" id="rdb1" value="1" checked><label for="rdb1">radio 1</label>
+															<input type="radio" name="radio" id="rdb2" value="2"><label for="rdb2">radio 2</label>
+														</div>
+														<div class="code-highlight language-javascript auto-run line-numbers show-console">
+															<script type="text/plain">
+																function f(e){
+																	console.log(e.type,e.target.id,e.target.checked);
+																}
+																document.querySelectorAll('input').forEach(ele => {
+																	ele.addEventListener('input',f);
+																	ele.addEventListener('change',f);
+																});
+															</script>
+														</div>
+													</div>
+													<p>Ứng dụng:</p>
+													<div class="code-group">
+														<div class="code-highlight language-css line-numbers hidden">
+															<script type="text/plain">
+																@import url('plugins/fontawesome-free/css/all.min.css');
+																*{margin:0;padding:0;box-sizing:border-box;}
+																.options{
+																	padding: 1em;
+																	text-align: right;
+																}
+																.options input[name="display"]{
+																	display: none;
+																}
+																.options label{
+																	margin: 0.5em;
+																	padding: 0.5em;
+																	border: 1px solid;
+																	border-radius: 8px;
+																	background: #fff;
+																	cursor: pointer;
+																}
+																.options input:checked+label{
+																	filter: invert(1);
+																}
+																#shop{
+																	padding: 1em 3em;
+																}
+																#shop.grid{
+																	display: grid;
+																	grid-template-columns: 1fr 1fr 1fr;
+																}
+																.product{
+																	padding: 1em;
+																	display: flex;
+																	gap: 2em;
+																}
+																.product .image{
+																	width: 100px;
+																	height: 100px;
+																	line-height: 100px;
+																	font-size: 80px;
+																	text-align: center;
+																	flex: auto 0 1;
+																}
+																.product .info{
+																	flex: auto 1 1;
+																}
+																
+																#shop.grid .image{
+																	width: 100%;
+																}
+																#shop.grid .product{
+																	display: block;
+																}
+																#shop.grid .product .info{
+																	text-align: center;
+																}
+																#shop.grid .product .description{
+																	display: none;
+																}
+															</script>
+														</div>
+														<div class="code-highlight language-html line-numbers show-result hidden">
+															<div class="options">																
+																<input type="radio" name="display" id="rdbList" value="list"><label for="rdbList"><i class="fas fa-th-list fa-fw"></i></label>
+																<input type="radio" name="display" id="rdbGrid" value="grid" checked><label for="rdbGrid"><i class="fas fa-th fa-fw"></i></label>
+															</div>
+															<div id="shop" class="grid">
+																<div class="product">
+																	<div class="image"><i class="fas fa-laptop fa-fw"></i></div>
+																	<div class="info">
+																		<h3 class="name">Laptop</h3>
+																		<h4 class="price">123 456 798 &#8363;</h4>
+																		<p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consectetur harum esse!</p>
+																	</div>
+																</div>
+																<div class="product">
+																	<div class="image"><i class="fas fa-mobile-alt fa-fw"></i></div>
+																	<div class="info">
+																		<h3 class="name">Mobile</h3>
+																		<h4 class="price">123 456 798 &#8363;</h4>
+																		<p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consectetur harum esse!</p>
+																	</div>
+																</div>
+																<div class="product">
+																	<div class="image"><i class="fas fa-tablet-alt fa-fw"></i></div>
+																	<div class="info">
+																		<h3 class="name">Tablet</h3>
+																		<h4 class="price">123 456 798 &#8363;</h4>
+																		<p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consectetur harum esse!</p>
+																	</div>
+																</div>
+																<div class="product">
+																	<div class="image"><i class="fas fa-headphones fa-fw"></i></div>
+																	<div class="info">
+																		<h3 class="name">Headphones</h3>
+																		<h4 class="price">123 456 798 &#8363;</h4>
+																		<p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consectetur harum esse!</p>
+																	</div>
+																</div>
+																<div class="product">
+																	<div class="image"><i class="fas fa-keyboard fa-fw"></i></div>
+																	<div class="info">
+																		<h3 class="name">Keyboard</h3>
+																		<h4 class="price">123 456 798 &#8363;</h4>
+																		<p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consectetur harum esse!</p>
+																	</div>
+																</div>
+																<div class="product">
+																	<div class="image"><i class="fas fa-memory fa-fw"></i></div>
+																	<div class="info">
+																		<h3 class="name">Memory</h3>
+																		<h4 class="price">123 456 798 &#8363;</h4>
+																		<p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consectetur harum esse!</p>
+																	</div>
+																</div>
+																<div class="product">
+																	<div class="image"><i class="fas fa-hdd fa-fw"></i></div>
+																	<div class="info">
+																		<h3 class="name">HDD</h3>
+																		<h4 class="price">123 456 798 &#8363;</h4>
+																		<p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consectetur harum esse!</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="code-highlight language-javascript auto-run line-numbers">
+															<script type="text/plain">
+																let shop=document.getElementById('shop');
+																function f(e){
+																	if (e.target.value === 'list'){
+																		shop.classList.remove('grid');
+																		shop.classList.add('list');
+																	}
+																	else{
+																		shop.classList.remove('list');
+																		shop.classList.add('grid');
+																	}
+																}
+																document.querySelectorAll('input[name="display"]').forEach(ele => {
+																	ele.addEventListener('input',f);
+																});
+															</script>
+														</div>
+													</div>
+													<div class="code-group">
+														<div class="code-highlight language-css line-numbers hidden">
+															<script type="text/plain">
+																*{margin:0;padding:0;box-sizing:border-box;}
+																.options{
+																	padding: 1em;
+																	text-align: right;
+																}
+																:root{
+																	--cl-1: #000;
+																	--bg-1: #fff;
+																	--cl-2: #fff;
+																	--bg-2: #95deff;
+																	--bg-3: #f9d4ff;
+																	--bg-4: #1e65f0;
+																	--bg-5: #6814e5;
+																	color: var(--cl-1);
+																	background: var(--bg-1);
+																}
+																:root.darkmode{
+																	--cl-1: #fff;
+																	--bg-1: #333;
+																	--cl-2: #000;
+																	--bg-4: #95deff;
+																	--bg-5: #f9d4ff;
+																	--bg-2: #1e65f0;
+																	--bg-3: #6814e5;
+																}
+																h1{
+																	text-align: center;
+																	margin: 0.5em;
+																}
+																main{
+																	display: flex;
+																	padding: 0 2em 2em;
+																	gap: 1em;
+																}
+																main p{
+																	text-indent: 1em;
+																	text-align: justify;
+																	padding: 1em;
+																	border-radius: 1em;
+																	background: linear-gradient(to right bottom, var(--bg-2), var(--bg-3));
+																}
+																main p:hover{
+																	background: linear-gradient(to right bottom, var(--bg-4), var(--bg-5));
+																	color: var(--cl-2);
+																	box-shadow: 2px 2px 3px var(--cl-1);
+																}
+															</script>
+														</div>
+														<div class="code-highlight language-html line-numbers show-result hidden">
+															<div class="options">																
+																<label for="chkDarkmode">Dark mode: </label><input type="checkbox" id="chkDarkmode">
+															</div>
+															<h1>Hello world!</h1>
+															<main>
+																<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, eum! Odit, maxime facere. Voluptatem officia laudantium debitis ut ad ipsam, quidem necessitatibus, id dolore eius corrupti assumenda earum iure dolorem.</p>
+																<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, eum! Odit, maxime facere. Voluptatem officia laudantium debitis ut ad ipsam, quidem necessitatibus, id dolore eius corrupti assumenda earum iure dolorem.</p>
+																<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, eum! Odit, maxime facere. Voluptatem officia laudantium debitis ut ad ipsam, quidem necessitatibus, id dolore eius corrupti assumenda earum iure dolorem.</p>
+															</main>
+														</div>
+														<div class="code-highlight language-javascript auto-run line-numbers">
+															<script type="text/plain">
+																document.getElementById('chkDarkmode').oninput = e => {
+																	if(e.target.checked){
+																		document.querySelector('html').classList.add('darkmode');
+																	}
+																	else{
+																		document.querySelector('html').classList.remove('darkmode');
+																	}
+																};
+															</script>
+														</div>
+													</div>
+												</li>
+												<!--[ ]Sự kiện submit form-->
+												<li>
+													<p>Sự kiện submit form</p>
+													<div class="callout callout-info">
+														<p>Xảy ra trước khi thẻ &lt;form&gt; gửi dữ liệu về server, thường dùng để kiểm tra dữ liệu người dùng nhập có đúng quy định chưa.</p>
+														<p>Cách này có ưu điểm hơn so với các thuộc tính kiểm tra trong thẻ HTML là có thể tùy chỉnh nội dung, cách hiển thị và định dạng của câu thông báo thay vì dùng câu thông báo mặc định của trình duyệt, và một số trường hợp các quy định phức tạp không thể giải quyết bằng các thuộc tính HTML. </p>
+													</div>
+													<div class="callout callout-danger">
+														<p>Cho dù dùng HTML hay JS để kiểm tra dữ liệu người dùng nhập ở client thì cũng phải kiểm lại ở server, vì người dùng có thể chỉnh sửa HTML/JS để vô hiệu hóa bước kiểm tra ở client.</p>
+													</div>
+													<div class="code-group">
+														<div class="code-highlight language-css line-numbers">
+															<script type="text/plain">
+																.error{
+																	color: red;
+																}
+																.hidden{
+																	display: none;
+																}
+															</script>
+														</div>
+														<div class="code-highlight language-html line-numbers show-result">
+															<form name="test" >
+																<label for="txtTen">Tên: </label><input id="txtTen" name="ten" type="text">
+																<span class="error hidden">Tên không được bỏ trống!</span><br>
+																<label for="dtpBatDau">Ngày bắt đầu: </label><input type="date" name="batdau" id="dtpBatDau"> <br>
+																<label for="dtpKetThuc">Ngày kết thúc: </label><input type="date" name="ketthuc" id="dtpKetThuc">
+																<span class="error hidden">Ngày kết thúc phải sau ngày bắt đầu!</span><br>
+																<button>OK</button>
+															</form>
+														</div>
+														<div class="code-highlight language-javascript auto-run line-numbers show-console">
+															<script type="text/plain">
+																document.forms['test'].onsubmit =  e => {
+																	let err = 0;
+																	let txtTen = document.getElementById('txtTen');
+																	let dtpBatDau = document.getElementById('dtpBatDau');
+																	let dtpKetThuc = document.getElementById('dtpKetThuc');
+																	//Trường hợp đơn giản, có thể dùng required
+																	if(txtTen.value.trim()===''){
+																		txtTen.nextElementSibling.classList.remove('hidden');
+																		err++;
+																	}
+																	else{
+																		txtTen.nextElementSibling.classList.add('hidden');
+																	}
+																	//Trường hợp cần so sánh 2 input, không dùng thuộc tính HTML được
+																	if(dtpKetThuc.value <= dtpBatDau.value){
+																		dtpKetThuc.nextElementSibling.classList.remove('hidden');
+																		err++;
+																	}
+																	else{
+																		dtpKetThuc.nextElementSibling.classList.add('hidden');
+																	}
+
+																	if(err){
+																		e.preventDefault();
+																	}
+																	else {
+																		alert('Gửi dữ liệu thành công!');
+																	}
+																}
+															</script>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div><!-- /.container-fluid -->
+			</div>
+			<!-- /.content -->
+			<a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+				<i class="fas fa-chevron-up"></i>
+			</a>
+		</div>
+	<!-- /.content-wrapper -->
+	<!-- Main Footer -->
+	<footer class="main-footer">
+	<!-- To the right -->
+	<div class="float-right d-none d-sm-inline">
+		Khoa Công nghệ thông tin - Trường Cao đẳng kỹ thuật Cao Thắng
+	</div>
+	<!-- Default to the left -->
+	<strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+	</footer>
+	</div>
+	<!-- ./wrapper -->
+	<template id="card-code">
+		<div class="card card-success m-0">
+			<div class="card-header py-1 px-3">
+				<h3 class="card-title text-uppercase font-weight-bold">Title</h3>
+				<div class="card-error hidden mx-2">
+					<span class="px-1 badge badge-danger"><i class="fas fa-times-circle"></i> <span class="errorCount">0</span></span>
+				</div>
+				<div class="card-tools">
+					<button type="button" class="btn-run btn btn-tool" title="Run"><i class="fas fa-play"></i></button>
+					<button type="button" class="btn-clear btn btn-tool" title="Clear"><i class="fas fa-trash-alt"></i></button>
+					<button type="button" class="btn-apply btn btn-tool" title="Apply"><i class="fas fa-check"></i></button>
+					<button type="button" class="btn-copy btn btn-tool" title="Copy"><i class="fas fa-copy"></i></button>
+					<button type="button" class="btn-reset btn btn-tool" title="Reset"><i class="fas fa-sync-alt"></i></button>
+					<button type="button" class="btn btn-tool" data-card-widget="maximize" title="Maximize"><i class="fas fa-expand"></i></button>
+					<button type="button" class="btn btn-tool" data-card-widget="collapse" data-animation-speed="150" title="Minimize"><i class="fas fa-minus"></i></button>
+				</div>
+				<!-- /.card-tools -->
+			</div>
+			<!-- /.card-header -->
+			<div class="card-body p-0">
+			</div>
+			<!-- /.card-body -->
+		</div>
+	</template>
+	<template id="card-text">
+		<div class="card card-primary m-0 card-text">
+			<div class="card-header py-1 px-3">
+				<h3 class="card-title font-weight-bold">Title</h3>
+				<div class="card-tools">
+					<button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
+					<button type="button" class="btn btn-tool" data-card-widget="collapse" data-animation-speed="150"><i class="fas fa-minus"></i></button>
+				</div>
+				<!-- /.card-tools -->
+			</div>
+			<!-- /.card-header -->
+			<div class="card-body">
+			</div>
+			<!-- /.card-body -->
+		</div>
+	</template>
+	<!-- #region JS-->
+	<!-- REQUIRED SCRIPTS -->
+	<!-- jQuery -->
+	<script src="plugins/jquery/jquery.min.js"></script>
+	<!-- Bootstrap 4 -->
+	<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- AdminLTE App -->
+	<script src="dist/js/adminlte.min.js"></script>
+	<!-- CodeMirror -->
+	<script src="plugins/codemirror/codemirror.js"></script>
+	<script src="plugins/codemirror/addon/fold/foldcode.js"></script>
+	<script src="plugins/codemirror/addon/fold/foldgutter.js"></script>
+	<script src="plugins/codemirror/addon/fold/brace-fold.js"></script>
+	<script src="plugins/codemirror/addon/fold/xml-fold.js"></script>
+	<script src="plugins/codemirror/addon/fold/indent-fold.js"></script>
+	<script src="plugins/codemirror/addon/fold/markdown-fold.js"></script>
+	<script src="plugins/codemirror/addon/fold/comment-fold.js"></script>
+	<script src="plugins/codemirror/addon/edit/matchbrackets.js"></script>
+	<script src="plugins/codemirror/addon/edit/closebrackets.js"></script>
+	<script src="plugins/codemirror/addon/edit/matchtags.js"></script>
+	<script src="plugins/codemirror/addon/edit/closetag.js"></script>
+	<script src="plugins/codemirror/mode/css/css.js"></script>
+	<script src="plugins/codemirror/mode/javascript/javascript.js"></script>
+	<script src="plugins/codemirror/mode/xml/xml.js"></script>
+	<script src="plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+	<!-- Custom JS -->
+	<script src="js/main.js"></script>
+	<!-- #endregion -->
+</body>
+</html>

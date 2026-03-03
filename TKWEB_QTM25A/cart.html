@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 2em;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        fieldset {
+            width: 85%;
+            margin: auto;
+            padding: 1em;
+        }
+
+        #cart {
+            width: 85%;
+            margin: 2em auto;
+            padding: 0 2em;
+            border-radius: 20px;
+            box-shadow: 0 0 3px 0px #000, 2px 2px 5px 2px #0005;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            padding: 1em;
+        }
+
+        .row:not(:last-child) {
+            border-bottom: 1px solid #0003;
+        }
+
+        .product-image {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .product {
+            flex: 1 1 auto;
+        }
+
+        .price {
+            width: 150px;
+            padding: 0 0.5em;
+            text-align: right;
+        }
+
+        .quantity :invalid {
+            box-shadow: 0 0 3px 1px red;
+        }
+
+        .quantity {
+            width: 80px;
+        }
+
+        .quantity input {
+            width: 40px;
+        }
+
+        .subtotal,
+        .tong-tien {
+            width: 150px;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .row:last-child {
+            font-size: 1.2rem;
+        }
+
+        .row:last-child p {
+            flex: 1 1 auto;
+            text-align: right;
+        }
+        #empty{
+            display: flex;
+            flex-flow: column nowrap;
+            text-align: center;
+            font-size: 1.5rem;
+            gap:1em;
+            padding:1em;
+        }
+        #empty.hidden{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="order" method="post">
+        <div class="header">
+            <h1>Giỏ hàng</h1>
+            <p>SV tự định dạng CSS, phần CSS của giỏ hàng chỉ mang tính tham khảo, không chép nguyên vào đồ án</p>
+        </div>
+        <div id="cart">
+            <div class="row">
+                <input type="hidden" name="productId[]" value="1">
+                <img class="product-image" src="img/1.jpg" alt="">
+                <div class="product">
+                    <h3>Sản phẩm 1</h3>
+                    <p>Size: M - Màu sắc: ...</p>
+                </div>
+                <div class="price">1000000</div>
+                <div class="quantity">
+                    <input type="number" name="quantity[]" value="2" min="1" max="20" step="1">
+                    <button type="button" class="btnDel">Xóa</button>
+                </div>
+                <div class="subtotal">---------</div>
+            </div>
+            <div class="row">
+                <input type="hidden" name="productId[]" value="2">
+                <img class="product-image" src="img/2.jpg" alt="">
+                <div class="product">
+                    <h3>Sản phẩm 2</h3>
+                    <p>Size: XXL - Màu sắc: ...</p>
+                </div>
+                <div class="price">1200000</div>
+                <div class="quantity">
+                    <input type="number" name="quantity[]" value="3" min="1" max="20" step="1">
+                    <button type="button" class="btnDel">Xóa</button>
+                </div>
+                <div class="subtotal">---------</div>
+            </div>
+            <div class="row">
+                <input type="hidden" name="productId[]" value="4">
+                <img class="product-image" src="img/4.jpg" alt="">
+                <div class="product">
+                    <h3>Sản phẩm 4</h3>
+                    <p>Size: L - Màu sắc: ...</p>
+                </div>
+                <div class="price">1500000</div>
+                <div class="quantity">
+                    <input type="number" name="quantity[]" value="5" min="1" max="20" step="1">
+                    <button type="button" class="btnDel">Xóa</button>
+                </div>
+                <div class="subtotal">---------</div>
+            </div>
+            <div class="row">
+                <input type="hidden" name="productId[]" value="7">
+                <img class="product-image" src="img/7.jpg" alt="">
+                <div class="product">
+                    <h3>Sản phẩm 7</h3>
+                    <p>Size: S - Màu sắc: ...</p>
+                </div>
+                <div class="price">1300000</div>
+                <div class="quantity">
+                    <input type="number" name="quantity[]" value="2" min="1" max="20" step="1">
+                    <button type="button" class="btnDel">Xóa</button>
+                </div>
+                <div class="subtotal">---------</div>
+            </div>
+            <div class="row">
+                <input type="hidden" name="productId[]" value="10">
+                <img class="product-image" src="img/10.jpg" alt="">
+                <div class="product">
+                    <h3>Sản phẩm 7</h3>
+                    <p>Size: S - Màu sắc: ...</p>
+                </div>
+                <div class="price">1000000</div>
+                <div class="quantity">
+                    <input type="number" name="quantity[]" value="3" min="1" max="20" step="1">
+                    <button type="button" class="btnDel">Xóa</button>
+                </div>
+                <div class="subtotal">---------</div>
+            </div>
+            <div class="row">
+                <p>(SV tự thêm phần phí ship)</p>
+            </div>
+            <div class="row">
+                <p>Tổng tiền: </p>
+                <div class="total">---------</div>
+            </div>
+        </div>
+        <fieldset>
+            <legend>Thông tin giao hàng</legend>
+            <label for="hoten">Người nhận hàng: </label>
+            <input type="text" name="hoten" id="hoten"> <br>
+            <label for="dienthoai">Điện thoại: </label>
+            <input type="tel" name="dienthoai" id="dienthoai"> <br>
+            <p>Các thông tin khác (SV tự làm và định dạng CSS phần này)</p>
+            <button>Thanh toán</button>
+        </fieldset>
+    </form>
+    <div id="empty" class="hidden">
+        <p>Không có sản phẩm nào trong giỏ hàng.</p>
+        <a href="index.html">Tiếp tục mua hàng</a>
+    </div>
+
+    <script>
+        function init() {
+            let arr = document.querySelectorAll('.price');
+            for (let i = 0; i < arr.length; i++) {
+                let tmp = parseInt(arr[i].textContent.trim());
+                arr[i].setAttribute('data-value', tmp);
+                arr[i].textContent = tmp.toLocaleString('vi-VN', { style: "currency", currency: "VND" });
+            }
+        }
+        function tinhTien() {
+            let sum = 0;
+            let arr = document.querySelectorAll('.quantity input');
+            if(arr.length==0){
+                document.querySelector('#order').remove();
+                document.querySelector('#empty').classList.remove('hidden');
+                return;
+            }
+            for (let i = 0; i < arr.length; i++) {
+                let row = arr[i].closest('.row');
+                let sl = arr[i].valueAsNumber;
+                let price = row.querySelector('.price').getAttribute('data-value');
+                row.querySelector('.subtotal').textContent = (sl * price).toLocaleString('vi-VN', { style: "currency", currency: "VND" });
+                sum += sl * price;
+            }
+            document.querySelector('.total').textContent = sum.toLocaleString('vi-VN', { style: "currency", currency: "VND" });
+        }
+        init();
+        tinhTien();
+        document.querySelector('#cart').oninput = tinhTien;
+        document.querySelector('#cart').onclick = e => {
+            if (e.target.classList.contains('btnDel')) {
+                let row = e.target.closest('.row');
+                let name = row.querySelector('.product h3').textContent;
+                if (confirm(`Bạn có chắc muốn xóa "${name}" ra khỏi giỏ hàng?`)) {
+                    row.remove();
+                    tinhTien();
+                }
+            }
+        };
+    </script>
+</body>
+
+</html>
