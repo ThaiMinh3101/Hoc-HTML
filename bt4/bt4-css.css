@@ -1,0 +1,13 @@
+:root {
+    font-family: sans-serif;
+    text-align: center;
+}
+header {
+    background-color:  hsl(196.98deg 96.36% 32.35%);
+    color: white;
+}
+header h1 {
+    text-transform: uppercase;
+    font-size: 30px;
+    text-transform: ;
+}

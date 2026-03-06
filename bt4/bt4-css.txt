@@ -1,0 +1,9 @@
+- Không thay đổi nội dung file html cho sẵn, chỉ thêm CSS (dùng external CSS)
+- Chưa cần sử dụng các thuộc tính flex hoặc grid
+- Toàn trang: font sans-serif
+- Các thẻ <li> cần sắp trên hàng ngang thì dùng display:inline-block
+- Khi vừa load lên thì điền sẵn thông tin họ tên, ngày sinh, MSSV (điền vào ô điện thoại), email (mail trường)
+- Điều chỉnh các khoảng trống giữa các thành phần bằng margin và padding
+- Các thẻ <lable> của input/select/textarea required có dấu * màu đỏ
+- Các button có type hợp lý, có hiệu ứng đổi màu khi hover (như hình mẫu)
+- Khi người dùng submit mà có lỗi thì các input/select/textarea bị lỗi đổi màu (như hình mẫu)
