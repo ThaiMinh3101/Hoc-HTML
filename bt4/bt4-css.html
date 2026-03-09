@@ -33,38 +33,38 @@
                 <legend>Guest Information</legend>
                 <div class="form-group">
                     <label for="full-name" class="required">Full Name:</label>
-                    <input type="text" id="full-name" name="full_name" required minlength="3" maxlength="50">
+                    <input type="text" value="Thái Hoàng Minh" id="full-name" name="full_name" required minlength="3" maxlength="50">
                 </div>
                 <div class="form-group">
-                    <label for="dob">Date of Birth:</label>
-                    <input type="date" id="dob" name="date_of_birth" required min="1900-01-01" max="2008-01-01">
+                    <label for="dob" class="required">Date of Birth:</label>
+                    <input type="date" value="2007-01-31" id="dob" name="date_of_birth" required min="1900-01-01" max="2008-01-01">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required pattern="0[0-9]{9}" title="10 digits starting with 0">
+                    <label for="phone" class="required">Phone Number:</label>
+                    <input type="tel" value="0468251047" id="phone" name="phone" required pattern="0[0-9]{9}" title="10 digits starting with 0">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email" class="required">Email Address:</label>
+                    <input type="email" value="0468251047@caothang.edu.vn" id="email" name="email" required>
                 </div>
             </fieldset>
             <br>
             <fieldset>
                 <legend>Stay Details</legend>
                 <div class="form-group">
-                    <label for="check-in">Check-In Date:</label>
+                    <label for="check-in" class="required">Check-In Date:</label>
                     <input type="date" id="check-in" name="check_in_date" required min="2026-01-01">
                 </div>
                 <div class="form-group">
-                    <label for="check-out">Check-Out Date:</label>
+                    <label for="check-out" class="required">Check-Out Date:</label>
                     <input type="date" id="check-out" name="check_out_date" required min="2026-01-02">
                 </div>
                 <div class="form-group">
-                    <label for="rooms-num">Number of Rooms:</label>
+                    <label for="rooms-num" class="required">Number of Rooms:</label>
                     <input type="number" id="rooms-num" name="rooms-num" required min="1" max="5" step="1" value="1">
                 </div>
                 <div class="form-group">
-                    <label for="room-type">Preferred Room Type:</label>
+                    <label for="room-type" class="required">Preferred Room Type:</label>
                     <select id="room-type" name="room_type" required>
                         <optgroup label="Rooms">
                             <option value="standard">Standard Room - $150/night</option>
@@ -173,7 +173,7 @@
                 </p>
 
                 <div class="form-group">
-                    <label for="payment-method">Payment Method:</label>
+                    <label for="payment-method" class="required">Payment Method:</label>
                     <select id="payment-method" name="payment_method" required>
                         <option value="credit-card">Credit Card</option>
                         <option value="debit-card">Debit Card</option>
@@ -182,7 +182,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="card-type">Card Type:</label>
+                    <label for="card-type" class="required">Card Type:</label>
                     <select id="card-type" name="card_type" required>
                         <option value="visa">Visa</option>
                         <option value="mastercard">MasterCard</option>
@@ -192,24 +192,24 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="billing-address">Billing Address:</label>
+                    <label for="billing-address" class="required">Billing Address:</label>
                     <input type="text" id="billing-address" name="billing_address" required maxlength="100">
                 </div>
                 <div class="form-group">
-                    <label for="card-name">Name on Card:</label>
+                    <label for="card-name" class="required">Name on Card:</label>
                     <input type="text" id="card-name" name="card_name" required minlength="3" maxlength="50">
                 </div>
 
                 <div class="form-group">
-                    <label for="card-number">Card Number:</label>
+                    <label for="card-number" class="required">Card Number:</label>
                     <input type="text" id="card-number" name="card_number" required pattern="\d{16}" placeholder="1234 5678 9012 3456" title="16-digit card number">
                 </div>
                 <div class="form-group">
-                    <label for="exp-date">Expiration Date:</label>
+                    <label for="exp-date" class="required">Expiration Date:</label>
                     <input type="month" id="exp-date" name="exp_date" required min="2026-01">
                 </div>
                 <div class="form-group">
-                    <label for="cvv">CVV:</label>
+                    <label for="cvv" class="required">CVV:</label>
                     <input type="text" id="cvv" name="cvv" required pattern="\d{3}" placeholder="123" title="3-digit CVV" size="3">
                 </div>
             </fieldset>
