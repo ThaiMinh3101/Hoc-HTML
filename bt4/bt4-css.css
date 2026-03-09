@@ -1,7 +1,6 @@
-body, html{
-    background-color: white;
+body{
+    background-color: rgb(245 249 252);
     font-family: sans-serif;
-    text-align: center;
     margin: 0px;
     padding: 0px;
     
@@ -9,6 +8,7 @@ body, html{
 header{
     background-color: #0784b5;
     color: white;
+    text-align: center;
 }
 header h1{
     text-transform: uppercase;
@@ -37,9 +37,61 @@ header a{
     font-weight: bold;
     letter-spacing: 1px;
 }
-fieldset{
-    width: 1200px;
-    height: 300px;
-    margin: 30px auto;
+
+main{
+    margin:0 150px 0 150px;
+}
+main a{
+    color: #006994;
+    text-decoration: none;
+}
+main h1{
+    color: #006994;
+}
+form {
+    background-color: #f0f8ff;
+    padding: 10px;
     border-radius: 10px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+}
+fieldset {
+    border-radius: 10px;
+}
+legend{
+    color: #0a8ec2;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin:auto;
+    padding: 10px;
+}
+.form-group {
+    margin-bottom: 15px;
+    border-radius: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-group input {
+    width: 100%;
+    padding: 8px 0 8px 0;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+.required::after {
+    content: "*";
+    color: red;
+}
+
+
+footer {
+    background-color: #004a74;
+    font-size: 15px;
+    color:white;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    margin-top: 50px;
 }
