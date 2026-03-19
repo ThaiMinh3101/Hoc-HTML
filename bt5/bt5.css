@@ -1,4 +1,108 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #555;
+}
+:root { /*biến màu */
+    --maucamchudao: #f26d24; /* Màu cam chủ đạo */
+    --nentoi: #2b2e35;      /* Nền tối */
+    --nentoidam: #1a1b1f;    /* Nền tối đậm */
+    --nensang: #f8f9fa;     /* Nền sáng */
+    --phongchu: 'Emblema One', cursive; /* Phông chữ phong cách */
+}
+header {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--nentoi);
+}
+header #logo {
+    background-color: var(--maucamchudao);
+    color: white;
+    padding: 20px 40px;
+    font-family: var(--phongchu);
+    font-size: 2.5rem;
+    font-style: italic;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+header #info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+header #info a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+header nav {
+    width: 100%;
+    background-color: var(--nentoidam);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+    color: #fff;
+}
+header nav ul li:hover {
+    color: var(--maucamchudao);
+}
+header nav ul select {
+    background: transparent;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+header nav button {
+    background-color: var(--maucamchudao);
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+header nav button:hover {
+    background-color: #d15a1a;
+}
+
+.john-doe {
+    background-color: var(--nentoi);
+    padding: 80px 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+    color: #ccc;
+}
+.john-doe h1 {
+    grid-column: 1 / 4;
+    text-align: center;
+    font-family: var(--phongchu);
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 40px;
+    letter-spacing: 5px;
+}
+.john-doe img {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+}
+

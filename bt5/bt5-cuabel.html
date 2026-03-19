@@ -1,60 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link href="bt5.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css-cuabel.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <h1>
             CHEFER
         </h1>
         <nav>
+            <div>
+                <a href="info@example.com">
+                    <i class="fa-solid fa-envelope"></i>
+                    info@example.com
+                </a>
+                <a href="0123456789">
+                    <i class="fa-solid fa-phone"></i>
+                    +12 345 6789
+                </a>
+            </div>
             <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Menu</li>
-                <li>Chefs</li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Chefs</a></li>
+                <select>
+                    <option> pages </option>
+                </select>
+                <p><a href="#">Contact</a></p>
+                <button value="button"><i>Buy Pro Version</i></button>
             </ul>
-            <select>
-                <option> pages </option>
-            </select>
-            <p>Contact</p>
-            <button value="button">Buy Pro Version</button>
         </nav>
-        <div><a href="info@example.com">info@example.com</a>
-            <a href="0123456789">+12 345 6789 </a>
-        </div>
     </header>
     <main>
-        <form class="hero">
         <h1>John Doe</h1>
-        <img src="/img/hero-2.jpg" alt="img error">
-        <div>
-            Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod.
-        </div>
-        <img src="/img/hero-1.jpg" alt="img error">
-        <div>
-            Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod.
-        </div>
-        <img src="/img/hero-3.jpg" alt="img error">
+        <form class="hero">
+            <div>
+                <img src="img/hero-2.jpg" alt="img error">
+                <i class="fa-solid fa-arrow-down"></i>
+                <p>
+                    Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos
+                    sadipscing
+                    labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et
+                    tempor consetetur takimata eirmod.
+                </p>
+            </div>
+            <img src="img/hero-1.jpg" alt="img error">
+            <div>
+                <p>
+                    Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos
+                    sadipscing
+                    labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et
+                    tempor consetetur takimata eirmod.
+                </p>
+                <i class="fa-solid fa-arrow-up"></i>
+                <img src="img/hero-3.jpg" alt="img error">
+            </div>
         </form>
         <form action="" class="about">
-            <img src="/img/about.jpg" alt="">
-            <p>ABOUT US</p>
-            <h1>Cooking Together With The Expert</h1>
-            <p> 
-                Nonumy erat diam duo labore clita. Sit magna ipsum dolor sed ea duo at ut. Tempor sit lorem sit magna ipsum duo. Sit eos dolor ut sea rebum, diam sea rebum lorem kasd ut ipsum dolor est ipsum. Et stet amet justo amet clita erat, ipsum sed at ipsum eirmod labore lorem. 
-            </p>
-            <nav id="master chefs">
-                <img src="/img/feature-1.png" alt="">
-                <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore.</p>
-            </nav>
-            <nav id="quality food">
-                <img src="/img/feature-3.png" alt="">
-                <P>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore.</P>
-            </nav>
+            <img src="img/about.jpg" alt="">
+            <div>
+                <p>ABOUT US</p>
+                <nav>
+                    <h1>Cooking Together With The Expert</h1>
+                    <p id="div">
+                        Nonumy erat diam duo labore clita. Sit magna ipsum dolor sed ea duo at ut. Tempor sit lorem sit
+                        magna
+                        ipsum duo. Sit eos dolor ut sea rebum, diam sea rebum lorem kasd ut ipsum dolor est ipsum. Et
+                        stet
+                        amet
+                        justo amet clita erat, ipsum sed at ipsum eirmod labore lorem.
+                    </p>
+                </nav>
+                <div id="smallbox">
+                    <nav id="masterchefs">
+                        <div class="cercle1"></div>
+                        <img src="img/feature-1.png" alt="">
+                        <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor
+                            voluptua
+                            sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore.</p>
+                    </nav>
+                    <nav id="quality-food">
+                        <div class="cercle2"></div>
+                        <img src="img/feature-3.png" alt="">
+                        <P>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor
+                            voluptua
+                            sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore.</P>
+                    </nav>
+                </div>
+            </div>
         </form>
         <form action="" class="our menu">
             <h1>Hand Craft More Than Meals</h1>
@@ -66,33 +105,33 @@
                 </ul>
             </nav>
             <div id=" menu">
-            <img src="/img/menu-1.jpg" alt="">
-            <img src="/img/menu-2.jpg" alt="">
-            <img src="/img/menu-3.jpg" alt="">
-            <img src="/img/menu-4.jpg" alt="">
-            <img src="/img/menu-5.jpg" alt="">
-            <img src="/img/menu-6.jpg" alt="">
-            <img src="/img/menu-7.jpg" alt="">
-            <img src="/img/menu-8.jpg" alt="">
+                <img src="img/menu-1.jpg" alt="">
+                <img src="img/menu-2.jpg" alt="">
+                <img src="img/menu-3.jpg" alt="">
+                <img src="img/menu-4.jpg" alt="">
+                <img src="img/menu-5.jpg" alt="">
+                <img src="img/menu-6.jpg" alt="">
+                <img src="img/menu-7.jpg" alt="">
+                <img src="img/menu-8.jpg" alt="">
             </div>
         </form>
         <form action="" class="expert chefs">
             <h1>Let's Meet The Expert</h1>
-            <img src="/img/team-1.jpg" alt="">
-                <p>John Deo</p>
-                <p>MASTER CHEFS</p>
-            </img>
-            <img src="/img/team-1.jpg" alt="">
-                <p>John Deo</p>
-                <p>ASSISTANT</p>
-            </img>
-            <img src="/img/team-3.jpg" alt="">
-                <p>John Deo</p>
-                <p>ASSISTANT</p>
-            </img>
+            <img src="img/team-1.jpg" alt="">
+            <p>John Deo</p>
+            <p>MASTER CHEFS</p>
+            <img>
+            <img src="img/team-1.jpg" alt="">
+            <p>John Deo</p>
+            <p>ASSISTANT</p>
+            <img>
+            <img src="img/team-3.jpg" alt="">
+            <p>John Deo</p>
+            <p>ASSISTANT</p>
+            <img>
         </form>
         <form action="" class="testimonial">
-            <img src="/img/testimonial.jpg" alt="">
+            <img src="img/testimonial.jpg" alt="">
             <div id="text">
                 <h2>
 
@@ -100,25 +139,25 @@
                 <p>
 
                 </p>
-                <img src="/img/testimonial-1.jpg" alt="">
+                <img src="img/testimonial-1.jpg" alt="">
                 <p>Client Name</p>
                 <p>PROFESSION</p>
             </div>
         </form>
         <form action="" class="our blog">
-            <h1>Latest Articles From Good Blog</h1> 
+            <h1>Latest Articles From Good Blog</h1>
             <div>
-                <img src="/img/menu-3.jpg" alt="">
+                <img src="img/menu-3.jpg" alt="">
                 <p>01 JANUARY 2045</p>
                 <p>Sed amet tempor amet sit kard sea lorem</p>
             </div>
             <div>
-                <img src="/img/menu-5.jpg" alt="">
+                <img src="img/menu-5.jpg" alt="">
                 <p>01 JANUARY 2045</p>
                 <p>Sed amet tempor amet sit kard sea lorem</p>
             </div>
             <div>
-                <img src="/img/menu-7.jpg" alt="">
+                <img src="img/menu-7.jpg" alt="">
                 <p>01 JANUARY 2045</p>
                 <p>Sed amet tempor amet sit kard sea lorem</p>
             </div>
@@ -165,9 +204,10 @@
             </h3>
             <p>SUBSCIBE OUR NEWSLETTER</p>
             <p>Amet justo dolor rebum lorem sit stet sea justo kasd</p>
-            <input type="text" placeholder="Your Email" >
-            <button id = "last button"> Sign Up </button>
+            <input type="text" placeholder="Your Email">
+            <button id="last button"> Sign Up </button>
         </div>
     </form>
 </body>
+
 </html>
