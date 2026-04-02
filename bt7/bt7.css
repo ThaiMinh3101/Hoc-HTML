@@ -1,6 +1,9 @@
 .bg-img1 {
     background-image: url("img/carousel-2.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: cover; /* Đảm bảo ảnh phủ đầy phần tử mà không bị méo */
+    background-position: center; /* Căn giữa ảnh trong phần tử */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+}
+.four-img img {
+    object-fit: cover; /* Giúp ảnh không bị méo khi ép kích thước */
 }

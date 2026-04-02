@@ -56,35 +56,63 @@
     </div>
     </section>
 
-    <section class="four-img py-5">
-        <div class="container">
+    <section class="about-us py-5"> <!-- py-5 là padding trên dưới xa ra -->
+        <div class="container"> <!-- container là để căn giữa và có padding 2 bên -->
+
             <div class="row gy-4 align-items-center justify-content-center"> 
-                <div class="col-12 col-md-6 col-lg-4">
+                <!-- d-flex: là display flex, justify-content-end: là căn phải, align-items-center: là căn giữa theo chiều dọc -->
+                <div class="col-6 col-lg-6">
                     <img src="img/about-1.jpg" alt="" class="img-fluid w-100 mb-4"> <!-- mb-4 là margin bottom 4 -->
                     <img src="img/about-3.jpg" alt="" class="img-fluid w-50 d-block ms-auto"> 
                     <!-- img-fluid là để ảnh tự động rộng vừa đủ, w-100 là width 100%, rounded là bo góc -->
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-6 col-lg-6">
                     <img src="img/about-4.jpg" alt="" class="img-fluid w-50 ms-auto mb-4">
                     <!-- d-block là để hiển thị block, ms-auto là margin left auto để căn phải -->
                     <img src="img/about-2.jpg" alt="" class="img-fluid w-100">
             </div>
-        </div>
-    </section>
+            
+            <!--tiêu đề-->
+            <h6 class="text-success">About Us</h6>
+            <h1 class="display-5 mb-4">The success history of TEA House in 25 years</h1>
 
-    <section class="about-us py-5"> <!-- py-5 là padding trên dưới xa ra -->
-        <div class="container"> <!-- container là để căn giữa và có padding 2 bên -->
             <div class="row gy-4"> <!-- gy-4 là để tạo khoảng cách giữa các hàng -->
-                <div class="col-12 col-md-6 col-lg-4"> <!-- col-12 là cho mobile, col-md-6 là trên tablet, col-lg-4 là trên desktop -->
-                    <div class="py-3 border bg-light text-center">Nội dung 1</div> <!-- py-3 là để tạo padding trên dưới-->
-                    <!-- border là để tạo viền, bg-light là để tạo nền sáng, text-center là để căn giữa chữ -->
+
+                <!--dòng nội dung và ảnh 1-->
+                <div class="col-12">
+                <!-- col-12 là cho mobile, col-md-6 là trên tablet, col-lg-4 là trên desktop -->
+                    <div class="row align-items-center">
+                        <div class="col-3">
+                            <img src="img/about-5.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-9">
+                            <div class="py-3 border bg-light text-center">
+                                <div class="fw-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, esse.</div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis vel consequuntur rerum magni optio <br> accusamus quas minus. 
+                                Id totam non, nemo ullam nulla nam numquam. Ex nostrum esse ipsum iusto!</p>
+                            </div>
+                            <!-- py-3 là để tạo padding trên dưới-->
+                        </div>
+                    </div> 
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="py-3 border bg-light text-center">Nội dung 2</div>
+
+                <!--dòng nội dung và ảnh 2-->
+                <div class="col-12">
+                    <div class="row align-items-center">
+                        <div class="col-9">
+                            <div class="py-3 border bg-light text-center">
+                                <div class="fw-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, esse.</div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis vel consequuntur rerum magni optio <br> accusamus quas minus. 
+                                Id totam non, nemo ullam nulla nam numquam. Ex nostrum esse ipsum iusto!</p>
+                            </div>
+                            <!-- img-fluid là để ảnh tự động rộng vừa đủ,-->
+                        </div>
+                        <div class="col-3">
+                            <img src="img/about-6.jpg" alt="" class="img-fluid">
+                        </div>
+                    </div> 
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="py-3 border bg-light text-center">Nội dung 3</div>
-                </div>
+            </div>
         </div>
     </section>
 
