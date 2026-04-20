@@ -1,0 +1,54 @@
+html::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scrollbar-width: none;
+}
+
+.feature-card {
+    background-color: #8fbc8f;
+    position: relative;
+    border-radius: 4px;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.feature-card::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+}
+
+.feature-card i {
+    color: #1a2406;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.feature-card h4 {
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.feature-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(25deg);
+}
+
+.feature-card i {
+    font-size: 40px;
+}
