@@ -1,4 +1,4 @@
-.background {
+.background-1 {
     background-image: url(img/hero.jpg);
     background-size: cover; /* Đảm bảo ảnh phủ đầy phần tử mà không bị méo */
     background-position: center; /* Căn giữa ảnh trong phần tử */
