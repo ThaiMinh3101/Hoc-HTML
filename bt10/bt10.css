@@ -1,0 +1,16 @@
+.background {
+    background-image: url(img/hero.jpg);
+    background-size: cover; /* Đảm bảo ảnh phủ đầy phần tử mà không bị méo */
+    background-position: center; /* Căn giữa ảnh trong phần tử */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+}
+.text-pet { 
+    color: #7ab730 !important;
+}
+.bg-pet { 
+    background-color: #7ab730 !important; 
+    color: white !important; 
+}
+.border-start-pet { 
+    border-left: 4px solid #7ab730 !important; 
+}

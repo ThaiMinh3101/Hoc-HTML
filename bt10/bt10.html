@@ -8,14 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="bt10.css"> <!--CSS nên để dưới để tạo độ ưu tiên hơn bootstrap khi cần css cái gì đó-->
     <title>Document</title>
-    <style>
-        .background {
-            background-image: url(img/hero.jpg);
-            background-size: cover; /* Đảm bảo ảnh phủ đầy phần tử mà không bị méo */
-            background-position: center; /* Căn giữa ảnh trong phần tử */
-            background-repeat: no-repeat; /* Không lặp lại ảnh */
-        }
-    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -73,9 +65,9 @@
         <div class="container">
             <div class="row gy-4 ">
                 <div class="col-12 col-lg-7">
-                    <h1>PET SHOP</h1>
-                    <h3>MAKE YOUR PETS HAPPY</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas accusantium aut perferendis? Aut eius incidunt minima amet voluptas quidem sint omnis odit hic, nam beatae, nulla doloribus, natus assumenda commodi!</p>
+                    <h1 class="fw-bold fs-3">PET SHOP</h1>
+                    <h3 class="my-4 text-light fw-bold">MAKE YOUR PETS HAPPY</h3>
+                    <p class=" text-light">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas accusantium aut perferendis? Aut eius incidunt minima amet voluptas quidem sint omnis odit hic, nam beatae, nulla doloribus, natus assumenda commodi!</p>
                 </div>
                 <div class="d-flex flex-wrap gap-3 align-items-center">
                     <a href="#" class="btn border-light text-light rounded-0 px-4 my-3 mx-3">READ NOW</a>
@@ -85,22 +77,75 @@
             </div>
         </div>
     </section>
-    
-    <section class="about-us py-5">
+
+   <section class="part-3 py-5">
         <div class="container">
-            <div class="row gy-4">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="py-3 border bg-light text-center">Nội dung 1</div>
+            <div class="row gy-4 align-items-center">
+                
+                <div class="col-lg-5">
+                    <img src="img/about.jpg" alt="About Pets" class="img-fluid rounded">
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="py-3 border bg-light text-center">Nội dung 2</div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="py-3 border bg-light text-center">Nội dung 3</div>
+
+                <div class="col-lg-7 ps-lg-5">
+                    <div class="ps-3 mb-4" style="border-left: 4px solid #7ab730;">
+                        <h6 class="fw-bold text-uppercase mb-2" style="color: #7ab730;">About Us</h6>
+                        <h1 class="display-6 fw-bold text-uppercase mb-0">We Keep Your Pets Happy All Time</h1>
+                    </div>
+
+                    <p class="fs-5 text-dark mb-4 fw-medium">
+                        Diam dolor diam ipsum tempor sit. Clita erat ipsum et lorem stet no labore lorem sit clita duo justo magna dolore
+                    </p>
+
+                    <div class="bg-light p-4 p-md-5">
+                        <ul class="nav nav-pills mb-4"> 
+                            <li class="nav-item me-2"> <button class="nav-link text-white fw-bold px-4 py-2 rounded-0 text-uppercase" style="background-color: #7ab730;" type="button">Our Mission</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link bg-transparent fw-bold px-4 py-2 rounded-0 text-uppercase" style="color: #7ab730;" type="button">Our Vission</button>
+                            </li>
+                        </ul>
+                        <p class="text-secondary mb-0" style="line-height: 1.8; font-size: 1.1rem;"> 
+                            Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="Services py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="ps-3 mb-4" style="border-left: 4px solid #7ab730;">
+                        <h6 class="fw-bold text-uppercase mb-2" style="color: #7ab730;">SERVICES</h6>
+                        <h1 class="display-6 fw-bold text-uppercase mb-0">OUR EXCELLENT PET CARE SERVICES</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row gy-4">
+                <div class="col-12 col-md-6">
+                    <div class="py-3 border bg-light text-center">Nội dung 1</div> 
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="py-3 border bg-light text-center">Nội dung 2</div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="py-3 border bg-light text-center">Nội dung 3</div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="py-3 border bg-light text-center">Nội dung 4</div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="py-3 border bg-light text-center">Nội dung 5</div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="py-3 border bg-light text-center">Nội dung 6</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
