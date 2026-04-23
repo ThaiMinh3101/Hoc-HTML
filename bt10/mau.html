@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop Template</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary: #7ab730;
+            --dark: #252525;
+            --light: #f4f4f4;
+            --muted: #8a8a8a;
+        }
+
+        body {
+            background: #efefef;
+            color: #444;
+            font-family: Arial, sans-serif;
+        }
+
+        .section-title {
+            border-left: 3px solid var(--primary);
+            padding-left: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title small {
+            display: block;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.68rem;
+            font-weight: 700;
+        }
+
+        .section-title h2 {
+            margin: 0;
+            color: #333;
+            font-size: clamp(1.5rem, 2.4vw, 2.75rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .top-bar {
+            background: #fff;
+            font-size: 0.85rem;
+        }
+
+        .top-bar .item i {
+            color: var(--primary);
+            margin-right: 0.4rem;
+        }
+
+        .navbar {
+            background: #fff;
+        }
+
+        .navbar .nav-link {
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #333;
+            font-size: 0.78rem;
+        }
+
+        .navbar .nav-link.active,
+        .navbar .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .btn-primary-custom {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+        }
+
+        .btn-primary-custom:hover {
+            background: #6aa129;
+            border-color: #6aa129;
+            color: #fff;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(20, 20, 20, 0.15), rgba(20, 20, 20, 0.15)), url("./img/hero.jpg") center/cover no-repeat;
+            min-height: 290px;
+            color: #fff;
+        }
+
+        .hero h1 {
+            color: #2f2f2f;
+            text-transform: uppercase;
+            font-size: clamp(2rem, 4vw, 4rem);
+            font-weight: 800;
+        }
+
+        .hero h3 {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: clamp(1.2rem, 2.2vw, 2.2rem);
+        }
+
+        .play-btn {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: none;
+            background: #fff;
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-box,
+        .service-card,
+        .product-card,
+        .price-card,
+        .blog-card {
+            background: #f7f7f7;
+        }
+
+        .about-tabs .tab {
+            background: #ededed;
+            color: #8d8d8d;
+            text-transform: uppercase;
+            border: 0;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.7rem 1rem;
+            width: 100%;
+        }
+
+        .about-tabs .tab.active {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .service-card i {
+            font-size: 1.9rem;
+            color: var(--primary);
+        }
+
+        .service-card h6,
+        .product-card h6 {
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 0.25rem;
+        }
+
+        .read-more {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .price {
+            background: var(--primary);
+            color: #fff;
+            font-weight: 800;
+            text-align: center;
+            font-size: 2.2rem;
+            line-height: 1;
+            padding: 0.6rem;
+        }
+
+        .price.dark {
+            background: #212529;
+        }
+
+        .price small {
+            font-size: 0.9rem;
+            vertical-align: super;
+        }
+
+        .check {
+            color: #9fcf65;
+        }
+
+        .cross {
+            color: #ef7878;
+        }
+
+        .offer {
+            background: linear-gradient(rgba(22, 22, 22, 0.25), rgba(22, 22, 22, 0.25)), url("./img/offer.jpg") center/cover no-repeat;
+            color: #fff;
+        }
+
+        .offer h2 {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .team-card h6 {
+            margin-top: 0.6rem;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            color: #333;
+            font-weight: 800;
+        }
+
+        .testimonial {
+            background: url("./img/testimonial.jpg") center/cover no-repeat;
+            min-height: 260px;
+        }
+
+        .testimonial .box {
+            background: #fff;
+            max-width: 560px;
+        }
+
+        .footer {
+            background: #f2f2f2;
+            color: #666;
+        }
+
+        .footer h6 {
+            border-left: 2px solid var(--primary);
+            padding-left: 8px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .footer-link {
+            color: #666;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            background: #1f1f1f;
+            color: #e8e8e8;
+            font-size: 0.8rem;
+        }
+
+        .custom-control {
+            width: 24px;
+            height: 24px;
+            background: var(--primary);
+            color: #fff;
+            border: 0;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="top-bar d-none d-lg-block border-bottom">
+        <div class="container py-2">
+            <div class="row g-3">
+                <div class="col-lg-4 item"><i class="bi bi-geo-alt"></i>123 Street, New York, USA</div>
+                <div class="col-lg-4 item"><i class="bi bi-envelope"></i>info@example.com</div>
+                <div class="col-lg-4 item"><i class="bi bi-headset"></i>+012 345 6789</div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg border-bottom">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-dark" href="#">
+                <i class="fa-solid fa-house-chimney text-success"></i> PET SHOP
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link active px-lg-3" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3" href="#">Service</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3" href="#">Product</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle px-lg-3" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Pricing</a></li>
+                            <li><a class="dropdown-item" href="#">Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mt-2 mt-lg-0">
+                        <a class="btn btn-primary-custom rounded-0 ms-lg-3 px-4" href="#">Contact <i class="fa-solid fa-arrow-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero d-flex align-items-center">
+        <div class="container py-5">
+            <div class="col-12 col-lg-7">
+                <h1>Pet Shop</h1>
+                <h3>Make Your Pets Happy</h3>
+                <p class="text-white-50 mb-4">Dolore tempor clita lorem rebum kasd eirmod dolore eos kasd. Kasd clita ea justo est sed kasd erat clita sed.</p>
+                <div class="d-flex flex-wrap gap-3 align-items-center">
+                    <a href="#" class="btn btn-outline-light rounded-0 px-4">Read More</a>
+                    <button class="play-btn" type="button"><i class="fa-solid fa-play"></i></button>
+                    <span class="fw-semibold">Play Video</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="py-5">
+            <div class="container">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-4">
+                        <img src="./img/about.jpg" class="img-fluid" alt="about">
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="section-title">
+                            <small>About Us</small>
+                            <h2>We Keep Your Pets Happy All Time</h2>
+                        </div>
+                        <p class="fw-semibold mb-3">Diam dolor ipsum tempor sit. Clita erat ipsum et lorem stet no labore lorem sit clita duo justo magna dolore.</p>
+                        <div class="about-box p-3">
+                            <div class="row g-2 about-tabs mb-3">
+                                <div class="col-6"><button class="tab active">Our Mission</button></div>
+                                <div class="col-6"><button class="tab">Our Vision</button></div>
+                            </div>
+                            <p class="mb-0 text-secondary">Tempor erat elitr rebum at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos magna clita. Clita duo justo et tempor ipsum et, sit sanctus tempor sit ipsum et.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pb-5">
+            <div class="container">
+                <div class="section-title">
+                    <small>Services</small>
+                    <h2>Our Excellent Pet Care Services</h2>
+                </div>
+                <div class="row g-3">
+                    <div class="col-12 col-sm-6">
+                        <div class="service-card p-3 h-100">
+                            <i class="bi bi-house-heart"></i>
+                            <h6 class="mt-2">Pet Boarding</h6>
+                            <p class="small text-secondary">Kasd dolor no lorem sit tempor at justo rebum rebum stet justo est dolor amet sit.</p>
+                            <a class="read-more" href="#">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="service-card p-3 h-100">
+                            <i class="bi bi-basket2"></i>
+                            <h6 class="mt-2">Pet Feeding</h6>
+                            <p class="small text-secondary">Kasd dolor no lorem sit tempor at justo rebum rebum stet justo est dolor amet sit.</p>
+                            <a class="read-more" href="#">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="service-card p-3 h-100">
+                            <i class="bi bi-scissors"></i>
+                            <h6 class="mt-2">Pet Grooming</h6>
+                            <p class="small text-secondary">Kasd dolor no lorem sit tempor at justo rebum rebum stet justo est dolor amet sit.</p>
+                            <a class="read-more" href="#">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="service-card p-3 h-100">
+                            <i class="bi bi-emoji-smile"></i>
+                            <h6 class="mt-2">Pet Training</h6>
+                            <p class="small text-secondary">Kasd dolor no lorem sit tempor at justo rebum rebum stet justo est dolor amet sit.</p>
+                            <a class="read-more" href="#">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="service-card p-3 h-100">
+                            <i class="bi bi-activity"></i>
+                            <h6 class="mt-2">Pet Exercise</h6>
+                            <p class="small text-secondary">Kasd dolor no lorem sit tempor at justo rebum rebum stet justo est dolor amet sit.</p>
+                            <a class="read-more" href="#">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="service-card p-3 h-100">
+                            <i class="bi bi-shield-check"></i>
+                            <h6 class="mt-2">Pet Treatment</h6>
+                            <p class="small text-secondary">Kasd dolor no lorem sit tempor at justo rebum rebum stet justo est dolor amet sit.</p>
+                            <a class="read-more" href="#">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pb-5">
+            <div class="container">
+                <div class="section-title">
+                    <small>Products</small>
+                    <h2>Products For Your Best Friends</h2>
+                </div>
+                <div class="row g-3">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="product-card p-3 text-center h-100">
+                            <img src="./img/product-1.png" alt="product 1" class="img-fluid mb-3">
+                            <h6>Quality Pet Foods</h6>
+                            <p class="fw-bold text-success mb-0">$199.00</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="product-card p-3 text-center h-100">
+                            <img src="./img/product-2.png" alt="product 2" class="img-fluid mb-3">
+                            <h6>Quality Pet Foods</h6>
+                            <p class="fw-bold text-success mb-0">$199.00</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="product-card p-3 text-center h-100">
+                            <img src="./img/product-3.png" alt="product 3" class="img-fluid mb-3">
+                            <h6>Quality Pet Foods</h6>
+                            <p class="fw-bold text-success mb-0">$199.00</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="product-card p-3 text-center h-100">
+                            <img src="./img/product-4.png" alt="product 4" class="img-fluid mb-3">
+                            <h6>Quality Pet Foods</h6>
+                            <p class="fw-bold text-success mb-0">$199.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <button class="custom-control me-1"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="custom-control"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="offer py-5 mb-5">
+            <div class="container py-2">
+                <div class="section-title">
+                    <small class="text-white">Special Offer</small>
+                    <h2>Save 50% On All Items Your First Order</h2>
+                </div>
+                <p class="col-lg-7 text-white-50">Eirmod lorem ipsum no diam sit lorem, dolor ea sit dolore sed. Ipsum et dolor ipsum tempor justo dolore sit. Sed duo dolores amet est. Sed et lorem ipsum eos.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="#" class="btn btn-light rounded-0 px-4">Shop Now</a>
+                    <a href="#" class="btn btn-outline-light rounded-0 px-4">Read More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="pb-5">
+            <div class="container">
+                <div class="section-title">
+                    <small>Pricing Plan</small>
+                    <h2>Competitive Pricing For Pet Services</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-12 col-lg-4">
+                        <div class="price-card text-center h-100">
+                            <div class="py-4">
+                                <h4 class="fw-bold text-uppercase mb-0">Basic</h4>
+                                <small class="text-muted">The Best Choice</small>
+                            </div>
+                            <div class="price"><small>$</small>49<small>/Mo</small></div>
+                            <div class="p-4">
+                                <p class="small mb-2">HTML5 & CSS3 <i class="fa-solid fa-check check float-end"></i></p>
+                                <p class="small mb-2">Bootstrap v5 <i class="fa-solid fa-check check float-end"></i></p>
+                                <p class="small mb-2">Responsive Layout <i class="fa-solid fa-check check float-end"></i></p>
+                                <p class="small mb-4">Browsers Compatibility <i class="fa-solid fa-xmark cross float-end"></i></p>
+                                <a href="#" class="btn btn-primary-custom rounded-0 px-4">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="price-card text-center h-100">
+                            <div class="py-4">
+                                <h4 class="fw-bold text-uppercase mb-0">Standard</h4>
+                                <small class="text-muted">The Best Choice</small>
+                            </div>
+                            <div class="price dark"><small>$</small>99<small>/Mo</small></div>
+                            <div class="p-4">
+                                <p class="small mb-2">HTML5 & CSS3 <i class="fa-solid fa-check check float-end"></i></p>
+                                <p class="small mb-2">Bootstrap v5 <i class="fa-solid fa-check check float-end"></i></p>
+                                <p class="small mb-2">Responsive Layout <i class="fa-solid fa-check check float-end"></i></p>
+                                <p class="small mb-4">Browsers Compatibility <i class="fa-solid fa-xmark cross float-end"></i></p>
+                                <a href="#" class="btn btn-primary-custom rounded-0 px-4">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="price-card text-center h-100">
+                            <div class="py-4">
+                                <h4 class="fw-bold text-uppercase mb-0">Extended</h4>
+                                <small class="text-muted">The Best Choice</small>
+                            </div>
+                            <div class="price"><small>$</small>149<small>/Mo</small></div>
+                            <div class="p-4">
+                                <p class="small mb-2">HTML5 & CSS3 <i class="fa-solid fa-check check float-end"></i></p>
+                                <p class="small mb-2">Bootstrap v5 <i class="fa-solid fa-check check float-end"></i></p>
+                                <p class="small mb-2">Responsive Layout <i class="fa-solid fa-check check float-end"></i></p>
+                                <p class="small mb-4">Browsers Compatibility <i class="fa-solid fa-check check float-end"></i></p>
+                                <a href="#" class="btn btn-primary-custom rounded-0 px-4">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pb-5">
+            <div class="container">
+                <div class="section-title">
+                    <small>Team Members</small>
+                    <h2>Qualified Pets Care Professionals</h2>
+                </div>
+                <div class="row g-3 align-items-stretch">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="team-card bg-light p-2 h-100 text-center">
+                            <img src="./img/team-1.jpg" alt="team 1" class="img-fluid">
+                            <h6>Full Name</h6>
+                            <small class="text-muted">Designation</small>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="team-card bg-light p-2 h-100 text-center">
+                            <img src="./img/team-2.jpg" alt="team 2" class="img-fluid">
+                            <h6>Full Name</h6>
+                            <small class="text-muted">Designation</small>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="team-card bg-light p-2 h-100 text-center">
+                            <img src="./img/team-3.jpg" alt="team 3" class="img-fluid">
+                            <h6>Full Name</h6>
+                            <small class="text-muted">Designation</small>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="team-card bg-light p-2 h-100 text-center">
+                            <img src="./img/team-4.jpg" alt="team 4" class="img-fluid">
+                            <h6>Full Name</h6>
+                            <small class="text-muted">Designation</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial py-5 mb-5 d-flex align-items-center">
+            <div class="container d-flex justify-content-center">
+                <div class="box p-4">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="./img/testimonial-1.jpg" alt="user" width="64" height="64">
+                        <div>
+                            <p class="small text-secondary mb-1">Dolores sed duo tempor justo dolore sit amet lorem kasd labore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor est.</p>
+                            <h6 class="fw-bold text-uppercase mb-0">Client Name</h6>
+                            <small class="text-muted">Profession</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pb-5">
+            <div class="container">
+                <div class="section-title">
+                    <small>Latest Blog</small>
+                    <h2>Latest Articles From Our Blog Post</h2>
+                </div>
+                <div class="row g-3">
+                    <div class="col-12 col-lg-6">
+                        <div class="blog-card p-3 h-100">
+                            <div class="row g-3">
+                                <div class="col-5 col-sm-4"><img src="./img/blog-1.jpg" alt="blog 1" class="img-fluid"></div>
+                                <div class="col-7 col-sm-8">
+                                    <small class="text-muted d-block mb-1"><i class="fa-regular fa-calendar"></i> 01, Jan, 2045</small>
+                                    <h6 class="text-uppercase fw-bold">Dolor Sit Magna Rebum Clita Rebum Dolor</h6>
+                                    <p class="small text-secondary mb-2">Ipsum sed lorem amet dolor sit amet eos. Clita duo ipsum amet et dolor kasd amet duo justo dolore.</p>
+                                    <a class="read-more" href="#">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="blog-card p-3 h-100">
+                            <div class="row g-3">
+                                <div class="col-5 col-sm-4"><img src="./img/blog-2.jpg" alt="blog 2" class="img-fluid"></div>
+                                <div class="col-7 col-sm-8">
+                                    <small class="text-muted d-block mb-1"><i class="fa-regular fa-calendar"></i> 01, Jan, 2045</small>
+                                    <h6 class="text-uppercase fw-bold">Dolor Sit Magna Rebum Clita Rebum Dolor</h6>
+                                    <p class="small text-secondary mb-2">Ipsum sed lorem amet dolor sit amet eos. Clita duo ipsum amet et dolor kasd amet duo justo dolore.</p>
+                                    <a class="read-more" href="#">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer pt-5">
+        <div class="container">
+            <div class="row g-4 pb-4">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h6>Get In Touch</h6>
+                    <p class="small mb-3">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor.</p>
+                    <p class="small mb-2"><i class="bi bi-geo-alt text-success me-2"></i>123 Street, New York, USA</p>
+                    <p class="small mb-2"><i class="bi bi-envelope text-success me-2"></i>info@example.com</p>
+                    <p class="small mb-0"><i class="bi bi-telephone text-success me-2"></i>+012 345 67890</p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h6>Quick Links</h6>
+                    <a href="#" class="footer-link">Home</a>
+                    <a href="#" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Our Services</a>
+                    <a href="#" class="footer-link">Meet The Team</a>
+                    <a href="#" class="footer-link">Latest Blog</a>
+                    <a href="#" class="footer-link">Contact Us</a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h6>Popular Links</h6>
+                    <a href="#" class="footer-link">Home</a>
+                    <a href="#" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Our Services</a>
+                    <a href="#" class="footer-link">Meet The Team</a>
+                    <a href="#" class="footer-link">Latest Blog</a>
+                    <a href="#" class="footer-link">Contact Us</a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h6>Newsletter</h6>
+                    <div class="d-flex mb-3">
+                        <input type="email" class="form-control rounded-0" placeholder="Your Email">
+                        <button class="btn btn-primary-custom rounded-0 ms-2">Sign Up</button>
+                    </div>
+                    <p class="text-uppercase small fw-bold mb-2 text-muted">Follow Us</p>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-outline-success btn-sm rounded-0"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="btn btn-outline-success btn-sm rounded-0"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-success btn-sm rounded-0"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="btn btn-outline-success btn-sm rounded-0"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="small text-center pb-3">
+                <a href="#" class="footer-link d-inline me-2">Terms & Conditions</a>|
+                <a href="#" class="footer-link d-inline mx-2">Privacy Policy</a>|
+                <a href="#" class="footer-link d-inline mx-2">Customer Support</a>|
+                <a href="#" class="footer-link d-inline mx-2">Payments</a>|
+                <a href="#" class="footer-link d-inline ms-2">FAQs</a>
+            </div>
+        </div>
+        <div class="copyright py-3">
+            <div class="container d-flex flex-column flex-lg-row justify-content-between text-center text-lg-start">
+                <div>&copy; Your Site Name. All Rights Reserved.</div>
+                <div>Designed by HTML Codex</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

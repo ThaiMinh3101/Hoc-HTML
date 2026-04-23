@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="bt10.css"> <!--CSS nên để dưới để tạo độ ưu tiên hơn bootstrap khi cần css cái gì đó-->
     <title>Document</title>
+    <style>
+        .background {
+            background-image: url(img/hero.jpg);
+            background-size: cover; /* Đảm bảo ảnh phủ đầy phần tử mà không bị méo */
+            background-position: center; /* Căn giữa ảnh trong phần tử */
+            background-repeat: no-repeat; /* Không lặp lại ảnh */
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -61,23 +69,23 @@
         </div>
     </nav>
 
-
-    <section class="about-us py-5"> <!-- py-5 là padding trên dưới xa ra -->
-        <div class="container"> <!-- container là để căn giữa và có padding 2 bên -->
-            <div class="row gy-4"> <!-- gy-4 là để tạo khoảng cách giữa các hàng -->
-                <div class="col-12 col-md-6 col-lg-4"> <!-- col-12 là cho mobile, col-md-6 là trên tablet, col-lg-4 là trên desktop -->
-                    <div class="py-3 border bg-light text-center">Nội dung 1</div> <!-- py-3 là để tạo padding trên dưới-->
-                    <!-- border là để tạo viền, bg-light là để tạo nền sáng, text-center là để căn giữa chữ -->
+    <section class="background py-5 vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row gy-4 ">
+                <div class="col-12 col-lg-7">
+                    <h1>PET SHOP</h1>
+                    <h3>MAKE YOUR PETS HAPPY</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas accusantium aut perferendis? Aut eius incidunt minima amet voluptas quidem sint omnis odit hic, nam beatae, nulla doloribus, natus assumenda commodi!</p>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="py-3 border bg-light text-center">Nội dung 2</div>
+                <div class="d-flex flex-wrap gap-3 align-items-center">
+                    <a href="#" class="btn border-light text-light rounded-0 px-4 my-3 mx-3">READ NOW</a>
+                    <button class="play-btn bg-light rounded-circle p-2 rounded-0 mx-3" type="button"><i class="fa-solid fa-play text-success"></i></button>
+                    <span class="fw-bold text-light">Play Video</span>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="py-3 border bg-light text-center">Nội dung 3</div>
-                </div>
+            </div>
         </div>
     </section>
-
+    
     <section class="about-us py-5">
         <div class="container">
             <div class="row gy-4">
@@ -90,9 +98,9 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="py-3 border bg-light text-center">Nội dung 3</div>
                 </div>
+            </div>
         </div>
     </section>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
