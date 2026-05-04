@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Thi Cuối Kỳ - Lập Trình Web</title>
+    <style>
+        :root { --primary: #2563eb; --success: #22c55e; --error: #ef4444; --bg: #f8fafc; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); display: flex; justify-content: center; padding: 20px; }
+        .quiz-container { background: white; max-width: 600px; width: 100%; padding: 30px; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        h1 { color: var(--primary); text-align: center; font-size: 24px; }
+        .progress { margin-bottom: 20px; font-size: 14px; color: #64748b; text-align: right; }
+        .question { font-size: 18px; font-weight: 600; margin-bottom: 20px; line-height: 1.5; }
+        .options { display: grid; gap: 10px; }
+        .option-btn { padding: 12px 15px; border: 2px solid #e2e8f0; border-radius: 8px; background: white; cursor: pointer; text-align: left; transition: all 0.2s; font-size: 16px; }
+        .option-btn:hover:not(:disabled) { border-color: var(--primary); background: #eff6ff; }
+        .correct { background: var(--success) !important; color: white; border-color: var(--success) !important; }
+        .wrong { background: var(--error) !important; color: white; border-color: var(--error) !important; }
+        .controls { margin-top: 30px; display: flex; justify-content: space-between; align-items: center; }
+        #next-btn { padding: 10px 25px; background: var(--primary); color: white; border: none; border-radius: 6px; cursor: pointer; display: none; }
+        #score-board { text-align: center; display: none; }
+        .restart-btn { padding: 10px 20px; background: #64748b; color: white; border: none; border-radius: 6px; cursor: pointer; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <div id="quiz-box">
+        <h1>🚀 Ôn Thi Lập Trình Web</h1>
+        <div class="progress" id="progress">Câu 1/40</div>
+        <div class="question" id="question-text">Đang tải câu hỏi...</div>
+        <div class="options" id="options-container"></div>
+        <div class="controls">
+            <span id="feedback"></span>
+            <button id="next-btn" onclick="nextQuestion()">Câu Tiếp Theo</button>
+        </div>
+    </div>
+
+    <div id="score-board">
+        <h1>Kết Quả 🎉</h1>
+        <p style="font-size: 48px; font-weight: bold; margin: 20px 0;" id="final-score">0/40</p>
+        <p id="score-comment"></p>
+        <button class="restart-btn" onclick="restartQuiz()">Làm lại từ đầu</button>
+    </div>
+</div>
+
+<script>
+    const questions = [
+        // PHẦN 1: HTML
+        { q: "HTML là viết tắt của từ nào?", o: ["Home Tool Markup Language", "Hyperlinks and Text Markup Language", "Hyper Text Markup Language", "Hyper Tool Markup Language"], a: 2 },
+        { q: "Thẻ nào dùng để tạo một liên kết (hyperlink)?", o: ["<link>", "<a>", "<href>", "<url>"], a: 1 },
+        { q: "Thẻ HTML nào định dạng tiêu đề có kích thước lớn nhất?", o: ["<heading>", "<h6>", "<head>", "<h1>"], a: 3 },
+        { q: "Ký tự nào được dùng để biểu thị một thẻ đóng trong HTML?", o: ["^", "\\", "/", "*"], a: 2 },
+        { q: "Để chèn một hình ảnh vào trang web, ta dùng thẻ nào?", o: ["<image>", "<pic>", "<img>", "<src>"], a: 2 },
+        { q: "Thuộc tính nào của thẻ <img> dùng để cung cấp đường dẫn tới bức ảnh?", o: ["link", "href", "src", "alt"], a: 2 },
+        { q: "Làm thế nào để tạo một danh sách có đánh số thứ tự?", o: ["<ul>", "<ol>", "<list>", "<dl>"], a: 1 },
+        { q: "Phần tử HTML nào chứa các thẻ meta, title và liên kết tệp ngoài?", o: ["<header>", "<body>", "<footer>", "<head>"], a: 3 },
+        { q: "Thuộc tính nào giúp mở một liên kết trong một tab mới?", o: ["target='_blank'", "target='_new'", "open='new'", "window='_blank'"], a: 0 },
+        { q: "Để tạo một ô nhập văn bản (text input), ta dùng cú pháp nào?", o: ["<input type='textfield'>", "<textinput>", "<input type='text'>", "<textfield>"], a: 2 },
+        // PHẦN 2: CSS
+        { q: "CSS là viết tắt của từ gì?", o: ["Cascading Style Sheets", "Computer Style Sheets", "Colorful Style Sheets", "Creative Style Sheets"], a: 0 },
+        { q: "Thuộc tính CSS nào dùng để thay đổi màu nền?", o: ["color", "bgcolor", "background-color", "bg-color"], a: 2 },
+        { q: "Thuộc tính CSS nào dùng để thay đổi màu chữ?", o: ["text-color", "font-color", "color", "text-style"], a: 2 },
+        { q: "Ký hiệu nào dùng để chọn một phần tử có id='header'?", o: [".header", "#header", "*header", "header"], a: 1 },
+        { q: "Ký hiệu nào dùng để chọn các phần tử có class='menu'?", o: ["#menu", ".menu", "menu", "*menu"], a: 1 },
+        { q: "Box Model gồm những gì (từ ngoài vào trong)?", o: ["Margin, Padding, Border, Content", "Border, Margin, Padding, Content", "Margin, Border, Padding, Content", "Padding, Margin, Border, Content"], a: 2 },
+        { q: "Làm sao để làm chữ in đậm bằng CSS?", o: ["font-weight: bold;", "style: bold;", "font: bold;", "text-weight: bold;"], a: 0 },
+        { q: "Thuộc tính nào loại bỏ gạch chân mặc định của thẻ <a>?", o: ["text-style: none;", "text-decoration: none;", "font-decoration: none;", "underline: none;"], a: 1 },
+        { q: "Cú pháp chú thích (comment) trong CSS là gì?", o: ["// chú thích", "<!-- chú thích -->", "/* chú thích */", "' chú thích"], a: 2 },
+        { q: "Để dùng Flexbox xếp hàng ngang, ta gán thuộc tính nào cho cha?", o: ["display: inline;", "display: block;", "float: left;", "display: flex;"], a: 3 },
+        // PHẦN 3: JS
+        { q: "Thẻ HTML nào dùng để chứa mã JavaScript?", o: ["<js>", "<scripting>", "<script>", "<javascript>"], a: 2 },
+        { q: "Câu lệnh nào dùng để in ra Console?", o: ["print()", "console.log()", "document.write()", "window.print()"], a: 1 },
+        { q: "Từ khóa ES6 khai báo một hằng số?", o: ["var", "let", "const", "static"], a: 2 },
+        { q: "Khác biệt giữa == và === là gì?", o: ["== chỉ so sánh giá trị, === so sánh cả kiểu dữ liệu", "Không có khác biệt", "=== chỉ dùng cho chuỗi", "== dùng để gán"], a: 0 },
+        { q: "Cách đúng để gọi hàm myFunction?", o: ["call myFunction", "myFunction()", "call function()", "myFunction"], a: 1 },
+        { q: "Sự kiện xảy ra khi người dùng click chuột?", o: ["onmouseover", "onchange", "onclick", "onmouseclick"], a: 2 },
+        { q: "Hàm lấy phần tử qua ID?", o: ["getElementById()", "getElementsByClass()", "querySelector()", "getId()"], a: 0 },
+        { q: "Kiểu dữ liệu của [1, 2, 3] trong JS?", o: ["Object (Array)", "String", "Number", "Boolean"], a: 0 },
+        { q: "Lệnh thoát vòng lặp ngay lập tức?", o: ["stop", "exit", "break", "return"], a: 2 },
+        { q: "Dấu ngoặc nào định nghĩa khối mã (block code)?", o: ["[ ]", "( )", "{ }", "< >"], a: 2 },
+        // PHẦN 4: SQL & WEB
+        { q: "Câu lệnh SQL để lấy dữ liệu?", o: ["EXTRACT", "GET", "SELECT", "OPEN"], a: 2 },
+        { q: "SQL: Mệnh đề lọc dữ liệu theo điều kiện?", o: ["FILTER", "WHERE", "ORDER BY", "HAVING"], a: 1 },
+        { q: "SQL: Câu lệnh thêm dữ liệu mới?", o: ["ADD RECORD", "INSERT INTO", "INSERT NEW", "ADD TO"], a: 1 },
+        { q: "SQL: Câu lệnh cập nhật dữ liệu?", o: ["UPDATE", "MODIFY", "CHANGE", "SAVE"], a: 0 },
+        { q: "Phương thức HTTP gửi form bảo mật?", o: ["GET", "POST", "PUT", "DELETE"], a: 1 },
+        { q: "Mã HTTP 404 nghĩa là gì?", o: ["Lỗi máy chủ", "Thành công", "Cấm truy cập", "Không tìm thấy trang"], a: 3 },
+        { q: "Trong Web, 'Client' là gì?", o: ["Database", "Server", "Trình duyệt của người dùng", "Domain name"], a: 2 },
+        { q: "Session thường lưu ở đâu?", o: ["Client", "Server", "Local Storage", "File CSS"], a: 1 },
+        { q: "Cookie lưu trữ ở đâu?", o: ["Server", "Database", "Client (Trình duyệt)", "RAM"], a: 2 },
+        { q: "Mô hình phân tách Giao diện - Logic - Dữ liệu?", o: ["MVVM", "RESTful", "MVC", "OOP"], a: 2 }
+    ];
+
+    let currentIdx = 0;
+    let score = 0;
+
+    function loadQuestion() {
+        const q = questions[currentIdx];
+        document.getElementById("progress").innerText = `Câu ${currentIdx + 1}/${questions.length}`;
+        document.getElementById("question-text").innerText = q.q;
+        const container = document.getElementById("options-container");
+        container.innerHTML = "";
+        document.getElementById("next-btn").style.display = "none";
+        document.getElementById("feedback").innerText = "";
+
+        q.o.forEach((opt, i) => {
+            const btn = document.createElement("button");
+            btn.className = "option-btn";
+            btn.innerText = opt;
+            btn.onclick = () => checkAnswer(i, btn);
+            container.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(idx, btn) {
+        const correctIdx = questions[currentIdx].a;
+        const allBtns = document.querySelectorAll(".option-btn");
+        
+        allBtns.forEach(b => b.disabled = true);
+
+        if(idx === correctIdx) {
+            btn.classList.add("correct");
+            score++;
+            document.getElementById("feedback").innerText = "Chính xác! 🌟";
+            document.getElementById("feedback").style.color = "var(--success)";
+        } else {
+            btn.classList.add("wrong");
+            allBtns[correctIdx].classList.add("correct");
+            document.getElementById("feedback").innerText = "Sai rồi! 😅";
+            document.getElementById("feedback").style.color = "var(--error)";
+        }
+        document.getElementById("next-btn").style.display = "block";
+    }
+
+    function nextQuestion() {
+        currentIdx++;
+        if(currentIdx < questions.length) {
+            loadQuestion();
+        } else {
+            showResult();
+        }
+    }
+
+    function showResult() {
+        document.getElementById("quiz-box").style.display = "none";
+        document.getElementById("score-board").style.display = "block";
+        document.getElementById("final-score").innerText = `${score}/${questions.length}`;
+        
+        let comment = "";
+        if(score > 35) comment = "Xuất sắc! Bạn đã sẵn sàng đi thi rồi đó! 🔥";
+        else if(score > 25) comment = "Khá tốt! Ôn thêm một chút nữa là ổn. 👍";
+        else comment = "Cần cố gắng thêm nhé! Đừng nản lòng. 💪";
+        document.getElementById("score-comment").innerText = comment;
+    }
+
+    function restartQuiz() {
+        currentIdx = 0;
+        score = 0;
+        document.getElementById("quiz-box").style.display = "block";
+        document.getElementById("score-board").style.display = "none";
+        loadQuestion();
+    }
+
+    loadQuestion();
+</script>
+</body>
+</html>
