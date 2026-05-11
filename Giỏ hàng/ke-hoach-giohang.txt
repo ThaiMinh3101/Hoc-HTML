@@ -1,0 +1,101 @@
+KẾ HOẠCH HOÀN THIỆN GIOHANG.HTML
+
+Dùng mau.html để đối chiếu, nhưng tự làm lại từng phần trong giohang.html.
+
+BƯỚC 1
+Việc cần làm: So sánh khung đầu file
+Mục tiêu: Giữ Bootstrap trong giohang.html
+Dấu hiệu làm đúng: Có đủ link Bootstrap CSS, Bootstrap Icons, Font Awesome
+
+BƯỚC 2
+Việc cần làm: Thêm CSS nhỏ trong thẻ style
+Mục tiêu: Chỉnh ảnh, khung giỏ, ô số lượng
+Dấu hiệu làm đúng: Có .cart-box, .product-image, .quantity input, .price, .subtotal, .total
+
+BƯỚC 3
+Việc cần làm: Bọc nội dung bằng form có id là order
+Mục tiêu: Gom giỏ hàng và form giao hàng lại
+Dấu hiệu làm đúng: Từ tiêu đề tới fieldset nằm trong form
+
+BƯỚC 4
+Việc cần làm: Làm phần tiêu đề
+Mục tiêu: Giống cart.html hơn
+Dấu hiệu làm đúng: Có h1 Giỏ hàng và dòng mô tả bên dưới
+
+BƯỚC 5
+Việc cần làm: Tạo khung giỏ hàng
+Mục tiêu: Thay placeholder Nội dung 1, Nội dung 3
+Dấu hiệu làm đúng: Có div id="cart" và class container
+
+BƯỚC 6
+Việc cần làm: Làm 1 dòng sản phẩm mẫu
+Mục tiêu: Tạo khuôn để copy các sản phẩm sau
+Dấu hiệu làm đúng: Một dòng có ảnh, tên, giá, số lượng, nút xóa, thành tiền
+
+BƯỚC 7
+Việc cần làm: Nhân dòng sản phẩm thành 5 dòng
+Mục tiêu: Giống dữ liệu trong cart.html
+Dấu hiệu làm đúng: Có sản phẩm 1, 2, 4, 7, 10
+
+BƯỚC 8
+Việc cần làm: Thêm dòng phí ship
+Mục tiêu: Giữ yêu cầu mẫu
+Dấu hiệu làm đúng: Có dòng "(SV tự thêm phần phí ship)"
+
+BƯỚC 9
+Việc cần làm: Thêm dòng tổng tiền
+Mục tiêu: Nơi JavaScript đổ tổng tiền vào
+Dấu hiệu làm đúng: Có div class="total" với nội dung ban đầu là ---------
+
+BƯỚC 10
+Việc cần làm: Chỉnh fieldset giao hàng
+Mục tiêu: Dùng Bootstrap form
+Dấu hiệu làm đúng: Có hoten, dienthoai, nút Thanh toán
+
+BƯỚC 11
+Việc cần làm: Thêm khối giỏ hàng trống
+Mục tiêu: Hiện khi xóa hết sản phẩm
+Dấu hiệu làm đúng: Có div id="empty" và class d-none
+
+BƯỚC 12
+Việc cần làm: Thêm JavaScript init()
+Mục tiêu: Format giá tiền
+Dấu hiệu làm đúng: Giá từ 1000000 thành 1.000.000 đ hoặc dạng VND
+
+BƯỚC 13
+Việc cần làm: Thêm JavaScript tinhTien()
+Mục tiêu: Tính thành tiền và tổng tiền
+Dấu hiệu làm đúng: Đổi số lượng thì subtotal và total đổi theo
+
+BƯỚC 14
+Việc cần làm: Thêm sự kiện oninput
+Mục tiêu: Tự tính khi nhập số lượng
+Dấu hiệu làm đúng: Không cần bấm nút vẫn cập nhật tiền
+
+BƯỚC 15
+Việc cần làm: Thêm sự kiện click nút xóa
+Mục tiêu: Xóa sản phẩm khỏi giỏ
+Dấu hiệu làm đúng: Bấm Xóa có confirm, đồng ý thì dòng sản phẩm biến mất
+
+BƯỚC 16
+Việc cần làm: Test lại
+Mục tiêu: Bắt lỗi cuối
+Dấu hiệu làm đúng: Ảnh hiện, giá đúng, xóa hết hiện thông báo trống
+
+THỨ TỰ NÊN LÀM
+
+1. Làm bước 1 đến bước 5 trước để có khung trang.
+2. Làm bước 6 thật chắc: chỉ cần một dòng sản phẩm chạy đúng.
+3. Copy dòng mẫu ra thành 5 sản phẩm ở bước 7.
+4. Làm bước 8 đến bước 11 để hoàn thiện HTML.
+5. Làm JavaScript từ bước 12 đến bước 15.
+6. Test lại theo bước 16.
+
+GHI NHỚ NHANH
+
+.cart-item là mỗi dòng sản phẩm.
+.price là đơn giá.
+.quantity input là ô số lượng.
+.subtotal là thành tiền của từng dòng.
+.total là tổng tiền của cả giỏ hàng.
+.btnDel là nút xóa sản phẩm.

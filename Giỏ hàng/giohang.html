@@ -7,82 +7,223 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Giỏ hàng</title>
+    <style>
+        body {
+            background: #f5f7fb;
+        }
+
+        .cart-box {
+            box-shadow: 0 0 3px 0 #000, 2px 2px 5px 2px #0005;
+        }
+
+        .product-image {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .quantity input {
+            width: 64px;
+        }
+
+        .quantity :invalid {
+            box-shadow: 0 0 3px 1px red;
+        }
+
+        .price,
+        .subtotal,
+        .total {
+            min-width: 150px;
+            text-align: end;
+        }
+    </style>
 </head>
 <body>
-    <h1 class="text-center fw-bold">Giỏ hàng</h1>
+ <form id="order" method="post" class="py-4">
+        <header class="container text-center mb-4">
+            <h1 class="fw-bold">Giỏ hàng</h1>
+            <p class="text-muted mb-0">
+                SV tự định dạng CSS, phần CSS của giỏ hàng chỉ mang tính tham khảo, không chép nguyên vào đồ án
+            </p>
+        </header>
 
-    <section class="about-us py-5">
-        <div class="container border border-2 border-dark rounded-3">
-            <div class="row gy-4 py-3">
-                <div class="col-12 col-md-6 col-lg-8">
-                    <div class="py-3 border bg-light text-center">Nội dung 1</div>
-                </div>
-                <div class="col-12 col-md-8 col-lg-2 border bg-light"> 
-                    <div class="py-2 px-3 d-flex align-items-center gap-3 flex-nowrap">
-                        <div class="price mb-0" id="price-display">1000000</div>
-                        <div class="quantity d-flex align-items-center gap-2">
-                            <input class="text-center input-qty" type="number" name="quantity[]" value="1" min="1" max="20" step="1">
-                            <button type="button" class="btn-delete rounded-3">Xóa</button>
+        <section class="py-3">
+            <div id="cart" class="container bg-white rounded-4 px-3 px-lg-4 cart-box">
+                
+                <div class="row cart-item align-items-center gy-3 py-3 border-bottom">
+                    <input type="hidden" name="productId[]" value="1">
+                    <div class="col-12 col-lg-6">
+                        <div class="d-flex align-items-center gap-3">
+                            <img class="product-image" src="../TKWEB_QTM25A/img/1.jpg" alt="Sản phẩm 1">
+                            <div class="product">
+                                <h3 class="h5 fw-bold mb-1">Sản phẩm 1</h3>
+                                <p class="text-muted mb-0">Size: M - Màu sắc: ...</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-2">
-                    <div class="py-3 border bg-light text-center">Nội dung 3</div>
-                </div>
-            </div>
-            <div class="row gy-4 py-3">
-                <div class="col-12 col-md-6 col-lg-8">
-                    <div class="py-3 border bg-light text-center">Nội dung 1</div>
-                </div>
-                <div class="col-12 col-md-8 col-lg-2 border bg-light"> 
-                    <div class="py-2 px-3 d-flex align-items-center gap-3 flex-nowrap">
-                        <div class="price mb-0" id="price-display">1000000</div>
-                        <div class="quantity d-flex align-items-center gap-2">
-                            <input class="text-center input-qty" type="number" name="quantity[]" value="1" min="1" max="20" step="1">
-                            <button type="button" class="btn-delete rounded-3">Xóa</button>
+                    <div class="col-6 col-lg-2">
+                        <div class="price ms-lg-auto">1000000</div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="quantity d-flex align-items-center justify-content-end justify-content-lg-start gap-2">
+                            <input class="form-control form-control-sm text-center" type="number" name="quantity[]" value="2" min="1" max="20" step="1">
+                            <button type="button" class="btn btn-outline-danger btn-sm btnDel">Xóa</button>
                         </div>
                     </div>
+                    <div class="col-12 col-lg-2">
+                        <div class="subtotal fw-bold ms-auto">---------</div>
+                    </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-2">
-                    <div class="py-3 border bg-light text-center">Nội dung 3</div>
+
+                <div class="row cart-item align-items-center gy-3 py-3 border-bottom">
+                    <input type="hidden" name="productId[]" value="2">
+                    <div class="col-12 col-lg-6">
+                        <div class="d-flex align-items-center gap-3">
+                            <img class="product-image" src="../TKWEB_QTM25A/img/2.jpg" alt="Sản phẩm 2">
+                            <div class="product">
+                                <h3 class="h5 fw-bold mb-1">Sản phẩm 2</h3>
+                                <p class="text-muted mb-0">Size: XXL - Màu sắc: ...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="price ms-lg-auto">1200000</div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="quantity d-flex align-items-center justify-content-end justify-content-lg-start gap-2">
+                            <input class="form-control form-control-sm text-center" type="number" name="quantity[]" value="3" min="1" max="20" step="1">
+                            <button type="button" class="btn btn-outline-danger btn-sm btnDel">Xóa</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-2">
+                        <div class="subtotal fw-bold ms-auto">---------</div>
+                    </div>
+                </div>
+
+                <div class="row cart-item align-items-center gy-3 py-3 border-bottom">
+                    <input type="hidden" name="productId[]" value="4">
+                    <div class="col-12 col-lg-6">
+                        <div class="d-flex align-items-center gap-3">
+                            <img class="product-image" src="../TKWEB_QTM25A/img/4.jpg" alt="Sản phẩm 4">
+                            <div class="product">
+                                <h3 class="h5 fw-bold mb-1">Sản phẩm 4</h3>
+                                <p class="text-muted mb-0">Size: L - Màu sắc: ...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="price ms-lg-auto">1500000</div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="quantity d-flex align-items-center justify-content-end justify-content-lg-start gap-2">
+                            <input class="form-control form-control-sm text-center" type="number" name="quantity[]" value="5" min="1" max="20" step="1">
+                            <button type="button" class="btn btn-outline-danger btn-sm btnDel">Xóa</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-2">
+                        <div class="subtotal fw-bold ms-auto">---------</div>
+                    </div>
+                </div>
+
+                <div class="row cart-item align-items-center gy-3 py-3 border-bottom">
+                    <input type="hidden" name="productId[]" value="7">
+                    <div class="col-12 col-lg-6">
+                        <div class="d-flex align-items-center gap-3">
+                            <img class="product-image" src="../TKWEB_QTM25A/img/7.jpg" alt="Sản phẩm 7">
+                            <div class="product">
+                                <h3 class="h5 fw-bold mb-1">Sản phẩm 7</h3>
+                                <p class="text-muted mb-0">Size: S - Màu sắc: ...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="price ms-lg-auto">1300000</div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="quantity d-flex align-items-center justify-content-end justify-content-lg-start gap-2">
+                            <input class="form-control form-control-sm text-center" type="number" name="quantity[]" value="2" min="1" max="20" step="1">
+                            <button type="button" class="btn btn-outline-danger btn-sm btnDel">Xóa</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-2">
+                        <div class="subtotal fw-bold ms-auto">---------</div>
+                    </div>
+                </div>
+
+                <div class="row cart-item align-items-center gy-3 py-3 border-bottom">
+                    <input type="hidden" name="productId[]" value="10">
+                    <div class="col-12 col-lg-6">
+                        <div class="d-flex align-items-center gap-3">
+                            <img class="product-image" src="../TKWEB_QTM25A/img/10.jpg" alt="Sản phẩm 10">
+                            <div class="product">
+                                <h3 class="h5 fw-bold mb-1">Sản phẩm 10</h3>
+                                <p class="text-muted mb-0">Size: S - Màu sắc: ...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="price ms-lg-auto">1000000</div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="quantity d-flex align-items-center justify-content-end justify-content-lg-start gap-2">
+                            <input class="form-control form-control-sm text-center" type="number" name="quantity[]" value="3" min="1" max="20" step="1">
+                            <button type="button" class="btn btn-outline-danger btn-sm btnDel">Xóa</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-2">
+                        <div class="subtotal fw-bold ms-auto">---------</div>
+                    </div>
+                </div>
+
+                <div class="row align-items-center py-3 border-bottom">
+                    <div class="col text-end text-muted">(SV tự thêm phần phí ship)</div>
+                </div>
+                <div class="row align-items-center py-3 fs-5">
+                    <div class="col text-end fw-bold">Tổng tiền:</div>
+                    <div class="col-auto">
+                        <div class="total fw-bold">---------</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section>
-        <div class="container">
-            <fieldset class="border p-4">
-                <legend class="float-none w-auto px-2 fs-3 fw-bold">
-                    Thông tin giao hàng
-                </legend>
+        <section class="py-4">
+            <div class="container">
+                <fieldset class="border bg-white rounded-4 p-4">
+                    <legend class="float-none w-auto px-2 fs-3 fw-bold">
+                        Thông tin giao hàng
+                    </legend>
 
-                <div class="row mb-3 align-items-center">
-                    <label for="nguoinhan" class="col-3 col-form-label fw-bold fs-4">
-                        Người nhận hàng:
-                    </label>
-                    <div class="col-4">
-                        <input type="text" class="form-control" id="nguoinhan">
+                    <div class="row mb-3 align-items-center">
+                        <label for="hoten" class="col-12 col-md-4 col-lg-3 col-form-label fw-bold">
+                            Người nhận hàng:
+                        </label>
+                        <div class="col-12 col-md-8 col-lg-5">
+                            <input type="text" class="form-control" name="hoten" id="hoten">
+                        </div>
                     </div>
-                </div>
 
-                <div class="row mb-3 align-items-center">
-                    <label for="dienthoai" class="col-3 col-form-label fw-bold fs-4">
-                        Điện thoại:
-                    </label>
-                    <div class="col-4">
-                        <input type="text" class="form-control" id="dienthoai">
+                    <div class="row mb-3 align-items-center">
+                        <label for="dienthoai" class="col-12 col-md-4 col-lg-3 col-form-label fw-bold">
+                            Điện thoại:
+                        </label>
+                        <div class="col-12 col-md-8 col-lg-5">
+                            <input type="tel" class="form-control" name="dienthoai" id="dienthoai">
+                        </div>
                     </div>
-                </div>
 
-                <button type="submit" class="btn btn-outline-success">
-                    Thanh toán
-                </button>
-            </fieldset>
-        </div>
-    </section>
-
-
+                    <p class="text-muted">Các thông tin khác (SV tự làm và định dạng CSS phần này)</p>
+                    <button type="submit" class="btn btn-outline-success">
+                        Thanh toán
+                    </button>
+                </fieldset>
+            </div>
+        </section>
+    </form>
+    <div id="empty" class="container py-5 text-center fs-4 d-none">
+        <p>Không có sản phẩm nào trong giỏ hàng.</p>
+        <a class="btn btn-primary" href="index.html">Tiếp tục mua hàng</a>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
